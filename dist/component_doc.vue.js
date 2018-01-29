@@ -69,14 +69,4 @@ var ComponentDoc = /** @class */ (function (_super) {
 exports["default"] = ComponentDoc;
 
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<el-table :data=\"props\"><el-table-column prop=\"name\" label=\"Name\"></el-table-column><el-table-column prop=\"type\" label=\"Type\"><template slot-scope=\"scope\">{{ scope.row.type | stringify_constructor}}</template></el-table-column><el-table-column prop=\"required\" label=\"Required\"><template slot-scope=\"scope\">{{ scope.row.required | stringify_boolean}}</template></el-table-column><el-table-column prop=\"default\"><template slot-scope=\"scope\">{{ scope.row.default | stringify_default}}</template></el-table-column></el-table>"
-if (module.hot) {(function () {  module.hot.accept()
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  if (!module.hot.data) {
-    hotAPI.createRecord("_v-222b0ced", module.exports)
-  } else {
-    hotAPI.update("_v-222b0ced", module.exports, (typeof module.exports === "function" ? module.exports.options : module.exports).template)
-  }
-})()}
+;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<el-table :data=props><el-table-column prop=name label=Name></el-table-column><el-table-column prop=type label=Type><template slot-scope=scope>{{ scope.row.type | stringify_constructor}}</template></el-table-column><el-table-column prop=required label=Required><template slot-scope=scope>{{ scope.row.required | stringify_boolean}}</template></el-table-column><el-table-column prop=default><template slot-scope=scope>{{ scope.row.default | stringify_default}}</template></el-table-column></el-table>"

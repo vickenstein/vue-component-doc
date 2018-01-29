@@ -1,6 +1,6 @@
 {
   "name": "vue-component-doc",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Documentation for vue component",
   "main": "index.js",
   "scripts": {
@@ -29,6 +29,7 @@
     "grunt-browserify": "^5.2.0",
     "grunt-contrib-pug": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-env": "^0.4.4",
     "grunt-ts": "^6.0.0-beta.17",
     "grunt-vueify": "^1.0.1",
     "load-grunt-config": "^0.19.2",
