@@ -3,10 +3,9 @@ module.exports = (grunt) => {
     components: {
       files: [
         {
-          expand: true,
           src: 'src/**/*.vue',
           dest: 'dist/',
-          ext: '.vue.js'
+          ext: '.js'
         }
       ]
     }

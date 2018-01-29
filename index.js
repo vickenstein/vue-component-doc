@@ -1,4 +1,4 @@
-const component_doc = require('./component_doc.vue')
+var component_doc = require('./dist/component_doc.vue')
 
 module.exports = {
   install(Vue, options) {

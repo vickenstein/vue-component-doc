@@ -1,3 +1,6 @@
+# typescript
+.tscache
+
 # Logs
 logs
 *.log

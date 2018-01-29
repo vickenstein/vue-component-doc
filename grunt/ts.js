@@ -1,10 +1,12 @@
 module.exports = (grunt) => {
   return {
+    options: {
+      sourceMap: false,
+      rootDir: 'src'
+    },
     default : {
-      rootDir: 'src',
       src: ["src/**/*.ts"],
-      outDir: 'dist',
-      sourceMap: false
+      outDir: 'dist'
     }
   }
 }

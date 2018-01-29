@@ -5,7 +5,6 @@ const Vue = require('vue')
 Vue.use(ElementUI)
 Vue.component('component_doc', require('../src/component_doc.vue'))
 
-console.log(require('../dist/src/component_doc.vue'))
 
 
 new Vue({
