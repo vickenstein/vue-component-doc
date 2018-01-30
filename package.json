@@ -31,7 +31,6 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-env": "^0.4.4",
     "grunt-ts": "^6.0.0-beta.17",
-    "grunt-vueify": "^1.0.1",
     "load-grunt-config": "^0.19.2",
     "node-sass": "^4.7.2",
     "ts-loader": "^3.3.0",
@@ -42,7 +41,6 @@
   "dependencies": {
     "element-ui": "^2.0.11",
     "vue": "^2.5.13",
-    "vue-class-component": "^6.1.2",
-    "vue-property-decorator": "^6.0.0"
+    "vue-class-component": "^6.1.2"
   }
 }

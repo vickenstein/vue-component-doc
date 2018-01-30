@@ -1,3 +1,4 @@
+;(function(){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -68,5 +69,19 @@ var ComponentDoc = /** @class */ (function (_super) {
 }(Vue));
 exports["default"] = ComponentDoc;
 
+})()
 if (module.exports.__esModule) module.exports = module.exports.default
-;(typeof module.exports === "function"? module.exports.options: module.exports).template = "<el-table :data=props><el-table-column prop=name label=Name></el-table-column><el-table-column prop=type label=Type><template slot-scope=scope>{{ scope.row.type | stringify_constructor}}</template></el-table-column><el-table-column prop=required label=Required><template slot-scope=scope>{{ scope.row.required | stringify_boolean}}</template></el-table-column><el-table-column prop=default><template slot-scope=scope>{{ scope.row.default | stringify_default}}</template></el-table-column></el-table>"
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-table',{attrs:{"data":_vm.props}},[_c('el-table-column',{attrs:{"prop":"name","label":"Name"}}),_c('el-table-column',{attrs:{"prop":"type","label":"Type"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_constructor")(scope.row.type)))]}}])}),_c('el-table-column',{attrs:{"prop":"required","label":"Required"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_boolean")(scope.row.required)))]}}])}),_c('el-table-column',{attrs:{"prop":"default"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_default")(scope.row.default)))]}}])})],1)}
+__vue__options__.staticRenderFns = []
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-222b0ced", __vue__options__)
+  } else {
+    hotAPI.reload("data-v-222b0ced", __vue__options__)
+  }
+})()}
