@@ -21,6 +21,14 @@ export default class ComponentProperties {
     return this.format_props_for_table(props)
   }
 
+  get props_form (): any {
+    const props_form: any = {}
+    this.props.forEach((prop: any) => {
+      props_form[prop.name] = null
+    })
+    return props_form
+  }
+
   format_props_for_table (props: any | string[]): any[] {
     let table_data: any[] = []
     if (props instanceof Array) {

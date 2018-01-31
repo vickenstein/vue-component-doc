@@ -4,13 +4,14 @@
 
 var props = require('./basic_properties');
 module.exports = {
+  name: 'basic_component',
   props: props
 };
 })()
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"basic_properties"},[_vm._v("TEST")])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"component"},[_vm._v("Basic Component")])}
 __vue__options__.staticRenderFns = []
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -19,7 +20,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-170ec39b", __vue__options__)
   } else {
-    hotAPI.reload("data-v-170ec39b", __vue__options__)
+    hotAPI.rerender("data-v-170ec39b", __vue__options__)
   }
 })()}
 },{"./basic_properties":2,"vue":148,"vue-hot-reload-api":147}],2:[function(require,module,exports){
@@ -44,13 +45,14 @@ module.exports = generate_properties();
 
 var props = require('./complex_properties');
 module.exports = {
+  name: 'complex_object_component',
   props: props
 };
 })()
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"basic_properties"},[_vm._v("TEST")])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"component"},[_vm._v("Complex Object Component"+_vm._s(_vm.string_required))])}
 __vue__options__.staticRenderFns = []
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -67,54 +69,75 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
 const property_types = [
     {
         type: String,
-        default: 'test'
+        default: 'test',
+        default_function: function () {
+            return 'test';
+        }
     },
     {
         type: Number,
-        default: 1
+        default: 1,
+        default_function: function () {
+            return 1;
+        }
     },
     {
         type: Boolean,
-        default: true
+        default: true,
+        default_function: function () {
+            return true;
+        }
     },
     {
         type: Function,
-        default: (input) => input
+        default: (input) => input,
+        default_function: function () {
+            return (input) => input;
+        }
     },
     {
         type: Object,
-        default: { test: 'test' }
+        default: () => { test: 'test'; },
+        default_function: function () {
+            return { test: 'test' };
+        }
     },
     {
         type: Array,
-        default: ['test', 1, 2]
+        default: () => ['test', 1, 2],
+        default_function: function () {
+            return ['test', 1, 2];
+        }
     },
     {
         type: Symbol,
-        default: Symbol('test')
+        default: Symbol('test'),
+        default_function: function () {
+            return Symbol('test');
+        }
     }
 ];
 function generate_properties() {
     let properties = {};
     property_types.forEach((property_type) => {
-        const name = property_type.type.name;
-        properties[name] = property_type;
+        const name = property_type.type.name.toLowerCase();
+        const type = property_type.type;
+        const default_function = property_type.default_function;
+        properties[name] = type;
         properties[`${name}_type`] = {
-            type: property_type
+            type: type
         };
         properties[`${name}_required`] = {
-            type: property_type,
+            type: type,
             required: true
         };
         properties[`${name}_default`] = {
-            type: property_type,
+            type: type,
             default: property_type.default
         };
         properties[`${name}_default_function`] = {
-            type: property_type,
-            default: function () {
-                return this.non_existent_function();
-            }
+            type: type,
+            default: default_function
         };
     });
     return properties;
@@ -52123,22 +52146,15 @@ var component_properties_1 = require("./component_properties");
 var ComponentDoc = /** @class */ (function (_super) {
     __extends(ComponentDoc, _super);
     function ComponentDoc() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.component_properties = new component_properties_1["default"](_this.component);
+        _this.props = _this.component_properties.props;
+        _this.props_form = _this.component_properties.props_form;
+        return _this;
     }
-    Object.defineProperty(ComponentDoc.prototype, "component_properties", {
-        get: function () {
-            return new component_properties_1["default"](this.component);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ComponentDoc.prototype, "props", {
-        get: function () {
-            return this.component_properties.props;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    ComponentDoc.prototype.beforeMount = function () {
+        this.$options.components[this.component.name] = this.component;
+    };
     ComponentDoc = __decorate([
         vue_class_component_1["default"]({
             props: {
@@ -52173,7 +52189,7 @@ exports["default"] = ComponentDoc;
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-table',{attrs:{"data":_vm.props}},[_c('el-table-column',{attrs:{"prop":"name","label":"Name"}}),_c('el-table-column',{attrs:{"prop":"type","label":"Type"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_constructor")(scope.row.type)))]}}])}),_c('el-table-column',{attrs:{"prop":"required","label":"Required"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_boolean")(scope.row.required)))]}}])}),_c('el-table-column',{attrs:{"prop":"default"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_default")(scope.row.default)))]}}])})],1)}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-row',[_c('el-col',{attrs:{"span":12}},[_c('h3',[_vm._v(_vm._s(_vm.component.name))]),_c('el-table',{attrs:{"data":_vm.props}},[_c('el-table-column',{attrs:{"prop":"name","label":"Name"}}),_c('el-table-column',{attrs:{"prop":"type","label":"Type"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_constructor")(scope.row.type)))]}}])}),_c('el-table-column',{attrs:{"prop":"required","label":"Required"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_boolean")(scope.row.required)))]}}])}),_c('el-table-column',{attrs:{"prop":"default","label":"Default"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_default")(scope.row.default)))]}}])}),_c('el-table-column',{attrs:{"prop":"input","label":"Input"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [(!scope.row.type)?_c('el-input',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(scope.row.type === String)?_c('el-input',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(scope.row.type === Number)?_c('el-input-number',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(scope.row.type === Boolean)?_c('el-switch',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):_vm._e()]}}])})],1)],1),_c('el-col',{attrs:{"span":12}},[_c(_vm.component.name,_vm._b({tag:"component"},'component',_vm.props_form,false))],1)],1)}
 __vue__options__.staticRenderFns = []
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -52182,7 +52198,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-ba1ef200", __vue__options__)
   } else {
-    hotAPI.reload("data-v-ba1ef200", __vue__options__)
+    hotAPI.rerender("data-v-ba1ef200", __vue__options__)
   }
 })()}
 },{"./component_properties":150,"vue":148,"vue-class-component":146,"vue-hot-reload-api":147}],150:[function(require,module,exports){
@@ -52204,6 +52220,13 @@ class ComponentProperties {
             props = this.vue_component.props;
         }
         return this.format_props_for_table(props);
+    }
+    get props_form() {
+        const props_form = {};
+        this.props.forEach((prop) => {
+            props_form[prop.name] = null;
+        });
+        return props_form;
     }
     format_props_for_table(props) {
         let table_data = [];
