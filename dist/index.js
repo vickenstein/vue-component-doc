@@ -52198,7 +52198,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-ba1ef200", __vue__options__)
   } else {
-    hotAPI.reload("data-v-ba1ef200", __vue__options__)
+    hotAPI.rerender("data-v-ba1ef200", __vue__options__)
   }
 })()}
 },{"./component_properties":150,"vue":148,"vue-class-component":146,"vue-hot-reload-api":147}],150:[function(require,module,exports){

@@ -23,22 +23,15 @@ var component_properties_1 = require("./component_properties");
 var ComponentDoc = /** @class */ (function (_super) {
     __extends(ComponentDoc, _super);
     function ComponentDoc() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.component_properties = new component_properties_1["default"](_this.component);
+        _this.props = _this.component_properties.props;
+        _this.props_form = _this.component_properties.props_form;
+        return _this;
     }
-    Object.defineProperty(ComponentDoc.prototype, "component_properties", {
-        get: function () {
-            return new component_properties_1["default"](this.component);
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(ComponentDoc.prototype, "props", {
-        get: function () {
-            return this.component_properties.props;
-        },
-        enumerable: true,
-        configurable: true
-    });
+    ComponentDoc.prototype.beforeMount = function () {
+        this.$options.components[this.component.name] = this.component;
+    };
     ComponentDoc = __decorate([
         vue_class_component_1["default"]({
             props: {
@@ -72,16 +65,5 @@ exports["default"] = ComponentDoc;
 })()
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
-if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-table',{attrs:{"data":_vm.props}},[_c('el-table-column',{attrs:{"prop":"name","label":"Name"}}),_c('el-table-column',{attrs:{"prop":"type","label":"Type"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_constructor")(scope.row.type)))]}}])}),_c('el-table-column',{attrs:{"prop":"required","label":"Required"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_boolean")(scope.row.required)))]}}])}),_c('el-table-column',{attrs:{"prop":"default"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_default")(scope.row.default)))]}}])})],1)}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('el-row',[_c('el-col',{attrs:{"span":12}},[_c('h3',[_vm._v(_vm._s(_vm.component.name))]),_c('el-table',{attrs:{"data":_vm.props}},[_c('el-table-column',{attrs:{"prop":"name","label":"Name"}}),_c('el-table-column',{attrs:{"prop":"type","label":"Type"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_constructor")(scope.row.type)))]}}])}),_c('el-table-column',{attrs:{"prop":"required","label":"Required"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_boolean")(scope.row.required)))]}}])}),_c('el-table-column',{attrs:{"prop":"default","label":"Default"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_default")(scope.row.default)))]}}])}),_c('el-table-column',{attrs:{"prop":"input","label":"Input"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [(!scope.row.type)?_c('el-input',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(scope.row.type === String)?_c('el-input',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(scope.row.type === Number)?_c('el-input-number',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(scope.row.type === Boolean)?_c('el-switch',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):_vm._e()]}}])})],1)],1),_c('el-col',{attrs:{"span":12}},[_c(_vm.component.name,_vm._b({tag:"component"},'component',_vm.props_form,false))],1)],1)}
 __vue__options__.staticRenderFns = []
-if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), true)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-222b0ced", __vue__options__)
-  } else {
-    hotAPI.reload("data-v-222b0ced", __vue__options__)
-  }
-})()}
