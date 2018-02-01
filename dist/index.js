@@ -20,7 +20,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-170ec39b", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-170ec39b", __vue__options__)
+    hotAPI.reload("data-v-170ec39b", __vue__options__)
   }
 })()}
 },{"./basic_properties":2,"vue":148,"vue-hot-reload-api":147}],2:[function(require,module,exports){
@@ -52,7 +52,7 @@ module.exports = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"component"},[_vm._v("Complex Object Component"+_vm._s(_vm.string_required))])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"component"},[_vm._v("Complex Object Component")])}
 __vue__options__.staticRenderFns = []
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -52198,7 +52198,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-ba1ef200", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-ba1ef200", __vue__options__)
+    hotAPI.reload("data-v-ba1ef200", __vue__options__)
   }
 })()}
 },{"./component_properties":150,"vue":148,"vue-class-component":146,"vue-hot-reload-api":147}],150:[function(require,module,exports){

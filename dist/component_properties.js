@@ -25,6 +25,17 @@ var ComponentProperties = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(ComponentProperties.prototype, "props_form", {
+        get: function () {
+            var props_form = {};
+            this.props.forEach(function (prop) {
+                props_form[prop.name] = null;
+            });
+            return props_form;
+        },
+        enumerable: true,
+        configurable: true
+    });
     ComponentProperties.prototype.format_props_for_table = function (props) {
         var table_data = [];
         if (props instanceof Array) {
