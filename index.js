@@ -1,6 +1,6 @@
 const component_doc = require('./dist/component_doc.vue')
 const ElementUi = require('element-ui')
-const locale = require('element_ui/lib/locale/lang/en')
+const locale = require('element-ui/lib/locale/lang/en')
 
 module.exports = {
   install(Vue, options) {
