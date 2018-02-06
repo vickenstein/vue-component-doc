@@ -12,7 +12,7 @@ Vue.use(require('vue-component-doc'))
 
 ## Usage
 ```html
-  <component_doc :component="my_component" :presets="my_presets"><component_doc/>
+  <component-doc :component="my_component" :presets="my_presets"><component-doc/>
 ```
 ## Presets
 presets is a system to deliver some sample data to a component via props using vue-component-doc
