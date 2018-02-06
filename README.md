@@ -50,4 +50,4 @@ vue-component-doc will also auto generate name using your prop name or use the n
   }
 ```
 
-Built @ ![Promoboxx Logo](https://promoboxx.com/images/logo.png)
+Built @ ![Promoboxx Logo](https://s3.amazonaws.com/static.promoboxx.com/images/promoboxx_logo.png)
