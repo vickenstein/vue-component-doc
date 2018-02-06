@@ -73,6 +73,9 @@ function generate_properties(): object {
       default: default_function
     }
   })
+  properties[`multi_type`] = {
+    type: [String, Number]
+  }
   return properties
 }
 

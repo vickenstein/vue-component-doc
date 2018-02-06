@@ -11,6 +11,16 @@ var ComponentProperties = (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(ComponentProperties.prototype, "name", {
+        get: function () {
+            if (this.is_class_component && this.vue_component.sealedOptions.name) {
+                return this.vue_component.sealedOptions.name;
+            }
+            return this.vue_component.name || 'nameless_component';
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(ComponentProperties.prototype, "props", {
         get: function () {
             var props;

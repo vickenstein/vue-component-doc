@@ -11,6 +11,13 @@ export default class ComponentProperties {
     return !!this.vue_component.sealedOptions
   }
 
+  get name (): string {
+    if (this.is_class_component && this.vue_component.sealedOptions.name) {
+      return this.vue_component.sealedOptions.name
+    }
+    return this.vue_component.name || 'nameless_component'
+  }
+
   get props (): object[] {
     let props: any
     if (this.is_class_component) {
