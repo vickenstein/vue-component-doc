@@ -1,7 +1,8 @@
 <template lang="pug">
   .component Complex Object Component
-    h4 string required - {{ string_required }}
+    h4 string required - {{ JSON.stringify({string: string_required}) }}
     h4 object required - {{ object_required }}
+    h4 object default function - {{ JSON.stringify(object_default_function) }}
 </template>
 
 <script>

@@ -15,7 +15,8 @@
             template(slot-scope="scope")
               presets(v-if="get_presets(scope.row.name)", :presets="get_presets(scope.row.name)", :name="scope.row.name", v-model="props_form[scope.row.name]")
               el-input(v-else-if="!scope.row.type", v-model="props_form[scope.row.name]")
-              el-input(v-else-if="scope.row.type === String", v-model="props_form[scope.row.name]")
+              .string_input(v-else-if="scope.row.type === String", @keyup="nullify_blank_string(scope.row.name)")
+                el-input(v-model="props_form[scope.row.name]")
               el-input-number(v-else-if="scope.row.type === Number", v-model="props_form[scope.row.name]")
               el-switch(v-else-if="scope.row.type === Boolean", v-model="props_form[scope.row.name]")
       el-col(:xs="24", :sm="24", :md="24", :lg="12", :xl="12")
@@ -75,6 +76,12 @@
 
     get name () {
       return this.component_properties.name
+    }
+
+    nullify_blank_string(field) {
+      if (this.props_form[field] === '') {
+        this.props_form[field] = null
+      }
     }
 
     get_presets (prop_name) {

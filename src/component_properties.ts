@@ -31,7 +31,15 @@ export default class ComponentProperties {
   get props_form (): any {
     const props_form: any = {}
     this.props.forEach((prop: any) => {
-      props_form[prop.name] = null
+      if (prop.default) {
+        if (prop.default instanceof Function) {
+          props_form[prop.name] = prop.default()
+        } else {
+         props_form[prop.name] = prop.default
+        }
+      } else {
+        props_form[prop.name] = null
+      }
     })
     return props_form
   }

@@ -89,7 +89,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-3a778256", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-3a778256", __vue__options__)
+    hotAPI.reload("data-v-3a778256", __vue__options__)
   }
 })()}
 },{"./complex_properties":6,"vue":157,"vue-class-component":155,"vue-hot-reload-api":156}],4:[function(require,module,exports){
@@ -116,7 +116,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-12ada430", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-12ada430", __vue__options__)
+    hotAPI.reload("data-v-12ada430", __vue__options__)
   }
 })()}
 },{"./complex_properties":6,"vue":157,"vue-hot-reload-api":156}],5:[function(require,module,exports){
@@ -133,7 +133,7 @@ module.exports = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"component"},[_vm._v("Complex Object Component"),_c('h4',[_vm._v("string required - "+_vm._s(_vm.string_required))]),_c('h4',[_vm._v("object required - "+_vm._s(_vm.object_required))])])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"component"},[_vm._v("Complex Object Component"),_c('h4',[_vm._v("string required - "+_vm._s(JSON.stringify({string: _vm.string_required})))]),_c('h4',[_vm._v("object required - "+_vm._s(_vm.object_required))]),_c('h4',[_vm._v("object default function - "+_vm._s(JSON.stringify(_vm.object_default_function)))])])}
 __vue__options__.staticRenderFns = []
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -142,7 +142,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-d5d32566", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-d5d32566", __vue__options__)
+    hotAPI.reload("data-v-d5d32566", __vue__options__)
   }
 })()}
 },{"./complex_properties":6,"vue":157,"vue-hot-reload-api":156}],6:[function(require,module,exports){
@@ -178,14 +178,12 @@ const property_types = [
     },
     {
         type: Object,
-        default: () => { test: 'test'; },
         default_function: function () {
             return { test: 'test' };
         }
     },
     {
         type: Array,
-        default: () => ['test', 1, 2],
         default_function: function () {
             return ['test', 1, 2];
         }
@@ -212,10 +210,12 @@ function generate_properties() {
             type: type,
             required: true
         };
-        properties[`${name}_default`] = {
-            type: type,
-            default: property_type.default
-        };
+        if (property_type.default) {
+            properties[`${name}_default`] = {
+                type: type,
+                default: property_type.default
+            };
+        }
         properties[`${name}_default_function`] = {
             type: type,
             default: default_function
@@ -316,7 +316,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-48a2f001", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-48a2f001", __vue__options__)
+    hotAPI.reload("data-v-48a2f001", __vue__options__)
   }
 })()}
 },{"./basic_component.vue":1,"./complex_class_component.vue":3,"./complex_extend_component.vue":4,"./complex_object_component.vue":5,"vue":157,"vue-class-component":155,"vue-hot-reload-api":156}],9:[function(require,module,exports){
@@ -53665,6 +53665,11 @@ var ComponentDoc = /** @class */ (function (_super) {
         enumerable: true,
         configurable: true
     });
+    ComponentDoc.prototype.nullify_blank_string = function (field) {
+        if (this.props_form[field] === '') {
+            this.props_form[field] = null;
+        }
+    };
     ComponentDoc.prototype.get_presets = function (prop_name) {
         if (this.presets[prop_name] && this.presets[prop_name].length) {
             return this.presets[prop_name];
@@ -53718,7 +53723,7 @@ exports["default"] = ComponentDoc;
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"component_doc"},[_c('h3',[_vm._v(_vm._s(_vm.name))]),_c('el-row',{attrs:{"gutter":20}},[_c('el-col',{attrs:{"xs":24,"sm":24,"md":24,"lg":12,"xl":12}},[_c('el-table',{attrs:{"data":_vm.props}},[_c('el-table-column',{attrs:{"prop":"name","label":"Name"}}),_c('el-table-column',{attrs:{"prop":"type","label":"Type"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_constructor")(scope.row.type)))]}}])}),_c('el-table-column',{attrs:{"prop":"required","label":"Required"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_boolean")(scope.row.required)))]}}])}),_c('el-table-column',{attrs:{"prop":"default","label":"Default"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_default")(scope.row.default)))]}}])}),_c('el-table-column',{attrs:{"prop":"input","label":"Input","width":"200","class-name":"input"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [(_vm.get_presets(scope.row.name))?_c('presets',{attrs:{"presets":_vm.get_presets(scope.row.name),"name":scope.row.name},model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(!scope.row.type)?_c('el-input',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(scope.row.type === String)?_c('el-input',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(scope.row.type === Number)?_c('el-input-number',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(scope.row.type === Boolean)?_c('el-switch',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):_vm._e()]}}])})],1)],1),_c('el-col',{attrs:{"xs":24,"sm":24,"md":24,"lg":12,"xl":12}},[_c(_vm.component.name,_vm._b({tag:"component"},'component',_vm.props_form,false))],1)],1)],1)}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"component_doc"},[_c('h3',[_vm._v(_vm._s(_vm.name))]),_c('el-row',{attrs:{"gutter":20}},[_c('el-col',{attrs:{"xs":24,"sm":24,"md":24,"lg":12,"xl":12}},[_c('el-table',{attrs:{"data":_vm.props}},[_c('el-table-column',{attrs:{"prop":"name","label":"Name"}}),_c('el-table-column',{attrs:{"prop":"type","label":"Type"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_constructor")(scope.row.type)))]}}])}),_c('el-table-column',{attrs:{"prop":"required","label":"Required"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_boolean")(scope.row.required)))]}}])}),_c('el-table-column',{attrs:{"prop":"default","label":"Default"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_default")(scope.row.default)))]}}])}),_c('el-table-column',{attrs:{"prop":"input","label":"Input","width":"200","class-name":"input"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [(_vm.get_presets(scope.row.name))?_c('presets',{attrs:{"presets":_vm.get_presets(scope.row.name),"name":scope.row.name},model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(!scope.row.type)?_c('el-input',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(scope.row.type === String)?_c('div',{staticClass:"string_input",on:{"keyup":function($event){_vm.nullify_blank_string(scope.row.name)}}},[_c('el-input',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}})],1):(scope.row.type === Number)?_c('el-input-number',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(scope.row.type === Boolean)?_c('el-switch',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):_vm._e()]}}])})],1)],1),_c('el-col',{attrs:{"xs":24,"sm":24,"md":24,"lg":12,"xl":12}},[_c(_vm.component.name,_vm._b({tag:"component"},'component',_vm.props_form,false))],1)],1)],1)}
 __vue__options__.staticRenderFns = []
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -53728,7 +53733,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-ba1ef200", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-ba1ef200", __vue__options__)
+    hotAPI.reload("data-v-ba1ef200", __vue__options__)
   }
 })()}
 },{"./component_properties":160,"./presets.vue":161,"vue":157,"vue-class-component":155,"vue-hot-reload-api":156,"vueify/lib/insert-css":158}],160:[function(require,module,exports){
@@ -53760,7 +53765,17 @@ class ComponentProperties {
     get props_form() {
         const props_form = {};
         this.props.forEach((prop) => {
-            props_form[prop.name] = null;
+            if (prop.default) {
+                if (prop.default instanceof Function) {
+                    props_form[prop.name] = prop.default();
+                }
+                else {
+                    props_form[prop.name] = prop.default;
+                }
+            }
+            else {
+                props_form[prop.name] = null;
+            }
         });
         return props_form;
     }
@@ -53903,7 +53918,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-e8cb7804", __vue__options__)
   } else {
-    hotAPI.rerender("data-v-e8cb7804", __vue__options__)
+    hotAPI.reload("data-v-e8cb7804", __vue__options__)
   }
 })()}
 },{"vue":157,"vue-class-component":155,"vue-hot-reload-api":156}]},{},[7]);

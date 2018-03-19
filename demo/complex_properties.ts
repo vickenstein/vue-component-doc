@@ -29,14 +29,12 @@ const property_types = [
   },
   {
     type: Object,
-    default: () => { test: 'test' },
     default_function: function () {
       return { test: 'test' }
     }
   },
   {
     type: Array,
-    default: () => [ 'test', 1, 2 ],
     default_function: function () {
       return [ 'test', 1, 2 ]
     }
@@ -64,9 +62,11 @@ function generate_properties(): object {
       type: type,
       required: true
     }
-    properties[`${name}_default`] = {
-      type: type,
-      default: property_type.default
+    if (property_type.default) {
+      properties[`${name}_default`] = {
+        type: type,
+        default: property_type.default
+      }
     }
     properties[`${name}_default_function`] = {
       type: type,

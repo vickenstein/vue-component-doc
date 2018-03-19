@@ -39,7 +39,17 @@ var ComponentProperties = (function () {
         get: function () {
             var props_form = {};
             this.props.forEach(function (prop) {
-                props_form[prop.name] = null;
+                if (prop.default) {
+                    if (prop.default instanceof Function) {
+                        props_form[prop.name] = prop.default();
+                    }
+                    else {
+                        props_form[prop.name] = prop.default;
+                    }
+                }
+                else {
+                    props_form[prop.name] = null;
+                }
             });
             return props_form;
         },
