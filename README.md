@@ -12,9 +12,18 @@ Vue.use(require('vue-component-doc'))
 
 ## Usage
 ```html
-  <component-doc :component="my_component" :presets="my_presets"><component-doc/>
+  <component-doc :component="my_component" :presets="my_presets" :full_screen="true"><component-doc/>
 ```
-## Presets
+
+# Props
+
+## component: Component to be documented (Object, Function)
+this can be a vue class base component or a object that needs to be instantiated with new Vue.
+
+## full_screen: Full Screen Mode (Boolean)
+by default the component doc display the properties and documentation in two column on large screen size. This prop force doc to full screen width at all display sizes.
+
+## presets: Presets (Object)
 presets is a system to deliver some sample data to a component via props using vue-component-doc
 
 presets are shown as a select dropdown with each option labeled by the specified name

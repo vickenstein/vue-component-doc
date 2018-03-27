@@ -2,7 +2,7 @@
   .component_doc
     h3 {{ name }}
     el-row(:gutter="20")
-      el-col(:xs="24", :sm="24", :md="24", :lg="12", :xl="12")
+      el-col(:xs="24", :sm="24", :md="24", :lg="small_screen_column_count", :xl="small_screen_column_count")
         el-table(:data="props")
           el-table-column(prop="name", label="Name")
           el-table-column(prop="type", label="Type")
@@ -19,7 +19,7 @@
                 el-input(v-model="props_form[scope.row.name]")
               el-input-number(v-else-if="scope.row.type === Number", v-model="props_form[scope.row.name]")
               el-switch(v-else-if="scope.row.type === Boolean", v-model="props_form[scope.row.name]")
-      el-col(:xs="24", :sm="24", :md="24", :lg="12", :xl="12")
+      el-col(:xs="24", :sm="24", :md="24", :lg="small_screen_column_count", :xl="small_screen_column_count")
         component(:is="component.name", v-bind="props_form")
 </template>
 
@@ -37,6 +37,10 @@
       component: {
         type: [Object, Function],
         required: true
+      },
+      full_screen: {
+        type: Boolean,
+        default: false
       },
       presets: {
         type: Object,
@@ -76,6 +80,10 @@
 
     get name () {
       return this.component_properties.name
+    }
+
+    get small_screen_column_count () {
+      return this.full_screen ? 24 : 12
     }
 
     nullify_blank_string(field) {

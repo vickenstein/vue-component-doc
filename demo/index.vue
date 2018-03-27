@@ -2,6 +2,7 @@
   .demo
     component_doc(v-for="component in components", :component="component")
     component_doc(:component="components[3]", :presets="presets")
+    component_doc(:component="components[3]", :full_screen="true")
 </template>
 
 <script lang="typescript">
