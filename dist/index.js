@@ -23,7 +23,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.reload("data-v-170ec39b", __vue__options__)
   }
 })()}
-},{"./basic_properties":2,"vue":157,"vue-hot-reload-api":156}],2:[function(require,module,exports){
+},{"./basic_properties":2,"vue":160,"vue-hot-reload-api":159}],2:[function(require,module,exports){
 "use strict";
 const property_types = [
     String,
@@ -92,7 +92,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.reload("data-v-3a778256", __vue__options__)
   }
 })()}
-},{"./complex_properties":6,"vue":157,"vue-class-component":155,"vue-hot-reload-api":156}],4:[function(require,module,exports){
+},{"./complex_properties":6,"vue":160,"vue-class-component":158,"vue-hot-reload-api":159}],4:[function(require,module,exports){
 ;(function(){
 "use strict";
 exports.__esModule = true;
@@ -119,7 +119,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.reload("data-v-12ada430", __vue__options__)
   }
 })()}
-},{"./complex_properties":6,"vue":157,"vue-hot-reload-api":156}],5:[function(require,module,exports){
+},{"./complex_properties":6,"vue":160,"vue-hot-reload-api":159}],5:[function(require,module,exports){
 ;(function(){
 'use strict';
 
@@ -145,7 +145,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.reload("data-v-d5d32566", __vue__options__)
   }
 })()}
-},{"./complex_properties":6,"vue":157,"vue-hot-reload-api":156}],6:[function(require,module,exports){
+},{"./complex_properties":6,"vue":160,"vue-hot-reload-api":159}],6:[function(require,module,exports){
 "use strict";
 const property_types = [
     {
@@ -246,7 +246,8 @@ new Vue({
   }
 });
 
-},{"../src/component_doc.vue":159,"./index.vue":8,"element-ui":112,"element-ui/lib/locale/lang/en":117,"vue":157}],8:[function(require,module,exports){
+},{"../src/component_doc.vue":162,"./index.vue":8,"element-ui":113,"element-ui/lib/locale/lang/en":118,"vue":160}],8:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("/* line 45, stdin */\n.demo[data-v-48a2f001] {\n  margin-bottom: 200px; }")
 ;(function(){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
@@ -272,6 +273,7 @@ var basic_component = require("./basic_component.vue");
 var complex_object_component = require("./complex_object_component.vue");
 var complex_extend_component = require("./complex_extend_component.vue");
 var complex_class_component = require("./complex_class_component.vue");
+var variable_size_component = require("./variable_size_component.vue");
 var Demo = /** @class */ (function (_super) {
     __extends(Demo, _super);
     function Demo() {
@@ -282,6 +284,7 @@ var Demo = /** @class */ (function (_super) {
             complex_extend_component,
             complex_class_component
         ];
+        _this.variable_size_component = variable_size_component;
         _this.presets = {
             object_required: [
                 {
@@ -307,19 +310,63 @@ exports["default"] = Demo;
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"demo"},[_vm._l((_vm.components),function(component){return _c('component_doc',{attrs:{"component":component}})}),_c('component_doc',{attrs:{"component":_vm.components[3],"presets":_vm.presets}}),_c('component_doc',{attrs:{"component":_vm.components[3],"full_screen":true}})],2)}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"demo"},[_vm._l((_vm.components),function(component){return _c('component_doc',{attrs:{"component":component}})}),_c('component_doc',{attrs:{"component":_vm.components[3],"presets":_vm.presets}}),_c('component_doc',{attrs:{"component":_vm.components[3],"full_screen":true}}),_c('component_doc',{attrs:{"component":_vm.variable_size_component,"resizable":true}})],2)}
+__vue__options__.staticRenderFns = []
+__vue__options__._scopeId = "data-v-48a2f001"
+if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), true)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  module.hot.dispose(__vueify_style_dispose__)
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-48a2f001", __vue__options__)
+  } else {
+    hotAPI.rerender("data-v-48a2f001", __vue__options__)
+  }
+})()}
+},{"./basic_component.vue":1,"./complex_class_component.vue":3,"./complex_extend_component.vue":4,"./complex_object_component.vue":5,"./variable_size_component.vue":9,"vue":160,"vue-class-component":158,"vue-hot-reload-api":159,"vueify/lib/insert-css":161}],9:[function(require,module,exports){
+;(function(){
+'use strict';
+
+module.exports = {
+  name: 'variable_size_component',
+  props: {
+    width: {
+      type: String,
+      default: '300px'
+    },
+    height: {
+      type: String,
+      default: '100%'
+    }
+  },
+  computed: {
+    style: function style() {
+      return {
+        width: this.width,
+        height: this.height,
+        'background-color': 'red'
+      };
+    }
+  }
+};
+})()
+if (module.exports.__esModule) module.exports = module.exports.default
+var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
+if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"variable_size_component",style:(_vm.style)},[_vm._v("Variable Size Component")])}
 __vue__options__.staticRenderFns = []
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-48a2f001", __vue__options__)
+    hotAPI.createRecord("data-v-150c65d1", __vue__options__)
   } else {
-    hotAPI.reload("data-v-48a2f001", __vue__options__)
+    hotAPI.reload("data-v-150c65d1", __vue__options__)
   }
 })()}
-},{"./basic_component.vue":1,"./complex_class_component.vue":3,"./complex_extend_component.vue":4,"./complex_object_component.vue":5,"vue":157,"vue-class-component":155,"vue-hot-reload-api":156}],9:[function(require,module,exports){
+},{"vue":160,"vue-hot-reload-api":159}],10:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -601,7 +648,7 @@ Schema.messages = _messages2.messages;
 
 exports['default'] = Schema;
 module.exports = exports['default'];
-},{"./messages":10,"./util":18,"./validator/":24,"babel-runtime/helpers/extends":38,"babel-runtime/helpers/typeof":39}],10:[function(require,module,exports){
+},{"./messages":11,"./util":19,"./validator/":25,"babel-runtime/helpers/extends":39,"babel-runtime/helpers/typeof":40}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -664,7 +711,7 @@ function newMessages() {
 }
 
 var messages = exports.messages = newMessages();
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -699,7 +746,7 @@ function enumerable(rule, value, source, errors, options) {
 
 exports['default'] = enumerable;
 module.exports = exports['default'];
-},{"../util":18}],12:[function(require,module,exports){
+},{"../util":19}],13:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -741,7 +788,7 @@ exports['default'] = {
   pattern: _pattern2['default']
 };
 module.exports = exports['default'];
-},{"./enum":11,"./pattern":13,"./range":14,"./required":15,"./type":16,"./whitespace":17}],13:[function(require,module,exports){
+},{"./enum":12,"./pattern":14,"./range":15,"./required":16,"./type":17,"./whitespace":18}],14:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -786,7 +833,7 @@ function pattern(rule, value, source, errors, options) {
 
 exports['default'] = pattern;
 module.exports = exports['default'];
-},{"../util":18}],14:[function(require,module,exports){
+},{"../util":19}],15:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -850,7 +897,7 @@ function range(rule, value, source, errors, options) {
 
 exports['default'] = range;
 module.exports = exports['default'];
-},{"../util":18}],15:[function(require,module,exports){
+},{"../util":19}],16:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -882,7 +929,7 @@ function required(rule, value, source, errors, options, type) {
 
 exports['default'] = required;
 module.exports = exports['default'];
-},{"../util":18}],16:[function(require,module,exports){
+},{"../util":19}],17:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -990,7 +1037,7 @@ function type(rule, value, source, errors, options) {
 
 exports['default'] = type;
 module.exports = exports['default'];
-},{"../util":18,"./required":15,"babel-runtime/helpers/typeof":39}],17:[function(require,module,exports){
+},{"../util":19,"./required":16,"babel-runtime/helpers/typeof":40}],18:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1022,7 +1069,7 @@ function whitespace(rule, value, source, errors, options) {
 
 exports['default'] = whitespace;
 module.exports = exports['default'];
-},{"../util":18}],18:[function(require,module,exports){
+},{"../util":19}],19:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -1235,7 +1282,7 @@ function deepMerge(target, source) {
   return target;
 }
 }).call(this,require('_process'))
-},{"_process":152,"babel-runtime/helpers/extends":38,"babel-runtime/helpers/typeof":39}],19:[function(require,module,exports){
+},{"_process":155,"babel-runtime/helpers/extends":39,"babel-runtime/helpers/typeof":40}],20:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1278,7 +1325,7 @@ function array(rule, value, callback, source, options) {
 
 exports['default'] = array;
 module.exports = exports['default'];
-},{"../rule/":12,"../util":18}],20:[function(require,module,exports){
+},{"../rule/":13,"../util":19}],21:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1320,7 +1367,7 @@ function boolean(rule, value, callback, source, options) {
 
 exports['default'] = boolean;
 module.exports = exports['default'];
-},{"../rule/":12,"../util":18}],21:[function(require,module,exports){
+},{"../rule/":13,"../util":19}],22:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1357,7 +1404,7 @@ function date(rule, value, callback, source, options) {
 
 exports['default'] = date;
 module.exports = exports['default'];
-},{"../rule/":12,"../util":18}],22:[function(require,module,exports){
+},{"../rule/":13,"../util":19}],23:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1401,7 +1448,7 @@ function enumerable(rule, value, callback, source, options) {
 
 exports['default'] = enumerable;
 module.exports = exports['default'];
-},{"../rule/":12,"../util":18}],23:[function(require,module,exports){
+},{"../rule/":13,"../util":19}],24:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1444,7 +1491,7 @@ function floatFn(rule, value, callback, source, options) {
 
 exports['default'] = floatFn;
 module.exports = exports['default'];
-},{"../rule/":12,"../util":18}],24:[function(require,module,exports){
+},{"../rule/":13,"../util":19}],25:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1528,7 +1575,7 @@ exports['default'] = {
   required: _required2['default']
 };
 module.exports = exports['default'];
-},{"./array":19,"./boolean":20,"./date":21,"./enum":22,"./float":23,"./integer":25,"./method":26,"./number":27,"./object":28,"./pattern":29,"./regexp":30,"./required":31,"./string":32,"./type":33}],25:[function(require,module,exports){
+},{"./array":20,"./boolean":21,"./date":22,"./enum":23,"./float":24,"./integer":26,"./method":27,"./number":28,"./object":29,"./pattern":30,"./regexp":31,"./required":32,"./string":33,"./type":34}],26:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1571,7 +1618,7 @@ function integer(rule, value, callback, source, options) {
 
 exports['default'] = integer;
 module.exports = exports['default'];
-},{"../rule/":12,"../util":18}],26:[function(require,module,exports){
+},{"../rule/":13,"../util":19}],27:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1613,7 +1660,7 @@ function method(rule, value, callback, source, options) {
 
 exports['default'] = method;
 module.exports = exports['default'];
-},{"../rule/":12,"../util":18}],27:[function(require,module,exports){
+},{"../rule/":13,"../util":19}],28:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1656,7 +1703,7 @@ function number(rule, value, callback, source, options) {
 
 exports['default'] = number;
 module.exports = exports['default'];
-},{"../rule/":12,"../util":18}],28:[function(require,module,exports){
+},{"../rule/":13,"../util":19}],29:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1698,7 +1745,7 @@ function object(rule, value, callback, source, options) {
 
 exports['default'] = object;
 module.exports = exports['default'];
-},{"../rule/":12,"../util":18}],29:[function(require,module,exports){
+},{"../rule/":13,"../util":19}],30:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1743,7 +1790,7 @@ function pattern(rule, value, callback, source, options) {
 
 exports['default'] = pattern;
 module.exports = exports['default'];
-},{"../rule/":12,"../util":18}],30:[function(require,module,exports){
+},{"../rule/":13,"../util":19}],31:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1785,7 +1832,7 @@ function regexp(rule, value, callback, source, options) {
 
 exports['default'] = regexp;
 module.exports = exports['default'];
-},{"../rule/":12,"../util":18}],31:[function(require,module,exports){
+},{"../rule/":13,"../util":19}],32:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1811,7 +1858,7 @@ function required(rule, value, callback, source, options) {
 
 exports['default'] = required;
 module.exports = exports['default'];
-},{"../rule/":12,"babel-runtime/helpers/typeof":39}],32:[function(require,module,exports){
+},{"../rule/":13,"babel-runtime/helpers/typeof":40}],33:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1858,7 +1905,7 @@ function string(rule, value, callback, source, options) {
 
 exports['default'] = string;
 module.exports = exports['default'];
-},{"../rule/":12,"../util":18}],33:[function(require,module,exports){
+},{"../rule/":13,"../util":19}],34:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1891,7 +1938,7 @@ function type(rule, value, callback, source, options) {
 
 exports['default'] = type;
 module.exports = exports['default'];
-},{"../rule/":12,"../util":18}],34:[function(require,module,exports){
+},{"../rule/":13,"../util":19}],35:[function(require,module,exports){
 var nestRE = /^(attrs|props|on|nativeOn|class|style|hook)$/
 
 module.exports = function mergeJSXProps (objs) {
@@ -1943,13 +1990,13 @@ function mergeFn (a, b) {
   }
 }
 
-},{}],35:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/object/assign"), __esModule: true };
-},{"core-js/library/fn/object/assign":40}],36:[function(require,module,exports){
+},{"core-js/library/fn/object/assign":41}],37:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/symbol"), __esModule: true };
-},{"core-js/library/fn/symbol":41}],37:[function(require,module,exports){
+},{"core-js/library/fn/symbol":42}],38:[function(require,module,exports){
 module.exports = { "default": require("core-js/library/fn/symbol/iterator"), __esModule: true };
-},{"core-js/library/fn/symbol/iterator":42}],38:[function(require,module,exports){
+},{"core-js/library/fn/symbol/iterator":43}],39:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -1973,7 +2020,7 @@ exports.default = _assign2.default || function (target) {
 
   return target;
 };
-},{"../core-js/object/assign":35}],39:[function(require,module,exports){
+},{"../core-js/object/assign":36}],40:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -1995,39 +2042,39 @@ exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.d
 } : function (obj) {
   return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
 };
-},{"../core-js/symbol":36,"../core-js/symbol/iterator":37}],40:[function(require,module,exports){
+},{"../core-js/symbol":37,"../core-js/symbol/iterator":38}],41:[function(require,module,exports){
 require('../../modules/es6.object.assign');
 module.exports = require('../../modules/_core').Object.assign;
 
-},{"../../modules/_core":48,"../../modules/es6.object.assign":100}],41:[function(require,module,exports){
+},{"../../modules/_core":49,"../../modules/es6.object.assign":101}],42:[function(require,module,exports){
 require('../../modules/es6.symbol');
 require('../../modules/es6.object.to-string');
 require('../../modules/es7.symbol.async-iterator');
 require('../../modules/es7.symbol.observable');
 module.exports = require('../../modules/_core').Symbol;
 
-},{"../../modules/_core":48,"../../modules/es6.object.to-string":101,"../../modules/es6.symbol":103,"../../modules/es7.symbol.async-iterator":104,"../../modules/es7.symbol.observable":105}],42:[function(require,module,exports){
+},{"../../modules/_core":49,"../../modules/es6.object.to-string":102,"../../modules/es6.symbol":104,"../../modules/es7.symbol.async-iterator":105,"../../modules/es7.symbol.observable":106}],43:[function(require,module,exports){
 require('../../modules/es6.string.iterator');
 require('../../modules/web.dom.iterable');
 module.exports = require('../../modules/_wks-ext').f('iterator');
 
-},{"../../modules/_wks-ext":97,"../../modules/es6.string.iterator":102,"../../modules/web.dom.iterable":106}],43:[function(require,module,exports){
+},{"../../modules/_wks-ext":98,"../../modules/es6.string.iterator":103,"../../modules/web.dom.iterable":107}],44:[function(require,module,exports){
 module.exports = function (it) {
   if (typeof it != 'function') throw TypeError(it + ' is not a function!');
   return it;
 };
 
-},{}],44:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 module.exports = function () { /* empty */ };
 
-},{}],45:[function(require,module,exports){
+},{}],46:[function(require,module,exports){
 var isObject = require('./_is-object');
 module.exports = function (it) {
   if (!isObject(it)) throw TypeError(it + ' is not an object!');
   return it;
 };
 
-},{"./_is-object":64}],46:[function(require,module,exports){
+},{"./_is-object":65}],47:[function(require,module,exports){
 // false -> Array#indexOf
 // true  -> Array#includes
 var toIObject = require('./_to-iobject');
@@ -2052,18 +2099,18 @@ module.exports = function (IS_INCLUDES) {
   };
 };
 
-},{"./_to-absolute-index":89,"./_to-iobject":91,"./_to-length":92}],47:[function(require,module,exports){
+},{"./_to-absolute-index":90,"./_to-iobject":92,"./_to-length":93}],48:[function(require,module,exports){
 var toString = {}.toString;
 
 module.exports = function (it) {
   return toString.call(it).slice(8, -1);
 };
 
-},{}],48:[function(require,module,exports){
+},{}],49:[function(require,module,exports){
 var core = module.exports = { version: '2.5.3' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
-},{}],49:[function(require,module,exports){
+},{}],50:[function(require,module,exports){
 // optional / simple context binding
 var aFunction = require('./_a-function');
 module.exports = function (fn, that, length) {
@@ -2085,20 +2132,20 @@ module.exports = function (fn, that, length) {
   };
 };
 
-},{"./_a-function":43}],50:[function(require,module,exports){
+},{"./_a-function":44}],51:[function(require,module,exports){
 // 7.2.1 RequireObjectCoercible(argument)
 module.exports = function (it) {
   if (it == undefined) throw TypeError("Can't call method on  " + it);
   return it;
 };
 
-},{}],51:[function(require,module,exports){
+},{}],52:[function(require,module,exports){
 // Thank's IE8 for his funny defineProperty
 module.exports = !require('./_fails')(function () {
   return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
 });
 
-},{"./_fails":56}],52:[function(require,module,exports){
+},{"./_fails":57}],53:[function(require,module,exports){
 var isObject = require('./_is-object');
 var document = require('./_global').document;
 // typeof document.createElement is 'object' in old IE
@@ -2107,13 +2154,13 @@ module.exports = function (it) {
   return is ? document.createElement(it) : {};
 };
 
-},{"./_global":57,"./_is-object":64}],53:[function(require,module,exports){
+},{"./_global":58,"./_is-object":65}],54:[function(require,module,exports){
 // IE 8- don't enum bug keys
 module.exports = (
   'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
 ).split(',');
 
-},{}],54:[function(require,module,exports){
+},{}],55:[function(require,module,exports){
 // all enumerable object keys, includes symbols
 var getKeys = require('./_object-keys');
 var gOPS = require('./_object-gops');
@@ -2130,7 +2177,7 @@ module.exports = function (it) {
   } return result;
 };
 
-},{"./_object-gops":78,"./_object-keys":81,"./_object-pie":82}],55:[function(require,module,exports){
+},{"./_object-gops":79,"./_object-keys":82,"./_object-pie":83}],56:[function(require,module,exports){
 var global = require('./_global');
 var core = require('./_core');
 var ctx = require('./_ctx');
@@ -2193,7 +2240,7 @@ $export.U = 64;  // safe
 $export.R = 128; // real proto method for `library`
 module.exports = $export;
 
-},{"./_core":48,"./_ctx":49,"./_global":57,"./_hide":59}],56:[function(require,module,exports){
+},{"./_core":49,"./_ctx":50,"./_global":58,"./_hide":60}],57:[function(require,module,exports){
 module.exports = function (exec) {
   try {
     return !!exec();
@@ -2202,7 +2249,7 @@ module.exports = function (exec) {
   }
 };
 
-},{}],57:[function(require,module,exports){
+},{}],58:[function(require,module,exports){
 // https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
 var global = module.exports = typeof window != 'undefined' && window.Math == Math
   ? window : typeof self != 'undefined' && self.Math == Math ? self
@@ -2210,13 +2257,13 @@ var global = module.exports = typeof window != 'undefined' && window.Math == Mat
   : Function('return this')();
 if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
 
-},{}],58:[function(require,module,exports){
+},{}],59:[function(require,module,exports){
 var hasOwnProperty = {}.hasOwnProperty;
 module.exports = function (it, key) {
   return hasOwnProperty.call(it, key);
 };
 
-},{}],59:[function(require,module,exports){
+},{}],60:[function(require,module,exports){
 var dP = require('./_object-dp');
 var createDesc = require('./_property-desc');
 module.exports = require('./_descriptors') ? function (object, key, value) {
@@ -2226,16 +2273,16 @@ module.exports = require('./_descriptors') ? function (object, key, value) {
   return object;
 };
 
-},{"./_descriptors":51,"./_object-dp":73,"./_property-desc":83}],60:[function(require,module,exports){
+},{"./_descriptors":52,"./_object-dp":74,"./_property-desc":84}],61:[function(require,module,exports){
 var document = require('./_global').document;
 module.exports = document && document.documentElement;
 
-},{"./_global":57}],61:[function(require,module,exports){
+},{"./_global":58}],62:[function(require,module,exports){
 module.exports = !require('./_descriptors') && !require('./_fails')(function () {
   return Object.defineProperty(require('./_dom-create')('div'), 'a', { get: function () { return 7; } }).a != 7;
 });
 
-},{"./_descriptors":51,"./_dom-create":52,"./_fails":56}],62:[function(require,module,exports){
+},{"./_descriptors":52,"./_dom-create":53,"./_fails":57}],63:[function(require,module,exports){
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
 var cof = require('./_cof');
 // eslint-disable-next-line no-prototype-builtins
@@ -2243,19 +2290,19 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
   return cof(it) == 'String' ? it.split('') : Object(it);
 };
 
-},{"./_cof":47}],63:[function(require,module,exports){
+},{"./_cof":48}],64:[function(require,module,exports){
 // 7.2.2 IsArray(argument)
 var cof = require('./_cof');
 module.exports = Array.isArray || function isArray(arg) {
   return cof(arg) == 'Array';
 };
 
-},{"./_cof":47}],64:[function(require,module,exports){
+},{"./_cof":48}],65:[function(require,module,exports){
 module.exports = function (it) {
   return typeof it === 'object' ? it !== null : typeof it === 'function';
 };
 
-},{}],65:[function(require,module,exports){
+},{}],66:[function(require,module,exports){
 'use strict';
 var create = require('./_object-create');
 var descriptor = require('./_property-desc');
@@ -2270,7 +2317,7 @@ module.exports = function (Constructor, NAME, next) {
   setToStringTag(Constructor, NAME + ' Iterator');
 };
 
-},{"./_hide":59,"./_object-create":72,"./_property-desc":83,"./_set-to-string-tag":85,"./_wks":98}],66:[function(require,module,exports){
+},{"./_hide":60,"./_object-create":73,"./_property-desc":84,"./_set-to-string-tag":86,"./_wks":99}],67:[function(require,module,exports){
 'use strict';
 var LIBRARY = require('./_library');
 var $export = require('./_export');
@@ -2342,18 +2389,18 @@ module.exports = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCE
   return methods;
 };
 
-},{"./_export":55,"./_has":58,"./_hide":59,"./_iter-create":65,"./_iterators":68,"./_library":69,"./_object-gpo":79,"./_redefine":84,"./_set-to-string-tag":85,"./_wks":98}],67:[function(require,module,exports){
+},{"./_export":56,"./_has":59,"./_hide":60,"./_iter-create":66,"./_iterators":69,"./_library":70,"./_object-gpo":80,"./_redefine":85,"./_set-to-string-tag":86,"./_wks":99}],68:[function(require,module,exports){
 module.exports = function (done, value) {
   return { value: value, done: !!done };
 };
 
-},{}],68:[function(require,module,exports){
+},{}],69:[function(require,module,exports){
 module.exports = {};
 
-},{}],69:[function(require,module,exports){
+},{}],70:[function(require,module,exports){
 module.exports = true;
 
-},{}],70:[function(require,module,exports){
+},{}],71:[function(require,module,exports){
 var META = require('./_uid')('meta');
 var isObject = require('./_is-object');
 var has = require('./_has');
@@ -2408,7 +2455,7 @@ var meta = module.exports = {
   onFreeze: onFreeze
 };
 
-},{"./_fails":56,"./_has":58,"./_is-object":64,"./_object-dp":73,"./_uid":95}],71:[function(require,module,exports){
+},{"./_fails":57,"./_has":59,"./_is-object":65,"./_object-dp":74,"./_uid":96}],72:[function(require,module,exports){
 'use strict';
 // 19.1.2.1 Object.assign(target, source, ...)
 var getKeys = require('./_object-keys');
@@ -2444,7 +2491,7 @@ module.exports = !$assign || require('./_fails')(function () {
   } return T;
 } : $assign;
 
-},{"./_fails":56,"./_iobject":62,"./_object-gops":78,"./_object-keys":81,"./_object-pie":82,"./_to-object":93}],72:[function(require,module,exports){
+},{"./_fails":57,"./_iobject":63,"./_object-gops":79,"./_object-keys":82,"./_object-pie":83,"./_to-object":94}],73:[function(require,module,exports){
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject = require('./_an-object');
 var dPs = require('./_object-dps');
@@ -2487,7 +2534,7 @@ module.exports = Object.create || function create(O, Properties) {
   return Properties === undefined ? result : dPs(result, Properties);
 };
 
-},{"./_an-object":45,"./_dom-create":52,"./_enum-bug-keys":53,"./_html":60,"./_object-dps":74,"./_shared-key":86}],73:[function(require,module,exports){
+},{"./_an-object":46,"./_dom-create":53,"./_enum-bug-keys":54,"./_html":61,"./_object-dps":75,"./_shared-key":87}],74:[function(require,module,exports){
 var anObject = require('./_an-object');
 var IE8_DOM_DEFINE = require('./_ie8-dom-define');
 var toPrimitive = require('./_to-primitive');
@@ -2505,7 +2552,7 @@ exports.f = require('./_descriptors') ? Object.defineProperty : function defineP
   return O;
 };
 
-},{"./_an-object":45,"./_descriptors":51,"./_ie8-dom-define":61,"./_to-primitive":94}],74:[function(require,module,exports){
+},{"./_an-object":46,"./_descriptors":52,"./_ie8-dom-define":62,"./_to-primitive":95}],75:[function(require,module,exports){
 var dP = require('./_object-dp');
 var anObject = require('./_an-object');
 var getKeys = require('./_object-keys');
@@ -2520,7 +2567,7 @@ module.exports = require('./_descriptors') ? Object.defineProperties : function 
   return O;
 };
 
-},{"./_an-object":45,"./_descriptors":51,"./_object-dp":73,"./_object-keys":81}],75:[function(require,module,exports){
+},{"./_an-object":46,"./_descriptors":52,"./_object-dp":74,"./_object-keys":82}],76:[function(require,module,exports){
 var pIE = require('./_object-pie');
 var createDesc = require('./_property-desc');
 var toIObject = require('./_to-iobject');
@@ -2538,7 +2585,7 @@ exports.f = require('./_descriptors') ? gOPD : function getOwnPropertyDescriptor
   if (has(O, P)) return createDesc(!pIE.f.call(O, P), O[P]);
 };
 
-},{"./_descriptors":51,"./_has":58,"./_ie8-dom-define":61,"./_object-pie":82,"./_property-desc":83,"./_to-iobject":91,"./_to-primitive":94}],76:[function(require,module,exports){
+},{"./_descriptors":52,"./_has":59,"./_ie8-dom-define":62,"./_object-pie":83,"./_property-desc":84,"./_to-iobject":92,"./_to-primitive":95}],77:[function(require,module,exports){
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
 var toIObject = require('./_to-iobject');
 var gOPN = require('./_object-gopn').f;
@@ -2559,7 +2606,7 @@ module.exports.f = function getOwnPropertyNames(it) {
   return windowNames && toString.call(it) == '[object Window]' ? getWindowNames(it) : gOPN(toIObject(it));
 };
 
-},{"./_object-gopn":77,"./_to-iobject":91}],77:[function(require,module,exports){
+},{"./_object-gopn":78,"./_to-iobject":92}],78:[function(require,module,exports){
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
 var $keys = require('./_object-keys-internal');
 var hiddenKeys = require('./_enum-bug-keys').concat('length', 'prototype');
@@ -2568,10 +2615,10 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
   return $keys(O, hiddenKeys);
 };
 
-},{"./_enum-bug-keys":53,"./_object-keys-internal":80}],78:[function(require,module,exports){
+},{"./_enum-bug-keys":54,"./_object-keys-internal":81}],79:[function(require,module,exports){
 exports.f = Object.getOwnPropertySymbols;
 
-},{}],79:[function(require,module,exports){
+},{}],80:[function(require,module,exports){
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 var has = require('./_has');
 var toObject = require('./_to-object');
@@ -2586,7 +2633,7 @@ module.exports = Object.getPrototypeOf || function (O) {
   } return O instanceof Object ? ObjectProto : null;
 };
 
-},{"./_has":58,"./_shared-key":86,"./_to-object":93}],80:[function(require,module,exports){
+},{"./_has":59,"./_shared-key":87,"./_to-object":94}],81:[function(require,module,exports){
 var has = require('./_has');
 var toIObject = require('./_to-iobject');
 var arrayIndexOf = require('./_array-includes')(false);
@@ -2605,7 +2652,7 @@ module.exports = function (object, names) {
   return result;
 };
 
-},{"./_array-includes":46,"./_has":58,"./_shared-key":86,"./_to-iobject":91}],81:[function(require,module,exports){
+},{"./_array-includes":47,"./_has":59,"./_shared-key":87,"./_to-iobject":92}],82:[function(require,module,exports){
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
 var $keys = require('./_object-keys-internal');
 var enumBugKeys = require('./_enum-bug-keys');
@@ -2614,10 +2661,10 @@ module.exports = Object.keys || function keys(O) {
   return $keys(O, enumBugKeys);
 };
 
-},{"./_enum-bug-keys":53,"./_object-keys-internal":80}],82:[function(require,module,exports){
+},{"./_enum-bug-keys":54,"./_object-keys-internal":81}],83:[function(require,module,exports){
 exports.f = {}.propertyIsEnumerable;
 
-},{}],83:[function(require,module,exports){
+},{}],84:[function(require,module,exports){
 module.exports = function (bitmap, value) {
   return {
     enumerable: !(bitmap & 1),
@@ -2627,10 +2674,10 @@ module.exports = function (bitmap, value) {
   };
 };
 
-},{}],84:[function(require,module,exports){
+},{}],85:[function(require,module,exports){
 module.exports = require('./_hide');
 
-},{"./_hide":59}],85:[function(require,module,exports){
+},{"./_hide":60}],86:[function(require,module,exports){
 var def = require('./_object-dp').f;
 var has = require('./_has');
 var TAG = require('./_wks')('toStringTag');
@@ -2639,14 +2686,14 @@ module.exports = function (it, tag, stat) {
   if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
 };
 
-},{"./_has":58,"./_object-dp":73,"./_wks":98}],86:[function(require,module,exports){
+},{"./_has":59,"./_object-dp":74,"./_wks":99}],87:[function(require,module,exports){
 var shared = require('./_shared')('keys');
 var uid = require('./_uid');
 module.exports = function (key) {
   return shared[key] || (shared[key] = uid(key));
 };
 
-},{"./_shared":87,"./_uid":95}],87:[function(require,module,exports){
+},{"./_shared":88,"./_uid":96}],88:[function(require,module,exports){
 var global = require('./_global');
 var SHARED = '__core-js_shared__';
 var store = global[SHARED] || (global[SHARED] = {});
@@ -2654,7 +2701,7 @@ module.exports = function (key) {
   return store[key] || (store[key] = {});
 };
 
-},{"./_global":57}],88:[function(require,module,exports){
+},{"./_global":58}],89:[function(require,module,exports){
 var toInteger = require('./_to-integer');
 var defined = require('./_defined');
 // true  -> String#at
@@ -2673,7 +2720,7 @@ module.exports = function (TO_STRING) {
   };
 };
 
-},{"./_defined":50,"./_to-integer":90}],89:[function(require,module,exports){
+},{"./_defined":51,"./_to-integer":91}],90:[function(require,module,exports){
 var toInteger = require('./_to-integer');
 var max = Math.max;
 var min = Math.min;
@@ -2682,7 +2729,7 @@ module.exports = function (index, length) {
   return index < 0 ? max(index + length, 0) : min(index, length);
 };
 
-},{"./_to-integer":90}],90:[function(require,module,exports){
+},{"./_to-integer":91}],91:[function(require,module,exports){
 // 7.1.4 ToInteger
 var ceil = Math.ceil;
 var floor = Math.floor;
@@ -2690,7 +2737,7 @@ module.exports = function (it) {
   return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
 };
 
-},{}],91:[function(require,module,exports){
+},{}],92:[function(require,module,exports){
 // to indexed object, toObject with fallback for non-array-like ES3 strings
 var IObject = require('./_iobject');
 var defined = require('./_defined');
@@ -2698,7 +2745,7 @@ module.exports = function (it) {
   return IObject(defined(it));
 };
 
-},{"./_defined":50,"./_iobject":62}],92:[function(require,module,exports){
+},{"./_defined":51,"./_iobject":63}],93:[function(require,module,exports){
 // 7.1.15 ToLength
 var toInteger = require('./_to-integer');
 var min = Math.min;
@@ -2706,14 +2753,14 @@ module.exports = function (it) {
   return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
 };
 
-},{"./_to-integer":90}],93:[function(require,module,exports){
+},{"./_to-integer":91}],94:[function(require,module,exports){
 // 7.1.13 ToObject(argument)
 var defined = require('./_defined');
 module.exports = function (it) {
   return Object(defined(it));
 };
 
-},{"./_defined":50}],94:[function(require,module,exports){
+},{"./_defined":51}],95:[function(require,module,exports){
 // 7.1.1 ToPrimitive(input [, PreferredType])
 var isObject = require('./_is-object');
 // instead of the ES6 spec version, we didn't implement @@toPrimitive case
@@ -2727,14 +2774,14 @@ module.exports = function (it, S) {
   throw TypeError("Can't convert object to primitive value");
 };
 
-},{"./_is-object":64}],95:[function(require,module,exports){
+},{"./_is-object":65}],96:[function(require,module,exports){
 var id = 0;
 var px = Math.random();
 module.exports = function (key) {
   return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
 };
 
-},{}],96:[function(require,module,exports){
+},{}],97:[function(require,module,exports){
 var global = require('./_global');
 var core = require('./_core');
 var LIBRARY = require('./_library');
@@ -2745,10 +2792,10 @@ module.exports = function (name) {
   if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: wksExt.f(name) });
 };
 
-},{"./_core":48,"./_global":57,"./_library":69,"./_object-dp":73,"./_wks-ext":97}],97:[function(require,module,exports){
+},{"./_core":49,"./_global":58,"./_library":70,"./_object-dp":74,"./_wks-ext":98}],98:[function(require,module,exports){
 exports.f = require('./_wks');
 
-},{"./_wks":98}],98:[function(require,module,exports){
+},{"./_wks":99}],99:[function(require,module,exports){
 var store = require('./_shared')('wks');
 var uid = require('./_uid');
 var Symbol = require('./_global').Symbol;
@@ -2761,7 +2808,7 @@ var $exports = module.exports = function (name) {
 
 $exports.store = store;
 
-},{"./_global":57,"./_shared":87,"./_uid":95}],99:[function(require,module,exports){
+},{"./_global":58,"./_shared":88,"./_uid":96}],100:[function(require,module,exports){
 'use strict';
 var addToUnscopables = require('./_add-to-unscopables');
 var step = require('./_iter-step');
@@ -2797,15 +2844,15 @@ addToUnscopables('keys');
 addToUnscopables('values');
 addToUnscopables('entries');
 
-},{"./_add-to-unscopables":44,"./_iter-define":66,"./_iter-step":67,"./_iterators":68,"./_to-iobject":91}],100:[function(require,module,exports){
+},{"./_add-to-unscopables":45,"./_iter-define":67,"./_iter-step":68,"./_iterators":69,"./_to-iobject":92}],101:[function(require,module,exports){
 // 19.1.3.1 Object.assign(target, source)
 var $export = require('./_export');
 
 $export($export.S + $export.F, 'Object', { assign: require('./_object-assign') });
 
-},{"./_export":55,"./_object-assign":71}],101:[function(require,module,exports){
+},{"./_export":56,"./_object-assign":72}],102:[function(require,module,exports){
 
-},{}],102:[function(require,module,exports){
+},{}],103:[function(require,module,exports){
 'use strict';
 var $at = require('./_string-at')(true);
 
@@ -2824,7 +2871,7 @@ require('./_iter-define')(String, 'String', function (iterated) {
   return { value: point, done: false };
 });
 
-},{"./_iter-define":66,"./_string-at":88}],103:[function(require,module,exports){
+},{"./_iter-define":67,"./_string-at":89}],104:[function(require,module,exports){
 'use strict';
 // ECMAScript 6 symbols shim
 var global = require('./_global');
@@ -3060,13 +3107,13 @@ setToStringTag(Math, 'Math', true);
 // 24.3.3 JSON[@@toStringTag]
 setToStringTag(global.JSON, 'JSON', true);
 
-},{"./_an-object":45,"./_descriptors":51,"./_enum-keys":54,"./_export":55,"./_fails":56,"./_global":57,"./_has":58,"./_hide":59,"./_is-array":63,"./_is-object":64,"./_library":69,"./_meta":70,"./_object-create":72,"./_object-dp":73,"./_object-gopd":75,"./_object-gopn":77,"./_object-gopn-ext":76,"./_object-gops":78,"./_object-keys":81,"./_object-pie":82,"./_property-desc":83,"./_redefine":84,"./_set-to-string-tag":85,"./_shared":87,"./_to-iobject":91,"./_to-primitive":94,"./_uid":95,"./_wks":98,"./_wks-define":96,"./_wks-ext":97}],104:[function(require,module,exports){
+},{"./_an-object":46,"./_descriptors":52,"./_enum-keys":55,"./_export":56,"./_fails":57,"./_global":58,"./_has":59,"./_hide":60,"./_is-array":64,"./_is-object":65,"./_library":70,"./_meta":71,"./_object-create":73,"./_object-dp":74,"./_object-gopd":76,"./_object-gopn":78,"./_object-gopn-ext":77,"./_object-gops":79,"./_object-keys":82,"./_object-pie":83,"./_property-desc":84,"./_redefine":85,"./_set-to-string-tag":86,"./_shared":88,"./_to-iobject":92,"./_to-primitive":95,"./_uid":96,"./_wks":99,"./_wks-define":97,"./_wks-ext":98}],105:[function(require,module,exports){
 require('./_wks-define')('asyncIterator');
 
-},{"./_wks-define":96}],105:[function(require,module,exports){
+},{"./_wks-define":97}],106:[function(require,module,exports){
 require('./_wks-define')('observable');
 
-},{"./_wks-define":96}],106:[function(require,module,exports){
+},{"./_wks-define":97}],107:[function(require,module,exports){
 require('./es6.array.iterator');
 var global = require('./_global');
 var hide = require('./_hide');
@@ -3087,7 +3134,7 @@ for (var i = 0; i < DOMIterables.length; i++) {
   Iterators[NAME] = Iterators.Array;
 }
 
-},{"./_global":57,"./_hide":59,"./_iterators":68,"./_wks":98,"./es6.array.iterator":99}],107:[function(require,module,exports){
+},{"./_global":58,"./_hide":60,"./_iterators":69,"./_wks":99,"./es6.array.iterator":100}],108:[function(require,module,exports){
 'use strict';
 
 var isMergeableObject = function isMergeableObject(value) {
@@ -3186,7 +3233,7 @@ var deepmerge_1 = deepmerge;
 
 module.exports = deepmerge_1;
 
-},{}],108:[function(require,module,exports){
+},{}],109:[function(require,module,exports){
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -3462,7 +3509,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ })
 
 /******/ });
-},{}],109:[function(require,module,exports){
+},{}],110:[function(require,module,exports){
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -3812,7 +3859,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ })
 
 /******/ });
-},{}],110:[function(require,module,exports){
+},{}],111:[function(require,module,exports){
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -4131,7 +4178,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ })
 
 /******/ });
-},{"element-ui/lib/mixins/emitter":119}],111:[function(require,module,exports){
+},{"element-ui/lib/mixins/emitter":120}],112:[function(require,module,exports){
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -4608,7 +4655,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ })
 
 /******/ });
-},{"element-ui/lib/mixins/emitter":119}],112:[function(require,module,exports){
+},{"element-ui/lib/mixins/emitter":120}],113:[function(require,module,exports){
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -35658,7 +35705,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ })
 /******/ ]);
-},{"async-validator":9,"babel-helper-vue-jsx-merge-props":34,"element-ui/lib/button":109,"element-ui/lib/button-group":108,"element-ui/lib/checkbox":111,"element-ui/lib/checkbox-group":110,"element-ui/lib/input":114,"element-ui/lib/input-number":113,"element-ui/lib/locale":116,"element-ui/lib/mixins/emitter":119,"element-ui/lib/mixins/focus":120,"element-ui/lib/mixins/locale":121,"element-ui/lib/mixins/migrating":122,"element-ui/lib/option":123,"element-ui/lib/progress":124,"element-ui/lib/scrollbar":125,"element-ui/lib/select":126,"element-ui/lib/tag":127,"element-ui/lib/tooltip":128,"element-ui/lib/transitions/collapse-transition":129,"element-ui/lib/utils/after-leave":130,"element-ui/lib/utils/aria-dialog":131,"element-ui/lib/utils/clickoutside":133,"element-ui/lib/utils/date":134,"element-ui/lib/utils/dom":135,"element-ui/lib/utils/merge":136,"element-ui/lib/utils/popup":138,"element-ui/lib/utils/resize-event":140,"element-ui/lib/utils/scroll-into-view":141,"element-ui/lib/utils/scrollbar-width":142,"element-ui/lib/utils/shared":143,"element-ui/lib/utils/util":144,"element-ui/lib/utils/vdom":145,"element-ui/lib/utils/vue-popper":146,"normalize-wheel":147,"throttle-debounce/debounce":153,"throttle-debounce/throttle":154,"vue":157}],113:[function(require,module,exports){
+},{"async-validator":10,"babel-helper-vue-jsx-merge-props":35,"element-ui/lib/button":110,"element-ui/lib/button-group":109,"element-ui/lib/checkbox":112,"element-ui/lib/checkbox-group":111,"element-ui/lib/input":115,"element-ui/lib/input-number":114,"element-ui/lib/locale":117,"element-ui/lib/mixins/emitter":120,"element-ui/lib/mixins/focus":121,"element-ui/lib/mixins/locale":122,"element-ui/lib/mixins/migrating":123,"element-ui/lib/option":124,"element-ui/lib/progress":125,"element-ui/lib/scrollbar":126,"element-ui/lib/select":127,"element-ui/lib/tag":128,"element-ui/lib/tooltip":129,"element-ui/lib/transitions/collapse-transition":130,"element-ui/lib/utils/after-leave":131,"element-ui/lib/utils/aria-dialog":132,"element-ui/lib/utils/clickoutside":134,"element-ui/lib/utils/date":135,"element-ui/lib/utils/dom":136,"element-ui/lib/utils/merge":137,"element-ui/lib/utils/popup":139,"element-ui/lib/utils/resize-event":141,"element-ui/lib/utils/scroll-into-view":142,"element-ui/lib/utils/scrollbar-width":143,"element-ui/lib/utils/shared":144,"element-ui/lib/utils/util":145,"element-ui/lib/utils/vdom":146,"element-ui/lib/utils/vue-popper":147,"normalize-wheel":149,"throttle-debounce/debounce":156,"throttle-debounce/throttle":157,"vue":160}],114:[function(require,module,exports){
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -36225,7 +36272,7 @@ module.exports = require("element-ui/lib/input");
 /***/ })
 
 /******/ });
-},{"element-ui/lib/input":114,"element-ui/lib/mixins/focus":120,"element-ui/lib/utils/dom":135}],114:[function(require,module,exports){
+},{"element-ui/lib/input":115,"element-ui/lib/mixins/focus":121,"element-ui/lib/utils/dom":136}],115:[function(require,module,exports){
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -36928,7 +36975,7 @@ module.exports = require("element-ui/lib/utils/merge");
 /***/ })
 
 /******/ });
-},{"element-ui/lib/mixins/emitter":119,"element-ui/lib/mixins/migrating":122,"element-ui/lib/utils/merge":136}],115:[function(require,module,exports){
+},{"element-ui/lib/mixins/emitter":120,"element-ui/lib/mixins/migrating":123,"element-ui/lib/utils/merge":137}],116:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -36985,7 +37032,7 @@ var RE_NARGS = /(%|)\{([0-9a-zA-Z_]+)\}/g;
  *  - Inspired:
  *    https://github.com/Matt-Esch/string-template/index.js
  */
-},{"element-ui/lib/utils/util":144}],116:[function(require,module,exports){
+},{"element-ui/lib/utils/util":145}],117:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -37049,7 +37096,7 @@ var i18n = exports.i18n = function i18n(fn) {
 };
 
 exports.default = { use: use, t: t, i18n: i18n };
-},{"./format":115,"deepmerge":107,"element-ui/lib/locale/lang/zh-CN":118,"vue":157}],117:[function(require,module,exports){
+},{"./format":116,"deepmerge":108,"element-ui/lib/locale/lang/zh-CN":119,"vue":160}],118:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -37162,7 +37209,7 @@ exports.default = {
     }
   }
 };
-},{}],118:[function(require,module,exports){
+},{}],119:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -37275,7 +37322,7 @@ exports.default = {
     }
   }
 };
-},{}],119:[function(require,module,exports){
+},{}],120:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -37312,7 +37359,7 @@ exports.default = {
     }
   }
 };
-},{}],120:[function(require,module,exports){
+},{}],121:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -37328,7 +37375,7 @@ exports.default = function (ref) {
 };
 
 ;
-},{}],121:[function(require,module,exports){
+},{}],122:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -37346,7 +37393,7 @@ exports.default = {
     }
   }
 };
-},{"element-ui/lib/locale":116}],122:[function(require,module,exports){
+},{"element-ui/lib/locale":117}],123:[function(require,module,exports){
 (function (process){
 'use strict';
 
@@ -37413,7 +37460,7 @@ exports.default = {
   }
 };
 }).call(this,require('_process'))
-},{"_process":152}],123:[function(require,module,exports){
+},{"_process":155}],124:[function(require,module,exports){
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -37858,7 +37905,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ })
 
 /******/ });
-},{"element-ui/lib/mixins/emitter":119,"element-ui/lib/utils/util":144}],124:[function(require,module,exports){
+},{"element-ui/lib/mixins/emitter":120,"element-ui/lib/utils/util":145}],125:[function(require,module,exports){
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -38262,7 +38309,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ })
 
 /******/ });
-},{}],125:[function(require,module,exports){
+},{}],126:[function(require,module,exports){
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -38712,7 +38759,7 @@ function renderThumbStyle(_ref) {
 /***/ })
 
 /******/ });
-},{"element-ui/lib/utils/dom":135,"element-ui/lib/utils/resize-event":140,"element-ui/lib/utils/scrollbar-width":142,"element-ui/lib/utils/util":144}],126:[function(require,module,exports){
+},{"element-ui/lib/utils/dom":136,"element-ui/lib/utils/resize-event":141,"element-ui/lib/utils/scrollbar-width":143,"element-ui/lib/utils/util":145}],127:[function(require,module,exports){
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -40320,7 +40367,7 @@ module.exports = require("element-ui/lib/utils/vue-popper");
 /***/ })
 
 /******/ });
-},{"element-ui/lib/input":114,"element-ui/lib/locale":116,"element-ui/lib/mixins/emitter":119,"element-ui/lib/mixins/focus":120,"element-ui/lib/mixins/locale":121,"element-ui/lib/scrollbar":125,"element-ui/lib/tag":127,"element-ui/lib/utils/clickoutside":133,"element-ui/lib/utils/dom":135,"element-ui/lib/utils/resize-event":140,"element-ui/lib/utils/scroll-into-view":141,"element-ui/lib/utils/util":144,"element-ui/lib/utils/vue-popper":146,"throttle-debounce/debounce":153}],127:[function(require,module,exports){
+},{"element-ui/lib/input":115,"element-ui/lib/locale":117,"element-ui/lib/mixins/emitter":120,"element-ui/lib/mixins/focus":121,"element-ui/lib/mixins/locale":122,"element-ui/lib/scrollbar":126,"element-ui/lib/tag":128,"element-ui/lib/utils/clickoutside":134,"element-ui/lib/utils/dom":136,"element-ui/lib/utils/resize-event":141,"element-ui/lib/utils/scroll-into-view":142,"element-ui/lib/utils/util":145,"element-ui/lib/utils/vue-popper":147,"throttle-debounce/debounce":156}],128:[function(require,module,exports){
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -40631,7 +40678,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ })
 
 /******/ });
-},{}],128:[function(require,module,exports){
+},{}],129:[function(require,module,exports){
 module.exports =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -41020,7 +41067,7 @@ module.exports = require("element-ui/lib/utils/vue-popper");
 /***/ })
 
 /******/ });
-},{"element-ui/lib/utils/dom":135,"element-ui/lib/utils/util":144,"element-ui/lib/utils/vdom":145,"element-ui/lib/utils/vue-popper":146,"throttle-debounce/debounce":153,"vue":157}],129:[function(require,module,exports){
+},{"element-ui/lib/utils/dom":136,"element-ui/lib/utils/util":145,"element-ui/lib/utils/vdom":146,"element-ui/lib/utils/vue-popper":147,"throttle-debounce/debounce":156,"vue":160}],130:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41112,7 +41159,7 @@ exports.default = {
     return h('transition', data, children);
   }
 };
-},{"element-ui/lib/utils/dom":135}],130:[function(require,module,exports){
+},{"element-ui/lib/utils/dom":136}],131:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41148,7 +41195,7 @@ exports.default = function (instance, callback) {
    * @param {Number} speed the speed of transition, default value is 300ms
    * @param {Boolean} once weather bind after-leave once. default value is false.
    */
-},{}],131:[function(require,module,exports){
+},{}],132:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41253,7 +41300,7 @@ aria.Dialog.prototype.trapFocus = function (event) {
 };
 
 exports.default = aria.Dialog;
-},{"./aria-utils":132}],132:[function(require,module,exports){
+},{"./aria-utils":133}],133:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41379,7 +41426,7 @@ aria.Utils.keys = {
 };
 
 exports.default = aria.Utils;
-},{}],133:[function(require,module,exports){
+},{}],134:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41459,7 +41506,7 @@ exports.default = {
     delete el[ctx];
   }
 };
-},{"element-ui/lib/utils/dom":135,"vue":157}],134:[function(require,module,exports){
+},{"element-ui/lib/utils/dom":136,"vue":160}],135:[function(require,module,exports){
 'use strict';
 
 /* Modified from https://github.com/taylorhakes/fecha
@@ -41805,7 +41852,7 @@ exports.default = {
     main.fecha = fecha;
   }
 })(undefined);
-},{}],135:[function(require,module,exports){
+},{}],136:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -41994,7 +42041,7 @@ function setStyle(element, styleName, value) {
     }
   }
 };
-},{"vue":157}],136:[function(require,module,exports){
+},{"vue":160}],137:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -42016,7 +42063,7 @@ exports.default = function (target) {
 };
 
 ;
-},{}],137:[function(require,module,exports){
+},{}],138:[function(require,module,exports){
 'use strict';
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -43281,7 +43328,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
     return Popper;
 });
-},{}],138:[function(require,module,exports){
+},{}],139:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -43573,7 +43620,7 @@ exports.default = {
   }
 };
 exports.PopupManager = _popupManager2.default;
-},{"../dom":135,"../scrollbar-width":142,"element-ui/lib/utils/merge":136,"element-ui/lib/utils/popup/popup-manager":139,"vue":157}],139:[function(require,module,exports){
+},{"../dom":136,"../scrollbar-width":143,"element-ui/lib/utils/merge":137,"element-ui/lib/utils/popup/popup-manager":140,"vue":160}],140:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -43765,7 +43812,7 @@ if (!_vue2.default.prototype.$isServer) {
 }
 
 exports.default = PopupManager;
-},{"element-ui/lib/utils/dom":135,"vue":157}],140:[function(require,module,exports){
+},{"element-ui/lib/utils/dom":136,"vue":160}],141:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -43956,7 +44003,7 @@ var removeResizeListener = exports.removeResizeListener = function removeResizeL
     }
   }
 };
-},{}],141:[function(require,module,exports){
+},{}],142:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -43987,7 +44034,7 @@ function scrollIntoView(container, selected) {
     container.scrollTop = bottom - container.clientHeight;
   }
 }
-},{"vue":157}],142:[function(require,module,exports){
+},{"vue":160}],143:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -44027,7 +44074,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var scrollBarWidth = void 0;
 
 ;
-},{"vue":157}],143:[function(require,module,exports){
+},{"vue":160}],144:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -44035,7 +44082,7 @@ exports.isDef = isDef;
 function isDef(val) {
   return val !== undefined && val !== null;
 }
-},{}],144:[function(require,module,exports){
+},{}],145:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -44127,7 +44174,7 @@ var valueEquals = exports.valueEquals = function valueEquals(a, b) {
   }
   return true;
 };
-},{}],145:[function(require,module,exports){
+},{}],146:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -44148,7 +44195,7 @@ function getFirstComponentChild(children) {
     return c && c.tag;
   })[0];
 };
-},{"element-ui/lib/utils/util":144}],146:[function(require,module,exports){
+},{"element-ui/lib/utils/util":145}],147:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -44351,10 +44398,2655 @@ exports.default = {
     this.$options.beforeDestroy[0].call(this);
   }
 };
-},{"./popper":137,"element-ui/lib/utils/popup":138,"vue":157}],147:[function(require,module,exports){
+},{"./popper":138,"element-ui/lib/utils/popup":139,"vue":160}],148:[function(require,module,exports){
+/*! Hammer.JS - v2.0.7 - 2016-04-22
+ * http://hammerjs.github.io/
+ *
+ * Copyright (c) 2016 Jorik Tangelder;
+ * Licensed under the MIT license */
+(function(window, document, exportName, undefined) {
+  'use strict';
+
+var VENDOR_PREFIXES = ['', 'webkit', 'Moz', 'MS', 'ms', 'o'];
+var TEST_ELEMENT = document.createElement('div');
+
+var TYPE_FUNCTION = 'function';
+
+var round = Math.round;
+var abs = Math.abs;
+var now = Date.now;
+
+/**
+ * set a timeout with a given scope
+ * @param {Function} fn
+ * @param {Number} timeout
+ * @param {Object} context
+ * @returns {number}
+ */
+function setTimeoutContext(fn, timeout, context) {
+    return setTimeout(bindFn(fn, context), timeout);
+}
+
+/**
+ * if the argument is an array, we want to execute the fn on each entry
+ * if it aint an array we don't want to do a thing.
+ * this is used by all the methods that accept a single and array argument.
+ * @param {*|Array} arg
+ * @param {String} fn
+ * @param {Object} [context]
+ * @returns {Boolean}
+ */
+function invokeArrayArg(arg, fn, context) {
+    if (Array.isArray(arg)) {
+        each(arg, context[fn], context);
+        return true;
+    }
+    return false;
+}
+
+/**
+ * walk objects and arrays
+ * @param {Object} obj
+ * @param {Function} iterator
+ * @param {Object} context
+ */
+function each(obj, iterator, context) {
+    var i;
+
+    if (!obj) {
+        return;
+    }
+
+    if (obj.forEach) {
+        obj.forEach(iterator, context);
+    } else if (obj.length !== undefined) {
+        i = 0;
+        while (i < obj.length) {
+            iterator.call(context, obj[i], i, obj);
+            i++;
+        }
+    } else {
+        for (i in obj) {
+            obj.hasOwnProperty(i) && iterator.call(context, obj[i], i, obj);
+        }
+    }
+}
+
+/**
+ * wrap a method with a deprecation warning and stack trace
+ * @param {Function} method
+ * @param {String} name
+ * @param {String} message
+ * @returns {Function} A new function wrapping the supplied method.
+ */
+function deprecate(method, name, message) {
+    var deprecationMessage = 'DEPRECATED METHOD: ' + name + '\n' + message + ' AT \n';
+    return function() {
+        var e = new Error('get-stack-trace');
+        var stack = e && e.stack ? e.stack.replace(/^[^\(]+?[\n$]/gm, '')
+            .replace(/^\s+at\s+/gm, '')
+            .replace(/^Object.<anonymous>\s*\(/gm, '{anonymous}()@') : 'Unknown Stack Trace';
+
+        var log = window.console && (window.console.warn || window.console.log);
+        if (log) {
+            log.call(window.console, deprecationMessage, stack);
+        }
+        return method.apply(this, arguments);
+    };
+}
+
+/**
+ * extend object.
+ * means that properties in dest will be overwritten by the ones in src.
+ * @param {Object} target
+ * @param {...Object} objects_to_assign
+ * @returns {Object} target
+ */
+var assign;
+if (typeof Object.assign !== 'function') {
+    assign = function assign(target) {
+        if (target === undefined || target === null) {
+            throw new TypeError('Cannot convert undefined or null to object');
+        }
+
+        var output = Object(target);
+        for (var index = 1; index < arguments.length; index++) {
+            var source = arguments[index];
+            if (source !== undefined && source !== null) {
+                for (var nextKey in source) {
+                    if (source.hasOwnProperty(nextKey)) {
+                        output[nextKey] = source[nextKey];
+                    }
+                }
+            }
+        }
+        return output;
+    };
+} else {
+    assign = Object.assign;
+}
+
+/**
+ * extend object.
+ * means that properties in dest will be overwritten by the ones in src.
+ * @param {Object} dest
+ * @param {Object} src
+ * @param {Boolean} [merge=false]
+ * @returns {Object} dest
+ */
+var extend = deprecate(function extend(dest, src, merge) {
+    var keys = Object.keys(src);
+    var i = 0;
+    while (i < keys.length) {
+        if (!merge || (merge && dest[keys[i]] === undefined)) {
+            dest[keys[i]] = src[keys[i]];
+        }
+        i++;
+    }
+    return dest;
+}, 'extend', 'Use `assign`.');
+
+/**
+ * merge the values from src in the dest.
+ * means that properties that exist in dest will not be overwritten by src
+ * @param {Object} dest
+ * @param {Object} src
+ * @returns {Object} dest
+ */
+var merge = deprecate(function merge(dest, src) {
+    return extend(dest, src, true);
+}, 'merge', 'Use `assign`.');
+
+/**
+ * simple class inheritance
+ * @param {Function} child
+ * @param {Function} base
+ * @param {Object} [properties]
+ */
+function inherit(child, base, properties) {
+    var baseP = base.prototype,
+        childP;
+
+    childP = child.prototype = Object.create(baseP);
+    childP.constructor = child;
+    childP._super = baseP;
+
+    if (properties) {
+        assign(childP, properties);
+    }
+}
+
+/**
+ * simple function bind
+ * @param {Function} fn
+ * @param {Object} context
+ * @returns {Function}
+ */
+function bindFn(fn, context) {
+    return function boundFn() {
+        return fn.apply(context, arguments);
+    };
+}
+
+/**
+ * let a boolean value also be a function that must return a boolean
+ * this first item in args will be used as the context
+ * @param {Boolean|Function} val
+ * @param {Array} [args]
+ * @returns {Boolean}
+ */
+function boolOrFn(val, args) {
+    if (typeof val == TYPE_FUNCTION) {
+        return val.apply(args ? args[0] || undefined : undefined, args);
+    }
+    return val;
+}
+
+/**
+ * use the val2 when val1 is undefined
+ * @param {*} val1
+ * @param {*} val2
+ * @returns {*}
+ */
+function ifUndefined(val1, val2) {
+    return (val1 === undefined) ? val2 : val1;
+}
+
+/**
+ * addEventListener with multiple events at once
+ * @param {EventTarget} target
+ * @param {String} types
+ * @param {Function} handler
+ */
+function addEventListeners(target, types, handler) {
+    each(splitStr(types), function(type) {
+        target.addEventListener(type, handler, false);
+    });
+}
+
+/**
+ * removeEventListener with multiple events at once
+ * @param {EventTarget} target
+ * @param {String} types
+ * @param {Function} handler
+ */
+function removeEventListeners(target, types, handler) {
+    each(splitStr(types), function(type) {
+        target.removeEventListener(type, handler, false);
+    });
+}
+
+/**
+ * find if a node is in the given parent
+ * @method hasParent
+ * @param {HTMLElement} node
+ * @param {HTMLElement} parent
+ * @return {Boolean} found
+ */
+function hasParent(node, parent) {
+    while (node) {
+        if (node == parent) {
+            return true;
+        }
+        node = node.parentNode;
+    }
+    return false;
+}
+
+/**
+ * small indexOf wrapper
+ * @param {String} str
+ * @param {String} find
+ * @returns {Boolean} found
+ */
+function inStr(str, find) {
+    return str.indexOf(find) > -1;
+}
+
+/**
+ * split string on whitespace
+ * @param {String} str
+ * @returns {Array} words
+ */
+function splitStr(str) {
+    return str.trim().split(/\s+/g);
+}
+
+/**
+ * find if a array contains the object using indexOf or a simple polyFill
+ * @param {Array} src
+ * @param {String} find
+ * @param {String} [findByKey]
+ * @return {Boolean|Number} false when not found, or the index
+ */
+function inArray(src, find, findByKey) {
+    if (src.indexOf && !findByKey) {
+        return src.indexOf(find);
+    } else {
+        var i = 0;
+        while (i < src.length) {
+            if ((findByKey && src[i][findByKey] == find) || (!findByKey && src[i] === find)) {
+                return i;
+            }
+            i++;
+        }
+        return -1;
+    }
+}
+
+/**
+ * convert array-like objects to real arrays
+ * @param {Object} obj
+ * @returns {Array}
+ */
+function toArray(obj) {
+    return Array.prototype.slice.call(obj, 0);
+}
+
+/**
+ * unique array with objects based on a key (like 'id') or just by the array's value
+ * @param {Array} src [{id:1},{id:2},{id:1}]
+ * @param {String} [key]
+ * @param {Boolean} [sort=False]
+ * @returns {Array} [{id:1},{id:2}]
+ */
+function uniqueArray(src, key, sort) {
+    var results = [];
+    var values = [];
+    var i = 0;
+
+    while (i < src.length) {
+        var val = key ? src[i][key] : src[i];
+        if (inArray(values, val) < 0) {
+            results.push(src[i]);
+        }
+        values[i] = val;
+        i++;
+    }
+
+    if (sort) {
+        if (!key) {
+            results = results.sort();
+        } else {
+            results = results.sort(function sortUniqueArray(a, b) {
+                return a[key] > b[key];
+            });
+        }
+    }
+
+    return results;
+}
+
+/**
+ * get the prefixed property
+ * @param {Object} obj
+ * @param {String} property
+ * @returns {String|Undefined} prefixed
+ */
+function prefixed(obj, property) {
+    var prefix, prop;
+    var camelProp = property[0].toUpperCase() + property.slice(1);
+
+    var i = 0;
+    while (i < VENDOR_PREFIXES.length) {
+        prefix = VENDOR_PREFIXES[i];
+        prop = (prefix) ? prefix + camelProp : property;
+
+        if (prop in obj) {
+            return prop;
+        }
+        i++;
+    }
+    return undefined;
+}
+
+/**
+ * get a unique id
+ * @returns {number} uniqueId
+ */
+var _uniqueId = 1;
+function uniqueId() {
+    return _uniqueId++;
+}
+
+/**
+ * get the window object of an element
+ * @param {HTMLElement} element
+ * @returns {DocumentView|Window}
+ */
+function getWindowForElement(element) {
+    var doc = element.ownerDocument || element;
+    return (doc.defaultView || doc.parentWindow || window);
+}
+
+var MOBILE_REGEX = /mobile|tablet|ip(ad|hone|od)|android/i;
+
+var SUPPORT_TOUCH = ('ontouchstart' in window);
+var SUPPORT_POINTER_EVENTS = prefixed(window, 'PointerEvent') !== undefined;
+var SUPPORT_ONLY_TOUCH = SUPPORT_TOUCH && MOBILE_REGEX.test(navigator.userAgent);
+
+var INPUT_TYPE_TOUCH = 'touch';
+var INPUT_TYPE_PEN = 'pen';
+var INPUT_TYPE_MOUSE = 'mouse';
+var INPUT_TYPE_KINECT = 'kinect';
+
+var COMPUTE_INTERVAL = 25;
+
+var INPUT_START = 1;
+var INPUT_MOVE = 2;
+var INPUT_END = 4;
+var INPUT_CANCEL = 8;
+
+var DIRECTION_NONE = 1;
+var DIRECTION_LEFT = 2;
+var DIRECTION_RIGHT = 4;
+var DIRECTION_UP = 8;
+var DIRECTION_DOWN = 16;
+
+var DIRECTION_HORIZONTAL = DIRECTION_LEFT | DIRECTION_RIGHT;
+var DIRECTION_VERTICAL = DIRECTION_UP | DIRECTION_DOWN;
+var DIRECTION_ALL = DIRECTION_HORIZONTAL | DIRECTION_VERTICAL;
+
+var PROPS_XY = ['x', 'y'];
+var PROPS_CLIENT_XY = ['clientX', 'clientY'];
+
+/**
+ * create new input type manager
+ * @param {Manager} manager
+ * @param {Function} callback
+ * @returns {Input}
+ * @constructor
+ */
+function Input(manager, callback) {
+    var self = this;
+    this.manager = manager;
+    this.callback = callback;
+    this.element = manager.element;
+    this.target = manager.options.inputTarget;
+
+    // smaller wrapper around the handler, for the scope and the enabled state of the manager,
+    // so when disabled the input events are completely bypassed.
+    this.domHandler = function(ev) {
+        if (boolOrFn(manager.options.enable, [manager])) {
+            self.handler(ev);
+        }
+    };
+
+    this.init();
+
+}
+
+Input.prototype = {
+    /**
+     * should handle the inputEvent data and trigger the callback
+     * @virtual
+     */
+    handler: function() { },
+
+    /**
+     * bind the events
+     */
+    init: function() {
+        this.evEl && addEventListeners(this.element, this.evEl, this.domHandler);
+        this.evTarget && addEventListeners(this.target, this.evTarget, this.domHandler);
+        this.evWin && addEventListeners(getWindowForElement(this.element), this.evWin, this.domHandler);
+    },
+
+    /**
+     * unbind the events
+     */
+    destroy: function() {
+        this.evEl && removeEventListeners(this.element, this.evEl, this.domHandler);
+        this.evTarget && removeEventListeners(this.target, this.evTarget, this.domHandler);
+        this.evWin && removeEventListeners(getWindowForElement(this.element), this.evWin, this.domHandler);
+    }
+};
+
+/**
+ * create new input type manager
+ * called by the Manager constructor
+ * @param {Hammer} manager
+ * @returns {Input}
+ */
+function createInputInstance(manager) {
+    var Type;
+    var inputClass = manager.options.inputClass;
+
+    if (inputClass) {
+        Type = inputClass;
+    } else if (SUPPORT_POINTER_EVENTS) {
+        Type = PointerEventInput;
+    } else if (SUPPORT_ONLY_TOUCH) {
+        Type = TouchInput;
+    } else if (!SUPPORT_TOUCH) {
+        Type = MouseInput;
+    } else {
+        Type = TouchMouseInput;
+    }
+    return new (Type)(manager, inputHandler);
+}
+
+/**
+ * handle input events
+ * @param {Manager} manager
+ * @param {String} eventType
+ * @param {Object} input
+ */
+function inputHandler(manager, eventType, input) {
+    var pointersLen = input.pointers.length;
+    var changedPointersLen = input.changedPointers.length;
+    var isFirst = (eventType & INPUT_START && (pointersLen - changedPointersLen === 0));
+    var isFinal = (eventType & (INPUT_END | INPUT_CANCEL) && (pointersLen - changedPointersLen === 0));
+
+    input.isFirst = !!isFirst;
+    input.isFinal = !!isFinal;
+
+    if (isFirst) {
+        manager.session = {};
+    }
+
+    // source event is the normalized value of the domEvents
+    // like 'touchstart, mouseup, pointerdown'
+    input.eventType = eventType;
+
+    // compute scale, rotation etc
+    computeInputData(manager, input);
+
+    // emit secret event
+    manager.emit('hammer.input', input);
+
+    manager.recognize(input);
+    manager.session.prevInput = input;
+}
+
+/**
+ * extend the data with some usable properties like scale, rotate, velocity etc
+ * @param {Object} manager
+ * @param {Object} input
+ */
+function computeInputData(manager, input) {
+    var session = manager.session;
+    var pointers = input.pointers;
+    var pointersLength = pointers.length;
+
+    // store the first input to calculate the distance and direction
+    if (!session.firstInput) {
+        session.firstInput = simpleCloneInputData(input);
+    }
+
+    // to compute scale and rotation we need to store the multiple touches
+    if (pointersLength > 1 && !session.firstMultiple) {
+        session.firstMultiple = simpleCloneInputData(input);
+    } else if (pointersLength === 1) {
+        session.firstMultiple = false;
+    }
+
+    var firstInput = session.firstInput;
+    var firstMultiple = session.firstMultiple;
+    var offsetCenter = firstMultiple ? firstMultiple.center : firstInput.center;
+
+    var center = input.center = getCenter(pointers);
+    input.timeStamp = now();
+    input.deltaTime = input.timeStamp - firstInput.timeStamp;
+
+    input.angle = getAngle(offsetCenter, center);
+    input.distance = getDistance(offsetCenter, center);
+
+    computeDeltaXY(session, input);
+    input.offsetDirection = getDirection(input.deltaX, input.deltaY);
+
+    var overallVelocity = getVelocity(input.deltaTime, input.deltaX, input.deltaY);
+    input.overallVelocityX = overallVelocity.x;
+    input.overallVelocityY = overallVelocity.y;
+    input.overallVelocity = (abs(overallVelocity.x) > abs(overallVelocity.y)) ? overallVelocity.x : overallVelocity.y;
+
+    input.scale = firstMultiple ? getScale(firstMultiple.pointers, pointers) : 1;
+    input.rotation = firstMultiple ? getRotation(firstMultiple.pointers, pointers) : 0;
+
+    input.maxPointers = !session.prevInput ? input.pointers.length : ((input.pointers.length >
+        session.prevInput.maxPointers) ? input.pointers.length : session.prevInput.maxPointers);
+
+    computeIntervalInputData(session, input);
+
+    // find the correct target
+    var target = manager.element;
+    if (hasParent(input.srcEvent.target, target)) {
+        target = input.srcEvent.target;
+    }
+    input.target = target;
+}
+
+function computeDeltaXY(session, input) {
+    var center = input.center;
+    var offset = session.offsetDelta || {};
+    var prevDelta = session.prevDelta || {};
+    var prevInput = session.prevInput || {};
+
+    if (input.eventType === INPUT_START || prevInput.eventType === INPUT_END) {
+        prevDelta = session.prevDelta = {
+            x: prevInput.deltaX || 0,
+            y: prevInput.deltaY || 0
+        };
+
+        offset = session.offsetDelta = {
+            x: center.x,
+            y: center.y
+        };
+    }
+
+    input.deltaX = prevDelta.x + (center.x - offset.x);
+    input.deltaY = prevDelta.y + (center.y - offset.y);
+}
+
+/**
+ * velocity is calculated every x ms
+ * @param {Object} session
+ * @param {Object} input
+ */
+function computeIntervalInputData(session, input) {
+    var last = session.lastInterval || input,
+        deltaTime = input.timeStamp - last.timeStamp,
+        velocity, velocityX, velocityY, direction;
+
+    if (input.eventType != INPUT_CANCEL && (deltaTime > COMPUTE_INTERVAL || last.velocity === undefined)) {
+        var deltaX = input.deltaX - last.deltaX;
+        var deltaY = input.deltaY - last.deltaY;
+
+        var v = getVelocity(deltaTime, deltaX, deltaY);
+        velocityX = v.x;
+        velocityY = v.y;
+        velocity = (abs(v.x) > abs(v.y)) ? v.x : v.y;
+        direction = getDirection(deltaX, deltaY);
+
+        session.lastInterval = input;
+    } else {
+        // use latest velocity info if it doesn't overtake a minimum period
+        velocity = last.velocity;
+        velocityX = last.velocityX;
+        velocityY = last.velocityY;
+        direction = last.direction;
+    }
+
+    input.velocity = velocity;
+    input.velocityX = velocityX;
+    input.velocityY = velocityY;
+    input.direction = direction;
+}
+
+/**
+ * create a simple clone from the input used for storage of firstInput and firstMultiple
+ * @param {Object} input
+ * @returns {Object} clonedInputData
+ */
+function simpleCloneInputData(input) {
+    // make a simple copy of the pointers because we will get a reference if we don't
+    // we only need clientXY for the calculations
+    var pointers = [];
+    var i = 0;
+    while (i < input.pointers.length) {
+        pointers[i] = {
+            clientX: round(input.pointers[i].clientX),
+            clientY: round(input.pointers[i].clientY)
+        };
+        i++;
+    }
+
+    return {
+        timeStamp: now(),
+        pointers: pointers,
+        center: getCenter(pointers),
+        deltaX: input.deltaX,
+        deltaY: input.deltaY
+    };
+}
+
+/**
+ * get the center of all the pointers
+ * @param {Array} pointers
+ * @return {Object} center contains `x` and `y` properties
+ */
+function getCenter(pointers) {
+    var pointersLength = pointers.length;
+
+    // no need to loop when only one touch
+    if (pointersLength === 1) {
+        return {
+            x: round(pointers[0].clientX),
+            y: round(pointers[0].clientY)
+        };
+    }
+
+    var x = 0, y = 0, i = 0;
+    while (i < pointersLength) {
+        x += pointers[i].clientX;
+        y += pointers[i].clientY;
+        i++;
+    }
+
+    return {
+        x: round(x / pointersLength),
+        y: round(y / pointersLength)
+    };
+}
+
+/**
+ * calculate the velocity between two points. unit is in px per ms.
+ * @param {Number} deltaTime
+ * @param {Number} x
+ * @param {Number} y
+ * @return {Object} velocity `x` and `y`
+ */
+function getVelocity(deltaTime, x, y) {
+    return {
+        x: x / deltaTime || 0,
+        y: y / deltaTime || 0
+    };
+}
+
+/**
+ * get the direction between two points
+ * @param {Number} x
+ * @param {Number} y
+ * @return {Number} direction
+ */
+function getDirection(x, y) {
+    if (x === y) {
+        return DIRECTION_NONE;
+    }
+
+    if (abs(x) >= abs(y)) {
+        return x < 0 ? DIRECTION_LEFT : DIRECTION_RIGHT;
+    }
+    return y < 0 ? DIRECTION_UP : DIRECTION_DOWN;
+}
+
+/**
+ * calculate the absolute distance between two points
+ * @param {Object} p1 {x, y}
+ * @param {Object} p2 {x, y}
+ * @param {Array} [props] containing x and y keys
+ * @return {Number} distance
+ */
+function getDistance(p1, p2, props) {
+    if (!props) {
+        props = PROPS_XY;
+    }
+    var x = p2[props[0]] - p1[props[0]],
+        y = p2[props[1]] - p1[props[1]];
+
+    return Math.sqrt((x * x) + (y * y));
+}
+
+/**
+ * calculate the angle between two coordinates
+ * @param {Object} p1
+ * @param {Object} p2
+ * @param {Array} [props] containing x and y keys
+ * @return {Number} angle
+ */
+function getAngle(p1, p2, props) {
+    if (!props) {
+        props = PROPS_XY;
+    }
+    var x = p2[props[0]] - p1[props[0]],
+        y = p2[props[1]] - p1[props[1]];
+    return Math.atan2(y, x) * 180 / Math.PI;
+}
+
+/**
+ * calculate the rotation degrees between two pointersets
+ * @param {Array} start array of pointers
+ * @param {Array} end array of pointers
+ * @return {Number} rotation
+ */
+function getRotation(start, end) {
+    return getAngle(end[1], end[0], PROPS_CLIENT_XY) + getAngle(start[1], start[0], PROPS_CLIENT_XY);
+}
+
+/**
+ * calculate the scale factor between two pointersets
+ * no scale is 1, and goes down to 0 when pinched together, and bigger when pinched out
+ * @param {Array} start array of pointers
+ * @param {Array} end array of pointers
+ * @return {Number} scale
+ */
+function getScale(start, end) {
+    return getDistance(end[0], end[1], PROPS_CLIENT_XY) / getDistance(start[0], start[1], PROPS_CLIENT_XY);
+}
+
+var MOUSE_INPUT_MAP = {
+    mousedown: INPUT_START,
+    mousemove: INPUT_MOVE,
+    mouseup: INPUT_END
+};
+
+var MOUSE_ELEMENT_EVENTS = 'mousedown';
+var MOUSE_WINDOW_EVENTS = 'mousemove mouseup';
+
+/**
+ * Mouse events input
+ * @constructor
+ * @extends Input
+ */
+function MouseInput() {
+    this.evEl = MOUSE_ELEMENT_EVENTS;
+    this.evWin = MOUSE_WINDOW_EVENTS;
+
+    this.pressed = false; // mousedown state
+
+    Input.apply(this, arguments);
+}
+
+inherit(MouseInput, Input, {
+    /**
+     * handle mouse events
+     * @param {Object} ev
+     */
+    handler: function MEhandler(ev) {
+        var eventType = MOUSE_INPUT_MAP[ev.type];
+
+        // on start we want to have the left mouse button down
+        if (eventType & INPUT_START && ev.button === 0) {
+            this.pressed = true;
+        }
+
+        if (eventType & INPUT_MOVE && ev.which !== 1) {
+            eventType = INPUT_END;
+        }
+
+        // mouse must be down
+        if (!this.pressed) {
+            return;
+        }
+
+        if (eventType & INPUT_END) {
+            this.pressed = false;
+        }
+
+        this.callback(this.manager, eventType, {
+            pointers: [ev],
+            changedPointers: [ev],
+            pointerType: INPUT_TYPE_MOUSE,
+            srcEvent: ev
+        });
+    }
+});
+
+var POINTER_INPUT_MAP = {
+    pointerdown: INPUT_START,
+    pointermove: INPUT_MOVE,
+    pointerup: INPUT_END,
+    pointercancel: INPUT_CANCEL,
+    pointerout: INPUT_CANCEL
+};
+
+// in IE10 the pointer types is defined as an enum
+var IE10_POINTER_TYPE_ENUM = {
+    2: INPUT_TYPE_TOUCH,
+    3: INPUT_TYPE_PEN,
+    4: INPUT_TYPE_MOUSE,
+    5: INPUT_TYPE_KINECT // see https://twitter.com/jacobrossi/status/480596438489890816
+};
+
+var POINTER_ELEMENT_EVENTS = 'pointerdown';
+var POINTER_WINDOW_EVENTS = 'pointermove pointerup pointercancel';
+
+// IE10 has prefixed support, and case-sensitive
+if (window.MSPointerEvent && !window.PointerEvent) {
+    POINTER_ELEMENT_EVENTS = 'MSPointerDown';
+    POINTER_WINDOW_EVENTS = 'MSPointerMove MSPointerUp MSPointerCancel';
+}
+
+/**
+ * Pointer events input
+ * @constructor
+ * @extends Input
+ */
+function PointerEventInput() {
+    this.evEl = POINTER_ELEMENT_EVENTS;
+    this.evWin = POINTER_WINDOW_EVENTS;
+
+    Input.apply(this, arguments);
+
+    this.store = (this.manager.session.pointerEvents = []);
+}
+
+inherit(PointerEventInput, Input, {
+    /**
+     * handle mouse events
+     * @param {Object} ev
+     */
+    handler: function PEhandler(ev) {
+        var store = this.store;
+        var removePointer = false;
+
+        var eventTypeNormalized = ev.type.toLowerCase().replace('ms', '');
+        var eventType = POINTER_INPUT_MAP[eventTypeNormalized];
+        var pointerType = IE10_POINTER_TYPE_ENUM[ev.pointerType] || ev.pointerType;
+
+        var isTouch = (pointerType == INPUT_TYPE_TOUCH);
+
+        // get index of the event in the store
+        var storeIndex = inArray(store, ev.pointerId, 'pointerId');
+
+        // start and mouse must be down
+        if (eventType & INPUT_START && (ev.button === 0 || isTouch)) {
+            if (storeIndex < 0) {
+                store.push(ev);
+                storeIndex = store.length - 1;
+            }
+        } else if (eventType & (INPUT_END | INPUT_CANCEL)) {
+            removePointer = true;
+        }
+
+        // it not found, so the pointer hasn't been down (so it's probably a hover)
+        if (storeIndex < 0) {
+            return;
+        }
+
+        // update the event in the store
+        store[storeIndex] = ev;
+
+        this.callback(this.manager, eventType, {
+            pointers: store,
+            changedPointers: [ev],
+            pointerType: pointerType,
+            srcEvent: ev
+        });
+
+        if (removePointer) {
+            // remove from the store
+            store.splice(storeIndex, 1);
+        }
+    }
+});
+
+var SINGLE_TOUCH_INPUT_MAP = {
+    touchstart: INPUT_START,
+    touchmove: INPUT_MOVE,
+    touchend: INPUT_END,
+    touchcancel: INPUT_CANCEL
+};
+
+var SINGLE_TOUCH_TARGET_EVENTS = 'touchstart';
+var SINGLE_TOUCH_WINDOW_EVENTS = 'touchstart touchmove touchend touchcancel';
+
+/**
+ * Touch events input
+ * @constructor
+ * @extends Input
+ */
+function SingleTouchInput() {
+    this.evTarget = SINGLE_TOUCH_TARGET_EVENTS;
+    this.evWin = SINGLE_TOUCH_WINDOW_EVENTS;
+    this.started = false;
+
+    Input.apply(this, arguments);
+}
+
+inherit(SingleTouchInput, Input, {
+    handler: function TEhandler(ev) {
+        var type = SINGLE_TOUCH_INPUT_MAP[ev.type];
+
+        // should we handle the touch events?
+        if (type === INPUT_START) {
+            this.started = true;
+        }
+
+        if (!this.started) {
+            return;
+        }
+
+        var touches = normalizeSingleTouches.call(this, ev, type);
+
+        // when done, reset the started state
+        if (type & (INPUT_END | INPUT_CANCEL) && touches[0].length - touches[1].length === 0) {
+            this.started = false;
+        }
+
+        this.callback(this.manager, type, {
+            pointers: touches[0],
+            changedPointers: touches[1],
+            pointerType: INPUT_TYPE_TOUCH,
+            srcEvent: ev
+        });
+    }
+});
+
+/**
+ * @this {TouchInput}
+ * @param {Object} ev
+ * @param {Number} type flag
+ * @returns {undefined|Array} [all, changed]
+ */
+function normalizeSingleTouches(ev, type) {
+    var all = toArray(ev.touches);
+    var changed = toArray(ev.changedTouches);
+
+    if (type & (INPUT_END | INPUT_CANCEL)) {
+        all = uniqueArray(all.concat(changed), 'identifier', true);
+    }
+
+    return [all, changed];
+}
+
+var TOUCH_INPUT_MAP = {
+    touchstart: INPUT_START,
+    touchmove: INPUT_MOVE,
+    touchend: INPUT_END,
+    touchcancel: INPUT_CANCEL
+};
+
+var TOUCH_TARGET_EVENTS = 'touchstart touchmove touchend touchcancel';
+
+/**
+ * Multi-user touch events input
+ * @constructor
+ * @extends Input
+ */
+function TouchInput() {
+    this.evTarget = TOUCH_TARGET_EVENTS;
+    this.targetIds = {};
+
+    Input.apply(this, arguments);
+}
+
+inherit(TouchInput, Input, {
+    handler: function MTEhandler(ev) {
+        var type = TOUCH_INPUT_MAP[ev.type];
+        var touches = getTouches.call(this, ev, type);
+        if (!touches) {
+            return;
+        }
+
+        this.callback(this.manager, type, {
+            pointers: touches[0],
+            changedPointers: touches[1],
+            pointerType: INPUT_TYPE_TOUCH,
+            srcEvent: ev
+        });
+    }
+});
+
+/**
+ * @this {TouchInput}
+ * @param {Object} ev
+ * @param {Number} type flag
+ * @returns {undefined|Array} [all, changed]
+ */
+function getTouches(ev, type) {
+    var allTouches = toArray(ev.touches);
+    var targetIds = this.targetIds;
+
+    // when there is only one touch, the process can be simplified
+    if (type & (INPUT_START | INPUT_MOVE) && allTouches.length === 1) {
+        targetIds[allTouches[0].identifier] = true;
+        return [allTouches, allTouches];
+    }
+
+    var i,
+        targetTouches,
+        changedTouches = toArray(ev.changedTouches),
+        changedTargetTouches = [],
+        target = this.target;
+
+    // get target touches from touches
+    targetTouches = allTouches.filter(function(touch) {
+        return hasParent(touch.target, target);
+    });
+
+    // collect touches
+    if (type === INPUT_START) {
+        i = 0;
+        while (i < targetTouches.length) {
+            targetIds[targetTouches[i].identifier] = true;
+            i++;
+        }
+    }
+
+    // filter changed touches to only contain touches that exist in the collected target ids
+    i = 0;
+    while (i < changedTouches.length) {
+        if (targetIds[changedTouches[i].identifier]) {
+            changedTargetTouches.push(changedTouches[i]);
+        }
+
+        // cleanup removed touches
+        if (type & (INPUT_END | INPUT_CANCEL)) {
+            delete targetIds[changedTouches[i].identifier];
+        }
+        i++;
+    }
+
+    if (!changedTargetTouches.length) {
+        return;
+    }
+
+    return [
+        // merge targetTouches with changedTargetTouches so it contains ALL touches, including 'end' and 'cancel'
+        uniqueArray(targetTouches.concat(changedTargetTouches), 'identifier', true),
+        changedTargetTouches
+    ];
+}
+
+/**
+ * Combined touch and mouse input
+ *
+ * Touch has a higher priority then mouse, and while touching no mouse events are allowed.
+ * This because touch devices also emit mouse events while doing a touch.
+ *
+ * @constructor
+ * @extends Input
+ */
+
+var DEDUP_TIMEOUT = 2500;
+var DEDUP_DISTANCE = 25;
+
+function TouchMouseInput() {
+    Input.apply(this, arguments);
+
+    var handler = bindFn(this.handler, this);
+    this.touch = new TouchInput(this.manager, handler);
+    this.mouse = new MouseInput(this.manager, handler);
+
+    this.primaryTouch = null;
+    this.lastTouches = [];
+}
+
+inherit(TouchMouseInput, Input, {
+    /**
+     * handle mouse and touch events
+     * @param {Hammer} manager
+     * @param {String} inputEvent
+     * @param {Object} inputData
+     */
+    handler: function TMEhandler(manager, inputEvent, inputData) {
+        var isTouch = (inputData.pointerType == INPUT_TYPE_TOUCH),
+            isMouse = (inputData.pointerType == INPUT_TYPE_MOUSE);
+
+        if (isMouse && inputData.sourceCapabilities && inputData.sourceCapabilities.firesTouchEvents) {
+            return;
+        }
+
+        // when we're in a touch event, record touches to  de-dupe synthetic mouse event
+        if (isTouch) {
+            recordTouches.call(this, inputEvent, inputData);
+        } else if (isMouse && isSyntheticEvent.call(this, inputData)) {
+            return;
+        }
+
+        this.callback(manager, inputEvent, inputData);
+    },
+
+    /**
+     * remove the event listeners
+     */
+    destroy: function destroy() {
+        this.touch.destroy();
+        this.mouse.destroy();
+    }
+});
+
+function recordTouches(eventType, eventData) {
+    if (eventType & INPUT_START) {
+        this.primaryTouch = eventData.changedPointers[0].identifier;
+        setLastTouch.call(this, eventData);
+    } else if (eventType & (INPUT_END | INPUT_CANCEL)) {
+        setLastTouch.call(this, eventData);
+    }
+}
+
+function setLastTouch(eventData) {
+    var touch = eventData.changedPointers[0];
+
+    if (touch.identifier === this.primaryTouch) {
+        var lastTouch = {x: touch.clientX, y: touch.clientY};
+        this.lastTouches.push(lastTouch);
+        var lts = this.lastTouches;
+        var removeLastTouch = function() {
+            var i = lts.indexOf(lastTouch);
+            if (i > -1) {
+                lts.splice(i, 1);
+            }
+        };
+        setTimeout(removeLastTouch, DEDUP_TIMEOUT);
+    }
+}
+
+function isSyntheticEvent(eventData) {
+    var x = eventData.srcEvent.clientX, y = eventData.srcEvent.clientY;
+    for (var i = 0; i < this.lastTouches.length; i++) {
+        var t = this.lastTouches[i];
+        var dx = Math.abs(x - t.x), dy = Math.abs(y - t.y);
+        if (dx <= DEDUP_DISTANCE && dy <= DEDUP_DISTANCE) {
+            return true;
+        }
+    }
+    return false;
+}
+
+var PREFIXED_TOUCH_ACTION = prefixed(TEST_ELEMENT.style, 'touchAction');
+var NATIVE_TOUCH_ACTION = PREFIXED_TOUCH_ACTION !== undefined;
+
+// magical touchAction value
+var TOUCH_ACTION_COMPUTE = 'compute';
+var TOUCH_ACTION_AUTO = 'auto';
+var TOUCH_ACTION_MANIPULATION = 'manipulation'; // not implemented
+var TOUCH_ACTION_NONE = 'none';
+var TOUCH_ACTION_PAN_X = 'pan-x';
+var TOUCH_ACTION_PAN_Y = 'pan-y';
+var TOUCH_ACTION_MAP = getTouchActionProps();
+
+/**
+ * Touch Action
+ * sets the touchAction property or uses the js alternative
+ * @param {Manager} manager
+ * @param {String} value
+ * @constructor
+ */
+function TouchAction(manager, value) {
+    this.manager = manager;
+    this.set(value);
+}
+
+TouchAction.prototype = {
+    /**
+     * set the touchAction value on the element or enable the polyfill
+     * @param {String} value
+     */
+    set: function(value) {
+        // find out the touch-action by the event handlers
+        if (value == TOUCH_ACTION_COMPUTE) {
+            value = this.compute();
+        }
+
+        if (NATIVE_TOUCH_ACTION && this.manager.element.style && TOUCH_ACTION_MAP[value]) {
+            this.manager.element.style[PREFIXED_TOUCH_ACTION] = value;
+        }
+        this.actions = value.toLowerCase().trim();
+    },
+
+    /**
+     * just re-set the touchAction value
+     */
+    update: function() {
+        this.set(this.manager.options.touchAction);
+    },
+
+    /**
+     * compute the value for the touchAction property based on the recognizer's settings
+     * @returns {String} value
+     */
+    compute: function() {
+        var actions = [];
+        each(this.manager.recognizers, function(recognizer) {
+            if (boolOrFn(recognizer.options.enable, [recognizer])) {
+                actions = actions.concat(recognizer.getTouchAction());
+            }
+        });
+        return cleanTouchActions(actions.join(' '));
+    },
+
+    /**
+     * this method is called on each input cycle and provides the preventing of the browser behavior
+     * @param {Object} input
+     */
+    preventDefaults: function(input) {
+        var srcEvent = input.srcEvent;
+        var direction = input.offsetDirection;
+
+        // if the touch action did prevented once this session
+        if (this.manager.session.prevented) {
+            srcEvent.preventDefault();
+            return;
+        }
+
+        var actions = this.actions;
+        var hasNone = inStr(actions, TOUCH_ACTION_NONE) && !TOUCH_ACTION_MAP[TOUCH_ACTION_NONE];
+        var hasPanY = inStr(actions, TOUCH_ACTION_PAN_Y) && !TOUCH_ACTION_MAP[TOUCH_ACTION_PAN_Y];
+        var hasPanX = inStr(actions, TOUCH_ACTION_PAN_X) && !TOUCH_ACTION_MAP[TOUCH_ACTION_PAN_X];
+
+        if (hasNone) {
+            //do not prevent defaults if this is a tap gesture
+
+            var isTapPointer = input.pointers.length === 1;
+            var isTapMovement = input.distance < 2;
+            var isTapTouchTime = input.deltaTime < 250;
+
+            if (isTapPointer && isTapMovement && isTapTouchTime) {
+                return;
+            }
+        }
+
+        if (hasPanX && hasPanY) {
+            // `pan-x pan-y` means browser handles all scrolling/panning, do not prevent
+            return;
+        }
+
+        if (hasNone ||
+            (hasPanY && direction & DIRECTION_HORIZONTAL) ||
+            (hasPanX && direction & DIRECTION_VERTICAL)) {
+            return this.preventSrc(srcEvent);
+        }
+    },
+
+    /**
+     * call preventDefault to prevent the browser's default behavior (scrolling in most cases)
+     * @param {Object} srcEvent
+     */
+    preventSrc: function(srcEvent) {
+        this.manager.session.prevented = true;
+        srcEvent.preventDefault();
+    }
+};
+
+/**
+ * when the touchActions are collected they are not a valid value, so we need to clean things up. *
+ * @param {String} actions
+ * @returns {*}
+ */
+function cleanTouchActions(actions) {
+    // none
+    if (inStr(actions, TOUCH_ACTION_NONE)) {
+        return TOUCH_ACTION_NONE;
+    }
+
+    var hasPanX = inStr(actions, TOUCH_ACTION_PAN_X);
+    var hasPanY = inStr(actions, TOUCH_ACTION_PAN_Y);
+
+    // if both pan-x and pan-y are set (different recognizers
+    // for different directions, e.g. horizontal pan but vertical swipe?)
+    // we need none (as otherwise with pan-x pan-y combined none of these
+    // recognizers will work, since the browser would handle all panning
+    if (hasPanX && hasPanY) {
+        return TOUCH_ACTION_NONE;
+    }
+
+    // pan-x OR pan-y
+    if (hasPanX || hasPanY) {
+        return hasPanX ? TOUCH_ACTION_PAN_X : TOUCH_ACTION_PAN_Y;
+    }
+
+    // manipulation
+    if (inStr(actions, TOUCH_ACTION_MANIPULATION)) {
+        return TOUCH_ACTION_MANIPULATION;
+    }
+
+    return TOUCH_ACTION_AUTO;
+}
+
+function getTouchActionProps() {
+    if (!NATIVE_TOUCH_ACTION) {
+        return false;
+    }
+    var touchMap = {};
+    var cssSupports = window.CSS && window.CSS.supports;
+    ['auto', 'manipulation', 'pan-y', 'pan-x', 'pan-x pan-y', 'none'].forEach(function(val) {
+
+        // If css.supports is not supported but there is native touch-action assume it supports
+        // all values. This is the case for IE 10 and 11.
+        touchMap[val] = cssSupports ? window.CSS.supports('touch-action', val) : true;
+    });
+    return touchMap;
+}
+
+/**
+ * Recognizer flow explained; *
+ * All recognizers have the initial state of POSSIBLE when a input session starts.
+ * The definition of a input session is from the first input until the last input, with all it's movement in it. *
+ * Example session for mouse-input: mousedown -> mousemove -> mouseup
+ *
+ * On each recognizing cycle (see Manager.recognize) the .recognize() method is executed
+ * which determines with state it should be.
+ *
+ * If the recognizer has the state FAILED, CANCELLED or RECOGNIZED (equals ENDED), it is reset to
+ * POSSIBLE to give it another change on the next cycle.
+ *
+ *               Possible
+ *                  |
+ *            +-----+---------------+
+ *            |                     |
+ *      +-----+-----+               |
+ *      |           |               |
+ *   Failed      Cancelled          |
+ *                          +-------+------+
+ *                          |              |
+ *                      Recognized       Began
+ *                                         |
+ *                                      Changed
+ *                                         |
+ *                                  Ended/Recognized
+ */
+var STATE_POSSIBLE = 1;
+var STATE_BEGAN = 2;
+var STATE_CHANGED = 4;
+var STATE_ENDED = 8;
+var STATE_RECOGNIZED = STATE_ENDED;
+var STATE_CANCELLED = 16;
+var STATE_FAILED = 32;
+
+/**
+ * Recognizer
+ * Every recognizer needs to extend from this class.
+ * @constructor
+ * @param {Object} options
+ */
+function Recognizer(options) {
+    this.options = assign({}, this.defaults, options || {});
+
+    this.id = uniqueId();
+
+    this.manager = null;
+
+    // default is enable true
+    this.options.enable = ifUndefined(this.options.enable, true);
+
+    this.state = STATE_POSSIBLE;
+
+    this.simultaneous = {};
+    this.requireFail = [];
+}
+
+Recognizer.prototype = {
+    /**
+     * @virtual
+     * @type {Object}
+     */
+    defaults: {},
+
+    /**
+     * set options
+     * @param {Object} options
+     * @return {Recognizer}
+     */
+    set: function(options) {
+        assign(this.options, options);
+
+        // also update the touchAction, in case something changed about the directions/enabled state
+        this.manager && this.manager.touchAction.update();
+        return this;
+    },
+
+    /**
+     * recognize simultaneous with an other recognizer.
+     * @param {Recognizer} otherRecognizer
+     * @returns {Recognizer} this
+     */
+    recognizeWith: function(otherRecognizer) {
+        if (invokeArrayArg(otherRecognizer, 'recognizeWith', this)) {
+            return this;
+        }
+
+        var simultaneous = this.simultaneous;
+        otherRecognizer = getRecognizerByNameIfManager(otherRecognizer, this);
+        if (!simultaneous[otherRecognizer.id]) {
+            simultaneous[otherRecognizer.id] = otherRecognizer;
+            otherRecognizer.recognizeWith(this);
+        }
+        return this;
+    },
+
+    /**
+     * drop the simultaneous link. it doesnt remove the link on the other recognizer.
+     * @param {Recognizer} otherRecognizer
+     * @returns {Recognizer} this
+     */
+    dropRecognizeWith: function(otherRecognizer) {
+        if (invokeArrayArg(otherRecognizer, 'dropRecognizeWith', this)) {
+            return this;
+        }
+
+        otherRecognizer = getRecognizerByNameIfManager(otherRecognizer, this);
+        delete this.simultaneous[otherRecognizer.id];
+        return this;
+    },
+
+    /**
+     * recognizer can only run when an other is failing
+     * @param {Recognizer} otherRecognizer
+     * @returns {Recognizer} this
+     */
+    requireFailure: function(otherRecognizer) {
+        if (invokeArrayArg(otherRecognizer, 'requireFailure', this)) {
+            return this;
+        }
+
+        var requireFail = this.requireFail;
+        otherRecognizer = getRecognizerByNameIfManager(otherRecognizer, this);
+        if (inArray(requireFail, otherRecognizer) === -1) {
+            requireFail.push(otherRecognizer);
+            otherRecognizer.requireFailure(this);
+        }
+        return this;
+    },
+
+    /**
+     * drop the requireFailure link. it does not remove the link on the other recognizer.
+     * @param {Recognizer} otherRecognizer
+     * @returns {Recognizer} this
+     */
+    dropRequireFailure: function(otherRecognizer) {
+        if (invokeArrayArg(otherRecognizer, 'dropRequireFailure', this)) {
+            return this;
+        }
+
+        otherRecognizer = getRecognizerByNameIfManager(otherRecognizer, this);
+        var index = inArray(this.requireFail, otherRecognizer);
+        if (index > -1) {
+            this.requireFail.splice(index, 1);
+        }
+        return this;
+    },
+
+    /**
+     * has require failures boolean
+     * @returns {boolean}
+     */
+    hasRequireFailures: function() {
+        return this.requireFail.length > 0;
+    },
+
+    /**
+     * if the recognizer can recognize simultaneous with an other recognizer
+     * @param {Recognizer} otherRecognizer
+     * @returns {Boolean}
+     */
+    canRecognizeWith: function(otherRecognizer) {
+        return !!this.simultaneous[otherRecognizer.id];
+    },
+
+    /**
+     * You should use `tryEmit` instead of `emit` directly to check
+     * that all the needed recognizers has failed before emitting.
+     * @param {Object} input
+     */
+    emit: function(input) {
+        var self = this;
+        var state = this.state;
+
+        function emit(event) {
+            self.manager.emit(event, input);
+        }
+
+        // 'panstart' and 'panmove'
+        if (state < STATE_ENDED) {
+            emit(self.options.event + stateStr(state));
+        }
+
+        emit(self.options.event); // simple 'eventName' events
+
+        if (input.additionalEvent) { // additional event(panleft, panright, pinchin, pinchout...)
+            emit(input.additionalEvent);
+        }
+
+        // panend and pancancel
+        if (state >= STATE_ENDED) {
+            emit(self.options.event + stateStr(state));
+        }
+    },
+
+    /**
+     * Check that all the require failure recognizers has failed,
+     * if true, it emits a gesture event,
+     * otherwise, setup the state to FAILED.
+     * @param {Object} input
+     */
+    tryEmit: function(input) {
+        if (this.canEmit()) {
+            return this.emit(input);
+        }
+        // it's failing anyway
+        this.state = STATE_FAILED;
+    },
+
+    /**
+     * can we emit?
+     * @returns {boolean}
+     */
+    canEmit: function() {
+        var i = 0;
+        while (i < this.requireFail.length) {
+            if (!(this.requireFail[i].state & (STATE_FAILED | STATE_POSSIBLE))) {
+                return false;
+            }
+            i++;
+        }
+        return true;
+    },
+
+    /**
+     * update the recognizer
+     * @param {Object} inputData
+     */
+    recognize: function(inputData) {
+        // make a new copy of the inputData
+        // so we can change the inputData without messing up the other recognizers
+        var inputDataClone = assign({}, inputData);
+
+        // is is enabled and allow recognizing?
+        if (!boolOrFn(this.options.enable, [this, inputDataClone])) {
+            this.reset();
+            this.state = STATE_FAILED;
+            return;
+        }
+
+        // reset when we've reached the end
+        if (this.state & (STATE_RECOGNIZED | STATE_CANCELLED | STATE_FAILED)) {
+            this.state = STATE_POSSIBLE;
+        }
+
+        this.state = this.process(inputDataClone);
+
+        // the recognizer has recognized a gesture
+        // so trigger an event
+        if (this.state & (STATE_BEGAN | STATE_CHANGED | STATE_ENDED | STATE_CANCELLED)) {
+            this.tryEmit(inputDataClone);
+        }
+    },
+
+    /**
+     * return the state of the recognizer
+     * the actual recognizing happens in this method
+     * @virtual
+     * @param {Object} inputData
+     * @returns {Const} STATE
+     */
+    process: function(inputData) { }, // jshint ignore:line
+
+    /**
+     * return the preferred touch-action
+     * @virtual
+     * @returns {Array}
+     */
+    getTouchAction: function() { },
+
+    /**
+     * called when the gesture isn't allowed to recognize
+     * like when another is being recognized or it is disabled
+     * @virtual
+     */
+    reset: function() { }
+};
+
+/**
+ * get a usable string, used as event postfix
+ * @param {Const} state
+ * @returns {String} state
+ */
+function stateStr(state) {
+    if (state & STATE_CANCELLED) {
+        return 'cancel';
+    } else if (state & STATE_ENDED) {
+        return 'end';
+    } else if (state & STATE_CHANGED) {
+        return 'move';
+    } else if (state & STATE_BEGAN) {
+        return 'start';
+    }
+    return '';
+}
+
+/**
+ * direction cons to string
+ * @param {Const} direction
+ * @returns {String}
+ */
+function directionStr(direction) {
+    if (direction == DIRECTION_DOWN) {
+        return 'down';
+    } else if (direction == DIRECTION_UP) {
+        return 'up';
+    } else if (direction == DIRECTION_LEFT) {
+        return 'left';
+    } else if (direction == DIRECTION_RIGHT) {
+        return 'right';
+    }
+    return '';
+}
+
+/**
+ * get a recognizer by name if it is bound to a manager
+ * @param {Recognizer|String} otherRecognizer
+ * @param {Recognizer} recognizer
+ * @returns {Recognizer}
+ */
+function getRecognizerByNameIfManager(otherRecognizer, recognizer) {
+    var manager = recognizer.manager;
+    if (manager) {
+        return manager.get(otherRecognizer);
+    }
+    return otherRecognizer;
+}
+
+/**
+ * This recognizer is just used as a base for the simple attribute recognizers.
+ * @constructor
+ * @extends Recognizer
+ */
+function AttrRecognizer() {
+    Recognizer.apply(this, arguments);
+}
+
+inherit(AttrRecognizer, Recognizer, {
+    /**
+     * @namespace
+     * @memberof AttrRecognizer
+     */
+    defaults: {
+        /**
+         * @type {Number}
+         * @default 1
+         */
+        pointers: 1
+    },
+
+    /**
+     * Used to check if it the recognizer receives valid input, like input.distance > 10.
+     * @memberof AttrRecognizer
+     * @param {Object} input
+     * @returns {Boolean} recognized
+     */
+    attrTest: function(input) {
+        var optionPointers = this.options.pointers;
+        return optionPointers === 0 || input.pointers.length === optionPointers;
+    },
+
+    /**
+     * Process the input and return the state for the recognizer
+     * @memberof AttrRecognizer
+     * @param {Object} input
+     * @returns {*} State
+     */
+    process: function(input) {
+        var state = this.state;
+        var eventType = input.eventType;
+
+        var isRecognized = state & (STATE_BEGAN | STATE_CHANGED);
+        var isValid = this.attrTest(input);
+
+        // on cancel input and we've recognized before, return STATE_CANCELLED
+        if (isRecognized && (eventType & INPUT_CANCEL || !isValid)) {
+            return state | STATE_CANCELLED;
+        } else if (isRecognized || isValid) {
+            if (eventType & INPUT_END) {
+                return state | STATE_ENDED;
+            } else if (!(state & STATE_BEGAN)) {
+                return STATE_BEGAN;
+            }
+            return state | STATE_CHANGED;
+        }
+        return STATE_FAILED;
+    }
+});
+
+/**
+ * Pan
+ * Recognized when the pointer is down and moved in the allowed direction.
+ * @constructor
+ * @extends AttrRecognizer
+ */
+function PanRecognizer() {
+    AttrRecognizer.apply(this, arguments);
+
+    this.pX = null;
+    this.pY = null;
+}
+
+inherit(PanRecognizer, AttrRecognizer, {
+    /**
+     * @namespace
+     * @memberof PanRecognizer
+     */
+    defaults: {
+        event: 'pan',
+        threshold: 10,
+        pointers: 1,
+        direction: DIRECTION_ALL
+    },
+
+    getTouchAction: function() {
+        var direction = this.options.direction;
+        var actions = [];
+        if (direction & DIRECTION_HORIZONTAL) {
+            actions.push(TOUCH_ACTION_PAN_Y);
+        }
+        if (direction & DIRECTION_VERTICAL) {
+            actions.push(TOUCH_ACTION_PAN_X);
+        }
+        return actions;
+    },
+
+    directionTest: function(input) {
+        var options = this.options;
+        var hasMoved = true;
+        var distance = input.distance;
+        var direction = input.direction;
+        var x = input.deltaX;
+        var y = input.deltaY;
+
+        // lock to axis?
+        if (!(direction & options.direction)) {
+            if (options.direction & DIRECTION_HORIZONTAL) {
+                direction = (x === 0) ? DIRECTION_NONE : (x < 0) ? DIRECTION_LEFT : DIRECTION_RIGHT;
+                hasMoved = x != this.pX;
+                distance = Math.abs(input.deltaX);
+            } else {
+                direction = (y === 0) ? DIRECTION_NONE : (y < 0) ? DIRECTION_UP : DIRECTION_DOWN;
+                hasMoved = y != this.pY;
+                distance = Math.abs(input.deltaY);
+            }
+        }
+        input.direction = direction;
+        return hasMoved && distance > options.threshold && direction & options.direction;
+    },
+
+    attrTest: function(input) {
+        return AttrRecognizer.prototype.attrTest.call(this, input) &&
+            (this.state & STATE_BEGAN || (!(this.state & STATE_BEGAN) && this.directionTest(input)));
+    },
+
+    emit: function(input) {
+
+        this.pX = input.deltaX;
+        this.pY = input.deltaY;
+
+        var direction = directionStr(input.direction);
+
+        if (direction) {
+            input.additionalEvent = this.options.event + direction;
+        }
+        this._super.emit.call(this, input);
+    }
+});
+
+/**
+ * Pinch
+ * Recognized when two or more pointers are moving toward (zoom-in) or away from each other (zoom-out).
+ * @constructor
+ * @extends AttrRecognizer
+ */
+function PinchRecognizer() {
+    AttrRecognizer.apply(this, arguments);
+}
+
+inherit(PinchRecognizer, AttrRecognizer, {
+    /**
+     * @namespace
+     * @memberof PinchRecognizer
+     */
+    defaults: {
+        event: 'pinch',
+        threshold: 0,
+        pointers: 2
+    },
+
+    getTouchAction: function() {
+        return [TOUCH_ACTION_NONE];
+    },
+
+    attrTest: function(input) {
+        return this._super.attrTest.call(this, input) &&
+            (Math.abs(input.scale - 1) > this.options.threshold || this.state & STATE_BEGAN);
+    },
+
+    emit: function(input) {
+        if (input.scale !== 1) {
+            var inOut = input.scale < 1 ? 'in' : 'out';
+            input.additionalEvent = this.options.event + inOut;
+        }
+        this._super.emit.call(this, input);
+    }
+});
+
+/**
+ * Press
+ * Recognized when the pointer is down for x ms without any movement.
+ * @constructor
+ * @extends Recognizer
+ */
+function PressRecognizer() {
+    Recognizer.apply(this, arguments);
+
+    this._timer = null;
+    this._input = null;
+}
+
+inherit(PressRecognizer, Recognizer, {
+    /**
+     * @namespace
+     * @memberof PressRecognizer
+     */
+    defaults: {
+        event: 'press',
+        pointers: 1,
+        time: 251, // minimal time of the pointer to be pressed
+        threshold: 9 // a minimal movement is ok, but keep it low
+    },
+
+    getTouchAction: function() {
+        return [TOUCH_ACTION_AUTO];
+    },
+
+    process: function(input) {
+        var options = this.options;
+        var validPointers = input.pointers.length === options.pointers;
+        var validMovement = input.distance < options.threshold;
+        var validTime = input.deltaTime > options.time;
+
+        this._input = input;
+
+        // we only allow little movement
+        // and we've reached an end event, so a tap is possible
+        if (!validMovement || !validPointers || (input.eventType & (INPUT_END | INPUT_CANCEL) && !validTime)) {
+            this.reset();
+        } else if (input.eventType & INPUT_START) {
+            this.reset();
+            this._timer = setTimeoutContext(function() {
+                this.state = STATE_RECOGNIZED;
+                this.tryEmit();
+            }, options.time, this);
+        } else if (input.eventType & INPUT_END) {
+            return STATE_RECOGNIZED;
+        }
+        return STATE_FAILED;
+    },
+
+    reset: function() {
+        clearTimeout(this._timer);
+    },
+
+    emit: function(input) {
+        if (this.state !== STATE_RECOGNIZED) {
+            return;
+        }
+
+        if (input && (input.eventType & INPUT_END)) {
+            this.manager.emit(this.options.event + 'up', input);
+        } else {
+            this._input.timeStamp = now();
+            this.manager.emit(this.options.event, this._input);
+        }
+    }
+});
+
+/**
+ * Rotate
+ * Recognized when two or more pointer are moving in a circular motion.
+ * @constructor
+ * @extends AttrRecognizer
+ */
+function RotateRecognizer() {
+    AttrRecognizer.apply(this, arguments);
+}
+
+inherit(RotateRecognizer, AttrRecognizer, {
+    /**
+     * @namespace
+     * @memberof RotateRecognizer
+     */
+    defaults: {
+        event: 'rotate',
+        threshold: 0,
+        pointers: 2
+    },
+
+    getTouchAction: function() {
+        return [TOUCH_ACTION_NONE];
+    },
+
+    attrTest: function(input) {
+        return this._super.attrTest.call(this, input) &&
+            (Math.abs(input.rotation) > this.options.threshold || this.state & STATE_BEGAN);
+    }
+});
+
+/**
+ * Swipe
+ * Recognized when the pointer is moving fast (velocity), with enough distance in the allowed direction.
+ * @constructor
+ * @extends AttrRecognizer
+ */
+function SwipeRecognizer() {
+    AttrRecognizer.apply(this, arguments);
+}
+
+inherit(SwipeRecognizer, AttrRecognizer, {
+    /**
+     * @namespace
+     * @memberof SwipeRecognizer
+     */
+    defaults: {
+        event: 'swipe',
+        threshold: 10,
+        velocity: 0.3,
+        direction: DIRECTION_HORIZONTAL | DIRECTION_VERTICAL,
+        pointers: 1
+    },
+
+    getTouchAction: function() {
+        return PanRecognizer.prototype.getTouchAction.call(this);
+    },
+
+    attrTest: function(input) {
+        var direction = this.options.direction;
+        var velocity;
+
+        if (direction & (DIRECTION_HORIZONTAL | DIRECTION_VERTICAL)) {
+            velocity = input.overallVelocity;
+        } else if (direction & DIRECTION_HORIZONTAL) {
+            velocity = input.overallVelocityX;
+        } else if (direction & DIRECTION_VERTICAL) {
+            velocity = input.overallVelocityY;
+        }
+
+        return this._super.attrTest.call(this, input) &&
+            direction & input.offsetDirection &&
+            input.distance > this.options.threshold &&
+            input.maxPointers == this.options.pointers &&
+            abs(velocity) > this.options.velocity && input.eventType & INPUT_END;
+    },
+
+    emit: function(input) {
+        var direction = directionStr(input.offsetDirection);
+        if (direction) {
+            this.manager.emit(this.options.event + direction, input);
+        }
+
+        this.manager.emit(this.options.event, input);
+    }
+});
+
+/**
+ * A tap is ecognized when the pointer is doing a small tap/click. Multiple taps are recognized if they occur
+ * between the given interval and position. The delay option can be used to recognize multi-taps without firing
+ * a single tap.
+ *
+ * The eventData from the emitted event contains the property `tapCount`, which contains the amount of
+ * multi-taps being recognized.
+ * @constructor
+ * @extends Recognizer
+ */
+function TapRecognizer() {
+    Recognizer.apply(this, arguments);
+
+    // previous time and center,
+    // used for tap counting
+    this.pTime = false;
+    this.pCenter = false;
+
+    this._timer = null;
+    this._input = null;
+    this.count = 0;
+}
+
+inherit(TapRecognizer, Recognizer, {
+    /**
+     * @namespace
+     * @memberof PinchRecognizer
+     */
+    defaults: {
+        event: 'tap',
+        pointers: 1,
+        taps: 1,
+        interval: 300, // max time between the multi-tap taps
+        time: 250, // max time of the pointer to be down (like finger on the screen)
+        threshold: 9, // a minimal movement is ok, but keep it low
+        posThreshold: 10 // a multi-tap can be a bit off the initial position
+    },
+
+    getTouchAction: function() {
+        return [TOUCH_ACTION_MANIPULATION];
+    },
+
+    process: function(input) {
+        var options = this.options;
+
+        var validPointers = input.pointers.length === options.pointers;
+        var validMovement = input.distance < options.threshold;
+        var validTouchTime = input.deltaTime < options.time;
+
+        this.reset();
+
+        if ((input.eventType & INPUT_START) && (this.count === 0)) {
+            return this.failTimeout();
+        }
+
+        // we only allow little movement
+        // and we've reached an end event, so a tap is possible
+        if (validMovement && validTouchTime && validPointers) {
+            if (input.eventType != INPUT_END) {
+                return this.failTimeout();
+            }
+
+            var validInterval = this.pTime ? (input.timeStamp - this.pTime < options.interval) : true;
+            var validMultiTap = !this.pCenter || getDistance(this.pCenter, input.center) < options.posThreshold;
+
+            this.pTime = input.timeStamp;
+            this.pCenter = input.center;
+
+            if (!validMultiTap || !validInterval) {
+                this.count = 1;
+            } else {
+                this.count += 1;
+            }
+
+            this._input = input;
+
+            // if tap count matches we have recognized it,
+            // else it has began recognizing...
+            var tapCount = this.count % options.taps;
+            if (tapCount === 0) {
+                // no failing requirements, immediately trigger the tap event
+                // or wait as long as the multitap interval to trigger
+                if (!this.hasRequireFailures()) {
+                    return STATE_RECOGNIZED;
+                } else {
+                    this._timer = setTimeoutContext(function() {
+                        this.state = STATE_RECOGNIZED;
+                        this.tryEmit();
+                    }, options.interval, this);
+                    return STATE_BEGAN;
+                }
+            }
+        }
+        return STATE_FAILED;
+    },
+
+    failTimeout: function() {
+        this._timer = setTimeoutContext(function() {
+            this.state = STATE_FAILED;
+        }, this.options.interval, this);
+        return STATE_FAILED;
+    },
+
+    reset: function() {
+        clearTimeout(this._timer);
+    },
+
+    emit: function() {
+        if (this.state == STATE_RECOGNIZED) {
+            this._input.tapCount = this.count;
+            this.manager.emit(this.options.event, this._input);
+        }
+    }
+});
+
+/**
+ * Simple way to create a manager with a default set of recognizers.
+ * @param {HTMLElement} element
+ * @param {Object} [options]
+ * @constructor
+ */
+function Hammer(element, options) {
+    options = options || {};
+    options.recognizers = ifUndefined(options.recognizers, Hammer.defaults.preset);
+    return new Manager(element, options);
+}
+
+/**
+ * @const {string}
+ */
+Hammer.VERSION = '2.0.7';
+
+/**
+ * default settings
+ * @namespace
+ */
+Hammer.defaults = {
+    /**
+     * set if DOM events are being triggered.
+     * But this is slower and unused by simple implementations, so disabled by default.
+     * @type {Boolean}
+     * @default false
+     */
+    domEvents: false,
+
+    /**
+     * The value for the touchAction property/fallback.
+     * When set to `compute` it will magically set the correct value based on the added recognizers.
+     * @type {String}
+     * @default compute
+     */
+    touchAction: TOUCH_ACTION_COMPUTE,
+
+    /**
+     * @type {Boolean}
+     * @default true
+     */
+    enable: true,
+
+    /**
+     * EXPERIMENTAL FEATURE -- can be removed/changed
+     * Change the parent input target element.
+     * If Null, then it is being set the to main element.
+     * @type {Null|EventTarget}
+     * @default null
+     */
+    inputTarget: null,
+
+    /**
+     * force an input class
+     * @type {Null|Function}
+     * @default null
+     */
+    inputClass: null,
+
+    /**
+     * Default recognizer setup when calling `Hammer()`
+     * When creating a new Manager these will be skipped.
+     * @type {Array}
+     */
+    preset: [
+        // RecognizerClass, options, [recognizeWith, ...], [requireFailure, ...]
+        [RotateRecognizer, {enable: false}],
+        [PinchRecognizer, {enable: false}, ['rotate']],
+        [SwipeRecognizer, {direction: DIRECTION_HORIZONTAL}],
+        [PanRecognizer, {direction: DIRECTION_HORIZONTAL}, ['swipe']],
+        [TapRecognizer],
+        [TapRecognizer, {event: 'doubletap', taps: 2}, ['tap']],
+        [PressRecognizer]
+    ],
+
+    /**
+     * Some CSS properties can be used to improve the working of Hammer.
+     * Add them to this method and they will be set when creating a new Manager.
+     * @namespace
+     */
+    cssProps: {
+        /**
+         * Disables text selection to improve the dragging gesture. Mainly for desktop browsers.
+         * @type {String}
+         * @default 'none'
+         */
+        userSelect: 'none',
+
+        /**
+         * Disable the Windows Phone grippers when pressing an element.
+         * @type {String}
+         * @default 'none'
+         */
+        touchSelect: 'none',
+
+        /**
+         * Disables the default callout shown when you touch and hold a touch target.
+         * On iOS, when you touch and hold a touch target such as a link, Safari displays
+         * a callout containing information about the link. This property allows you to disable that callout.
+         * @type {String}
+         * @default 'none'
+         */
+        touchCallout: 'none',
+
+        /**
+         * Specifies whether zooming is enabled. Used by IE10>
+         * @type {String}
+         * @default 'none'
+         */
+        contentZooming: 'none',
+
+        /**
+         * Specifies that an entire element should be draggable instead of its contents. Mainly for desktop browsers.
+         * @type {String}
+         * @default 'none'
+         */
+        userDrag: 'none',
+
+        /**
+         * Overrides the highlight color shown when the user taps a link or a JavaScript
+         * clickable element in iOS. This property obeys the alpha value, if specified.
+         * @type {String}
+         * @default 'rgba(0,0,0,0)'
+         */
+        tapHighlightColor: 'rgba(0,0,0,0)'
+    }
+};
+
+var STOP = 1;
+var FORCED_STOP = 2;
+
+/**
+ * Manager
+ * @param {HTMLElement} element
+ * @param {Object} [options]
+ * @constructor
+ */
+function Manager(element, options) {
+    this.options = assign({}, Hammer.defaults, options || {});
+
+    this.options.inputTarget = this.options.inputTarget || element;
+
+    this.handlers = {};
+    this.session = {};
+    this.recognizers = [];
+    this.oldCssProps = {};
+
+    this.element = element;
+    this.input = createInputInstance(this);
+    this.touchAction = new TouchAction(this, this.options.touchAction);
+
+    toggleCssProps(this, true);
+
+    each(this.options.recognizers, function(item) {
+        var recognizer = this.add(new (item[0])(item[1]));
+        item[2] && recognizer.recognizeWith(item[2]);
+        item[3] && recognizer.requireFailure(item[3]);
+    }, this);
+}
+
+Manager.prototype = {
+    /**
+     * set options
+     * @param {Object} options
+     * @returns {Manager}
+     */
+    set: function(options) {
+        assign(this.options, options);
+
+        // Options that need a little more setup
+        if (options.touchAction) {
+            this.touchAction.update();
+        }
+        if (options.inputTarget) {
+            // Clean up existing event listeners and reinitialize
+            this.input.destroy();
+            this.input.target = options.inputTarget;
+            this.input.init();
+        }
+        return this;
+    },
+
+    /**
+     * stop recognizing for this session.
+     * This session will be discarded, when a new [input]start event is fired.
+     * When forced, the recognizer cycle is stopped immediately.
+     * @param {Boolean} [force]
+     */
+    stop: function(force) {
+        this.session.stopped = force ? FORCED_STOP : STOP;
+    },
+
+    /**
+     * run the recognizers!
+     * called by the inputHandler function on every movement of the pointers (touches)
+     * it walks through all the recognizers and tries to detect the gesture that is being made
+     * @param {Object} inputData
+     */
+    recognize: function(inputData) {
+        var session = this.session;
+        if (session.stopped) {
+            return;
+        }
+
+        // run the touch-action polyfill
+        this.touchAction.preventDefaults(inputData);
+
+        var recognizer;
+        var recognizers = this.recognizers;
+
+        // this holds the recognizer that is being recognized.
+        // so the recognizer's state needs to be BEGAN, CHANGED, ENDED or RECOGNIZED
+        // if no recognizer is detecting a thing, it is set to `null`
+        var curRecognizer = session.curRecognizer;
+
+        // reset when the last recognizer is recognized
+        // or when we're in a new session
+        if (!curRecognizer || (curRecognizer && curRecognizer.state & STATE_RECOGNIZED)) {
+            curRecognizer = session.curRecognizer = null;
+        }
+
+        var i = 0;
+        while (i < recognizers.length) {
+            recognizer = recognizers[i];
+
+            // find out if we are allowed try to recognize the input for this one.
+            // 1.   allow if the session is NOT forced stopped (see the .stop() method)
+            // 2.   allow if we still haven't recognized a gesture in this session, or the this recognizer is the one
+            //      that is being recognized.
+            // 3.   allow if the recognizer is allowed to run simultaneous with the current recognized recognizer.
+            //      this can be setup with the `recognizeWith()` method on the recognizer.
+            if (session.stopped !== FORCED_STOP && ( // 1
+                    !curRecognizer || recognizer == curRecognizer || // 2
+                    recognizer.canRecognizeWith(curRecognizer))) { // 3
+                recognizer.recognize(inputData);
+            } else {
+                recognizer.reset();
+            }
+
+            // if the recognizer has been recognizing the input as a valid gesture, we want to store this one as the
+            // current active recognizer. but only if we don't already have an active recognizer
+            if (!curRecognizer && recognizer.state & (STATE_BEGAN | STATE_CHANGED | STATE_ENDED)) {
+                curRecognizer = session.curRecognizer = recognizer;
+            }
+            i++;
+        }
+    },
+
+    /**
+     * get a recognizer by its event name.
+     * @param {Recognizer|String} recognizer
+     * @returns {Recognizer|Null}
+     */
+    get: function(recognizer) {
+        if (recognizer instanceof Recognizer) {
+            return recognizer;
+        }
+
+        var recognizers = this.recognizers;
+        for (var i = 0; i < recognizers.length; i++) {
+            if (recognizers[i].options.event == recognizer) {
+                return recognizers[i];
+            }
+        }
+        return null;
+    },
+
+    /**
+     * add a recognizer to the manager
+     * existing recognizers with the same event name will be removed
+     * @param {Recognizer} recognizer
+     * @returns {Recognizer|Manager}
+     */
+    add: function(recognizer) {
+        if (invokeArrayArg(recognizer, 'add', this)) {
+            return this;
+        }
+
+        // remove existing
+        var existing = this.get(recognizer.options.event);
+        if (existing) {
+            this.remove(existing);
+        }
+
+        this.recognizers.push(recognizer);
+        recognizer.manager = this;
+
+        this.touchAction.update();
+        return recognizer;
+    },
+
+    /**
+     * remove a recognizer by name or instance
+     * @param {Recognizer|String} recognizer
+     * @returns {Manager}
+     */
+    remove: function(recognizer) {
+        if (invokeArrayArg(recognizer, 'remove', this)) {
+            return this;
+        }
+
+        recognizer = this.get(recognizer);
+
+        // let's make sure this recognizer exists
+        if (recognizer) {
+            var recognizers = this.recognizers;
+            var index = inArray(recognizers, recognizer);
+
+            if (index !== -1) {
+                recognizers.splice(index, 1);
+                this.touchAction.update();
+            }
+        }
+
+        return this;
+    },
+
+    /**
+     * bind event
+     * @param {String} events
+     * @param {Function} handler
+     * @returns {EventEmitter} this
+     */
+    on: function(events, handler) {
+        if (events === undefined) {
+            return;
+        }
+        if (handler === undefined) {
+            return;
+        }
+
+        var handlers = this.handlers;
+        each(splitStr(events), function(event) {
+            handlers[event] = handlers[event] || [];
+            handlers[event].push(handler);
+        });
+        return this;
+    },
+
+    /**
+     * unbind event, leave emit blank to remove all handlers
+     * @param {String} events
+     * @param {Function} [handler]
+     * @returns {EventEmitter} this
+     */
+    off: function(events, handler) {
+        if (events === undefined) {
+            return;
+        }
+
+        var handlers = this.handlers;
+        each(splitStr(events), function(event) {
+            if (!handler) {
+                delete handlers[event];
+            } else {
+                handlers[event] && handlers[event].splice(inArray(handlers[event], handler), 1);
+            }
+        });
+        return this;
+    },
+
+    /**
+     * emit event to the listeners
+     * @param {String} event
+     * @param {Object} data
+     */
+    emit: function(event, data) {
+        // we also want to trigger dom events
+        if (this.options.domEvents) {
+            triggerDomEvent(event, data);
+        }
+
+        // no handlers, so skip it all
+        var handlers = this.handlers[event] && this.handlers[event].slice();
+        if (!handlers || !handlers.length) {
+            return;
+        }
+
+        data.type = event;
+        data.preventDefault = function() {
+            data.srcEvent.preventDefault();
+        };
+
+        var i = 0;
+        while (i < handlers.length) {
+            handlers[i](data);
+            i++;
+        }
+    },
+
+    /**
+     * destroy the manager and unbinds all events
+     * it doesn't unbind dom events, that is the user own responsibility
+     */
+    destroy: function() {
+        this.element && toggleCssProps(this, false);
+
+        this.handlers = {};
+        this.session = {};
+        this.input.destroy();
+        this.element = null;
+    }
+};
+
+/**
+ * add/remove the css properties as defined in manager.options.cssProps
+ * @param {Manager} manager
+ * @param {Boolean} add
+ */
+function toggleCssProps(manager, add) {
+    var element = manager.element;
+    if (!element.style) {
+        return;
+    }
+    var prop;
+    each(manager.options.cssProps, function(value, name) {
+        prop = prefixed(element.style, name);
+        if (add) {
+            manager.oldCssProps[prop] = element.style[prop];
+            element.style[prop] = value;
+        } else {
+            element.style[prop] = manager.oldCssProps[prop] || '';
+        }
+    });
+    if (!add) {
+        manager.oldCssProps = {};
+    }
+}
+
+/**
+ * trigger dom event
+ * @param {String} event
+ * @param {Object} data
+ */
+function triggerDomEvent(event, data) {
+    var gestureEvent = document.createEvent('Event');
+    gestureEvent.initEvent(event, true, true);
+    gestureEvent.gesture = data;
+    data.target.dispatchEvent(gestureEvent);
+}
+
+assign(Hammer, {
+    INPUT_START: INPUT_START,
+    INPUT_MOVE: INPUT_MOVE,
+    INPUT_END: INPUT_END,
+    INPUT_CANCEL: INPUT_CANCEL,
+
+    STATE_POSSIBLE: STATE_POSSIBLE,
+    STATE_BEGAN: STATE_BEGAN,
+    STATE_CHANGED: STATE_CHANGED,
+    STATE_ENDED: STATE_ENDED,
+    STATE_RECOGNIZED: STATE_RECOGNIZED,
+    STATE_CANCELLED: STATE_CANCELLED,
+    STATE_FAILED: STATE_FAILED,
+
+    DIRECTION_NONE: DIRECTION_NONE,
+    DIRECTION_LEFT: DIRECTION_LEFT,
+    DIRECTION_RIGHT: DIRECTION_RIGHT,
+    DIRECTION_UP: DIRECTION_UP,
+    DIRECTION_DOWN: DIRECTION_DOWN,
+    DIRECTION_HORIZONTAL: DIRECTION_HORIZONTAL,
+    DIRECTION_VERTICAL: DIRECTION_VERTICAL,
+    DIRECTION_ALL: DIRECTION_ALL,
+
+    Manager: Manager,
+    Input: Input,
+    TouchAction: TouchAction,
+
+    TouchInput: TouchInput,
+    MouseInput: MouseInput,
+    PointerEventInput: PointerEventInput,
+    TouchMouseInput: TouchMouseInput,
+    SingleTouchInput: SingleTouchInput,
+
+    Recognizer: Recognizer,
+    AttrRecognizer: AttrRecognizer,
+    Tap: TapRecognizer,
+    Pan: PanRecognizer,
+    Swipe: SwipeRecognizer,
+    Pinch: PinchRecognizer,
+    Rotate: RotateRecognizer,
+    Press: PressRecognizer,
+
+    on: addEventListeners,
+    off: removeEventListeners,
+    each: each,
+    merge: merge,
+    extend: extend,
+    assign: assign,
+    inherit: inherit,
+    bindFn: bindFn,
+    prefixed: prefixed
+});
+
+// this prevents errors when Hammer is loaded in the presence of an AMD
+//  style loader but by script tag, not by the loader.
+var freeGlobal = (typeof window !== 'undefined' ? window : (typeof self !== 'undefined' ? self : {})); // jshint ignore:line
+freeGlobal.Hammer = Hammer;
+
+if (typeof define === 'function' && define.amd) {
+    define(function() {
+        return Hammer;
+    });
+} else if (typeof module != 'undefined' && module.exports) {
+    module.exports = Hammer;
+} else {
+    window[exportName] = Hammer;
+}
+
+})(window, document, 'Hammer');
+
+},{}],149:[function(require,module,exports){
 module.exports = require('./src/normalizeWheel.js');
 
-},{"./src/normalizeWheel.js":151}],148:[function(require,module,exports){
+},{"./src/normalizeWheel.js":153}],150:[function(require,module,exports){
 /**
  * Copyright (c) 2015, Facebook, Inc.
  * All rights reserved.
@@ -44399,7 +47091,7 @@ var ExecutionEnvironment = {
 
 module.exports = ExecutionEnvironment;
 
-},{}],149:[function(require,module,exports){
+},{}],151:[function(require,module,exports){
 /**
  * Copyright 2004-present Facebook. All Rights Reserved.
  *
@@ -44683,7 +47375,7 @@ var UserAgent_DEPRECATED = {
 
 module.exports = UserAgent_DEPRECATED;
 
-},{}],150:[function(require,module,exports){
+},{}],152:[function(require,module,exports){
 /**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
@@ -44748,7 +47440,7 @@ function isEventSupported(eventNameSuffix, capture) {
 
 module.exports = isEventSupported;
 
-},{"./ExecutionEnvironment":148}],151:[function(require,module,exports){
+},{"./ExecutionEnvironment":150}],153:[function(require,module,exports){
 /**
  * Copyright (c) 2015, Facebook, Inc.
  * All rights reserved.
@@ -44931,7 +47623,12 @@ normalizeWheel.getEventType = function() /*string*/ {
 
 module.exports = normalizeWheel;
 
-},{"./UserAgent_DEPRECATED":149,"./isEventSupported":150}],152:[function(require,module,exports){
+},{"./UserAgent_DEPRECATED":151,"./isEventSupported":152}],154:[function(require,module,exports){
+(function (global){
+!function(e){if("object"==typeof exports)module.exports=e();else if("function"==typeof define&&define.amd)define(e);else{var t;"undefined"!=typeof window?t=window:"undefined"!=typeof global?t=global:"undefined"!=typeof self&&(t=self),t.objectHash=e()}}(function(){return function e(t,n,r){function o(u,a){if(!n[u]){if(!t[u]){var f="function"==typeof require&&require;if(!a&&f)return f(u,!0);if(i)return i(u,!0);throw new Error("Cannot find module '"+u+"'")}var s=n[u]={exports:{}};t[u][0].call(s.exports,function(e){var n=t[u][1][e];return o(n?n:e)},s,s.exports,e,t,n,r)}return n[u].exports}for(var i="function"==typeof require&&require,u=0;u<r.length;u++)o(r[u]);return o}({1:[function(e,t,n){(function(r,o,i,u,a,f,s,c,l){"use strict";function d(e,t){return t=h(e,t),y(e,t)}function h(e,t){if(t=t||{},t.algorithm=t.algorithm||"sha1",t.encoding=t.encoding||"hex",t.excludeValues=!!t.excludeValues,t.algorithm=t.algorithm.toLowerCase(),t.encoding=t.encoding.toLowerCase(),t.ignoreUnknown=t.ignoreUnknown===!0,t.respectType=t.respectType!==!1,t.respectFunctionNames=t.respectFunctionNames!==!1,t.respectFunctionProperties=t.respectFunctionProperties!==!1,t.unorderedArrays=t.unorderedArrays===!0,t.unorderedSets=t.unorderedSets!==!1,t.unorderedObjects=t.unorderedObjects!==!1,t.replacer=t.replacer||void 0,t.excludeKeys=t.excludeKeys||void 0,"undefined"==typeof e)throw new Error("Object argument required.");for(var n=0;n<v.length;++n)v[n].toLowerCase()===t.algorithm.toLowerCase()&&(t.algorithm=v[n]);if(v.indexOf(t.algorithm)===-1)throw new Error('Algorithm "'+t.algorithm+'"  not supported. supported values: '+v.join(", "));if(m.indexOf(t.encoding)===-1&&"passthrough"!==t.algorithm)throw new Error('Encoding "'+t.encoding+'"  not supported. supported values: '+m.join(", "));return t}function p(e){if("function"!=typeof e)return!1;var t=/^function\s+\w*\s*\(\s*\)\s*{\s+\[native code\]\s+}$/i;return null!=t.exec(Function.prototype.toString.call(e))}function y(e,t){var n;n="passthrough"!==t.algorithm?b.createHash(t.algorithm):new w,"undefined"==typeof n.write&&(n.write=n.update,n.end=n.update);var r=g(t,n);if(r.dispatch(e),n.update||n.end(""),n.digest)return n.digest("buffer"===t.encoding?void 0:t.encoding);var o=n.read();return"buffer"===t.encoding?o:o.toString(t.encoding)}function g(e,t,n){n=n||[];var r=function(e){return t.update?t.update(e,"utf8"):t.write(e,"utf8")};return{dispatch:function(t){e.replacer&&(t=e.replacer(t));var n=typeof t;return null===t&&(n="null"),this["_"+n](t)},_object:function(t){var o=/\[object (.*)\]/i,u=Object.prototype.toString.call(t),a=o.exec(u);a=a?a[1]:"unknown:["+u+"]",a=a.toLowerCase();var f=null;if((f=n.indexOf(t))>=0)return this.dispatch("[CIRCULAR:"+f+"]");if(n.push(t),"undefined"!=typeof i&&i.isBuffer&&i.isBuffer(t))return r("buffer:"),r(t);if("object"===a||"function"===a){var s=Object.keys(t);e.unorderedObjects&&(s=s.sort()),e.respectType===!1||p(t)||s.splice(0,0,"prototype","__proto__","constructor"),e.excludeKeys&&(s=s.filter(function(t){return!e.excludeKeys(t)})),r("object:"+s.length+":");var c=this;return s.forEach(function(n){c.dispatch(n),r(":"),e.excludeValues||c.dispatch(t[n]),r(",")})}if(!this["_"+a]){if(e.ignoreUnknown)return r("["+a+"]");throw new Error('Unknown object type "'+a+'"')}this["_"+a](t)},_array:function(t,o){o="undefined"!=typeof o?o:e.unorderedArrays!==!1;var i=this;if(r("array:"+t.length+":"),!o||t.length<=1)return t.forEach(function(e){return i.dispatch(e)});var u=[],a=t.map(function(t){var r=new w,o=n.slice(),i=g(e,r,o);return i.dispatch(t),u=u.concat(o.slice(n.length)),r.read().toString()});return n=n.concat(u),a.sort(),this._array(a,!1)},_date:function(e){return r("date:"+e.toJSON())},_symbol:function(e){return r("symbol:"+e.toString())},_error:function(e){return r("error:"+e.toString())},_boolean:function(e){return r("bool:"+e.toString())},_string:function(e){r("string:"+e.length+":"),r(e)},_function:function(t){r("fn:"),p(t)?this.dispatch("[native]"):this.dispatch(t.toString()),e.respectFunctionNames!==!1&&this.dispatch("function-name:"+String(t.name)),e.respectFunctionProperties&&this._object(t)},_number:function(e){return r("number:"+e.toString())},_xml:function(e){return r("xml:"+e.toString())},_null:function(){return r("Null")},_undefined:function(){return r("Undefined")},_regexp:function(e){return r("regex:"+e.toString())},_uint8array:function(e){return r("uint8array:"),this.dispatch(Array.prototype.slice.call(e))},_uint8clampedarray:function(e){return r("uint8clampedarray:"),this.dispatch(Array.prototype.slice.call(e))},_int8array:function(e){return r("uint8array:"),this.dispatch(Array.prototype.slice.call(e))},_uint16array:function(e){return r("uint16array:"),this.dispatch(Array.prototype.slice.call(e))},_int16array:function(e){return r("uint16array:"),this.dispatch(Array.prototype.slice.call(e))},_uint32array:function(e){return r("uint32array:"),this.dispatch(Array.prototype.slice.call(e))},_int32array:function(e){return r("uint32array:"),this.dispatch(Array.prototype.slice.call(e))},_float32array:function(e){return r("float32array:"),this.dispatch(Array.prototype.slice.call(e))},_float64array:function(e){return r("float64array:"),this.dispatch(Array.prototype.slice.call(e))},_arraybuffer:function(e){return r("arraybuffer:"),this.dispatch(new Uint8Array(e))},_url:function(e){return r("url:"+e.toString(),"utf8")},_map:function(t){r("map:");var n=Array.from(t);return this._array(n,e.unorderedSets!==!1)},_set:function(t){r("set:");var n=Array.from(t);return this._array(n,e.unorderedSets!==!1)},_blob:function(){if(e.ignoreUnknown)return r("[blob]");throw Error('Hashing Blob objects is currently not supported\n(see https://github.com/puleos/object-hash/issues/26)\nUse "options.replacer" or "options.ignoreUnknown"\n')},_domwindow:function(){return r("domwindow")},_process:function(){return r("process")},_timer:function(){return r("timer")},_pipe:function(){return r("pipe")},_tcp:function(){return r("tcp")},_udp:function(){return r("udp")},_tty:function(){return r("tty")},_statwatcher:function(){return r("statwatcher")},_securecontext:function(){return r("securecontext")},_connection:function(){return r("connection")},_zlib:function(){return r("zlib")},_context:function(){return r("context")},_nodescript:function(){return r("nodescript")},_httpparser:function(){return r("httpparser")},_dataview:function(){return r("dataview")},_signal:function(){return r("signal")},_fsevent:function(){return r("fsevent")},_tlswrap:function(){return r("tlswrap")}}}function w(){return{buf:"",write:function(e){this.buf+=e},end:function(e){this.buf+=e},read:function(){return this.buf}}}var b=e("crypto");n=t.exports=d,n.sha1=function(e){return d(e)},n.keys=function(e){return d(e,{excludeValues:!0,algorithm:"sha1",encoding:"hex"})},n.MD5=function(e){return d(e,{algorithm:"md5",encoding:"hex"})},n.keysMD5=function(e){return d(e,{algorithm:"md5",encoding:"hex",excludeValues:!0})};var v=b.getHashes?b.getHashes().slice():["sha1","md5"];v.push("passthrough");var m=["buffer","hex","binary","base64"];n.writeToStream=function(e,t,n){return"undefined"==typeof n&&(n=t,t={}),t=h(e,t),g(t,n).dispatch(e)}}).call(this,e("lYpoI2"),"undefined"!=typeof self?self:"undefined"!=typeof window?window:{},e("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_5f1a2fc7.js","/")},{buffer:3,crypto:5,lYpoI2:10}],2:[function(e,t,n){(function(e,t,r,o,i,u,a,f,s){var c="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";!function(e){"use strict";function t(e){var t=e.charCodeAt(0);return t===i||t===l?62:t===u||t===d?63:t<a?-1:t<a+10?t-a+26+26:t<s+26?t-s:t<f+26?t-f+26:void 0}function n(e){function n(e){s[l++]=e}var r,i,u,a,f,s;if(e.length%4>0)throw new Error("Invalid string. Length must be a multiple of 4");var c=e.length;f="="===e.charAt(c-2)?2:"="===e.charAt(c-1)?1:0,s=new o(3*e.length/4-f),u=f>0?e.length-4:e.length;var l=0;for(r=0,i=0;r<u;r+=4,i+=3)a=t(e.charAt(r))<<18|t(e.charAt(r+1))<<12|t(e.charAt(r+2))<<6|t(e.charAt(r+3)),n((16711680&a)>>16),n((65280&a)>>8),n(255&a);return 2===f?(a=t(e.charAt(r))<<2|t(e.charAt(r+1))>>4,n(255&a)):1===f&&(a=t(e.charAt(r))<<10|t(e.charAt(r+1))<<4|t(e.charAt(r+2))>>2,n(a>>8&255),n(255&a)),s}function r(e){function t(e){return c.charAt(e)}function n(e){return t(e>>18&63)+t(e>>12&63)+t(e>>6&63)+t(63&e)}var r,o,i,u=e.length%3,a="";for(r=0,i=e.length-u;r<i;r+=3)o=(e[r]<<16)+(e[r+1]<<8)+e[r+2],a+=n(o);switch(u){case 1:o=e[e.length-1],a+=t(o>>2),a+=t(o<<4&63),a+="==";break;case 2:o=(e[e.length-2]<<8)+e[e.length-1],a+=t(o>>10),a+=t(o>>4&63),a+=t(o<<2&63),a+="="}return a}var o="undefined"!=typeof Uint8Array?Uint8Array:Array,i="+".charCodeAt(0),u="/".charCodeAt(0),a="0".charCodeAt(0),f="a".charCodeAt(0),s="A".charCodeAt(0),l="-".charCodeAt(0),d="_".charCodeAt(0);e.toByteArray=n,e.fromByteArray=r}("undefined"==typeof n?this.base64js={}:n)}).call(this,e("lYpoI2"),"undefined"!=typeof self?self:"undefined"!=typeof window?window:{},e("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/node_modules/gulp-browserify/node_modules/base64-js/lib/b64.js","/node_modules/gulp-browserify/node_modules/base64-js/lib")},{buffer:3,lYpoI2:10}],3:[function(e,t,n){(function(t,r,o,i,u,a,f,s,c){function o(e,t,n){if(!(this instanceof o))return new o(e,t,n);var r=typeof e;if("base64"===t&&"string"===r)for(e=N(e);e.length%4!==0;)e+="=";var i;if("number"===r)i=F(e);else if("string"===r)i=o.byteLength(e,t);else{if("object"!==r)throw new Error("First argument needs to be a number, array or string.");i=F(e.length)}var u;o._useTypedArrays?u=o._augment(new Uint8Array(i)):(u=this,u.length=i,u._isBuffer=!0);var a;if(o._useTypedArrays&&"number"==typeof e.byteLength)u._set(e);else if(O(e))for(a=0;a<i;a++)o.isBuffer(e)?u[a]=e.readUInt8(a):u[a]=e[a];else if("string"===r)u.write(e,0,t);else if("number"===r&&!o._useTypedArrays&&!n)for(a=0;a<i;a++)u[a]=0;return u}function l(e,t,n,r){n=Number(n)||0;var i=e.length-n;r?(r=Number(r),r>i&&(r=i)):r=i;var u=t.length;$(u%2===0,"Invalid hex string"),r>u/2&&(r=u/2);for(var a=0;a<r;a++){var f=parseInt(t.substr(2*a,2),16);$(!isNaN(f),"Invalid hex string"),e[n+a]=f}return o._charsWritten=2*a,a}function d(e,t,n,r){var i=o._charsWritten=W(V(t),e,n,r);return i}function h(e,t,n,r){var i=o._charsWritten=W(q(t),e,n,r);return i}function p(e,t,n,r){return h(e,t,n,r)}function y(e,t,n,r){var i=o._charsWritten=W(R(t),e,n,r);return i}function g(e,t,n,r){var i=o._charsWritten=W(P(t),e,n,r);return i}function w(e,t,n){return 0===t&&n===e.length?G.fromByteArray(e):G.fromByteArray(e.slice(t,n))}function b(e,t,n){var r="",o="";n=Math.min(e.length,n);for(var i=t;i<n;i++)e[i]<=127?(r+=J(o)+String.fromCharCode(e[i]),o=""):o+="%"+e[i].toString(16);return r+J(o)}function v(e,t,n){var r="";n=Math.min(e.length,n);for(var o=t;o<n;o++)r+=String.fromCharCode(e[o]);return r}function m(e,t,n){return v(e,t,n)}function _(e,t,n){var r=e.length;(!t||t<0)&&(t=0),(!n||n<0||n>r)&&(n=r);for(var o="",i=t;i<n;i++)o+=H(e[i]);return o}function E(e,t,n){for(var r=e.slice(t,n),o="",i=0;i<r.length;i+=2)o+=String.fromCharCode(r[i]+256*r[i+1]);return o}function I(e,t,n,r){r||($("boolean"==typeof n,"missing or invalid endian"),$(void 0!==t&&null!==t,"missing offset"),$(t+1<e.length,"Trying to read beyond buffer length"));var o=e.length;if(!(t>=o)){var i;return n?(i=e[t],t+1<o&&(i|=e[t+1]<<8)):(i=e[t]<<8,t+1<o&&(i|=e[t+1])),i}}function A(e,t,n,r){r||($("boolean"==typeof n,"missing or invalid endian"),$(void 0!==t&&null!==t,"missing offset"),$(t+3<e.length,"Trying to read beyond buffer length"));var o=e.length;if(!(t>=o)){var i;return n?(t+2<o&&(i=e[t+2]<<16),t+1<o&&(i|=e[t+1]<<8),i|=e[t],t+3<o&&(i+=e[t+3]<<24>>>0)):(t+1<o&&(i=e[t+1]<<16),t+2<o&&(i|=e[t+2]<<8),t+3<o&&(i|=e[t+3]),i+=e[t]<<24>>>0),i}}function B(e,t,n,r){r||($("boolean"==typeof n,"missing or invalid endian"),$(void 0!==t&&null!==t,"missing offset"),$(t+1<e.length,"Trying to read beyond buffer length"));var o=e.length;if(!(t>=o)){var i=I(e,t,n,!0),u=32768&i;return u?(65535-i+1)*-1:i}}function L(e,t,n,r){r||($("boolean"==typeof n,"missing or invalid endian"),$(void 0!==t&&null!==t,"missing offset"),$(t+3<e.length,"Trying to read beyond buffer length"));var o=e.length;if(!(t>=o)){var i=A(e,t,n,!0),u=2147483648&i;return u?(4294967295-i+1)*-1:i}}function U(e,t,n,r){return r||($("boolean"==typeof n,"missing or invalid endian"),$(t+3<e.length,"Trying to read beyond buffer length")),Q.read(e,t,n,23,4)}function x(e,t,n,r){return r||($("boolean"==typeof n,"missing or invalid endian"),$(t+7<e.length,"Trying to read beyond buffer length")),Q.read(e,t,n,52,8)}function S(e,t,n,r,o){o||($(void 0!==t&&null!==t,"missing value"),$("boolean"==typeof r,"missing or invalid endian"),$(void 0!==n&&null!==n,"missing offset"),$(n+1<e.length,"trying to write beyond buffer length"),K(t,65535));var i=e.length;if(!(n>=i))for(var u=0,a=Math.min(i-n,2);u<a;u++)e[n+u]=(t&255<<8*(r?u:1-u))>>>8*(r?u:1-u)}function j(e,t,n,r,o){o||($(void 0!==t&&null!==t,"missing value"),$("boolean"==typeof r,"missing or invalid endian"),$(void 0!==n&&null!==n,"missing offset"),$(n+3<e.length,"trying to write beyond buffer length"),K(t,4294967295));var i=e.length;if(!(n>=i))for(var u=0,a=Math.min(i-n,4);u<a;u++)e[n+u]=t>>>8*(r?u:3-u)&255}function C(e,t,n,r,o){o||($(void 0!==t&&null!==t,"missing value"),$("boolean"==typeof r,"missing or invalid endian"),$(void 0!==n&&null!==n,"missing offset"),$(n+1<e.length,"Trying to write beyond buffer length"),z(t,32767,-32768));var i=e.length;n>=i||(t>=0?S(e,t,n,r,o):S(e,65535+t+1,n,r,o))}function k(e,t,n,r,o){o||($(void 0!==t&&null!==t,"missing value"),$("boolean"==typeof r,"missing or invalid endian"),$(void 0!==n&&null!==n,"missing offset"),$(n+3<e.length,"Trying to write beyond buffer length"),z(t,2147483647,-2147483648));var i=e.length;n>=i||(t>=0?j(e,t,n,r,o):j(e,4294967295+t+1,n,r,o))}function T(e,t,n,r,o){o||($(void 0!==t&&null!==t,"missing value"),$("boolean"==typeof r,"missing or invalid endian"),$(void 0!==n&&null!==n,"missing offset"),$(n+3<e.length,"Trying to write beyond buffer length"),X(t,3.4028234663852886e38,-3.4028234663852886e38));var i=e.length;n>=i||Q.write(e,t,n,r,23,4)}function M(e,t,n,r,o){o||($(void 0!==t&&null!==t,"missing value"),$("boolean"==typeof r,"missing or invalid endian"),$(void 0!==n&&null!==n,"missing offset"),$(n+7<e.length,"Trying to write beyond buffer length"),X(t,1.7976931348623157e308,-1.7976931348623157e308));var i=e.length;n>=i||Q.write(e,t,n,r,52,8)}function N(e){return e.trim?e.trim():e.replace(/^\s+|\s+$/g,"")}function Y(e,t,n){return"number"!=typeof e?n:(e=~~e,e>=t?t:e>=0?e:(e+=t,e>=0?e:0))}function F(e){return e=~~Math.ceil(+e),e<0?0:e}function D(e){return(Array.isArray||function(e){return"[object Array]"===Object.prototype.toString.call(e)})(e)}function O(e){return D(e)||o.isBuffer(e)||e&&"object"==typeof e&&"number"==typeof e.length}function H(e){return e<16?"0"+e.toString(16):e.toString(16)}function V(e){for(var t=[],n=0;n<e.length;n++){var r=e.charCodeAt(n);if(r<=127)t.push(e.charCodeAt(n));else{var o=n;r>=55296&&r<=57343&&n++;for(var i=encodeURIComponent(e.slice(o,n+1)).substr(1).split("%"),u=0;u<i.length;u++)t.push(parseInt(i[u],16))}}return t}function q(e){for(var t=[],n=0;n<e.length;n++)t.push(255&e.charCodeAt(n));return t}function P(e){for(var t,n,r,o=[],i=0;i<e.length;i++)t=e.charCodeAt(i),n=t>>8,r=t%256,o.push(r),o.push(n);return o}function R(e){return G.toByteArray(e)}function W(e,t,n,r){for(var o=0;o<r&&!(o+n>=t.length||o>=e.length);o++)t[o+n]=e[o];return o}function J(e){try{return decodeURIComponent(e)}catch(t){return String.fromCharCode(65533)}}function K(e,t){$("number"==typeof e,"cannot write a non-number as a number"),$(e>=0,"specified a negative value for writing an unsigned value"),$(e<=t,"value is larger than maximum value for type"),$(Math.floor(e)===e,"value has a fractional component")}function z(e,t,n){$("number"==typeof e,"cannot write a non-number as a number"),$(e<=t,"value larger than maximum allowed value"),$(e>=n,"value smaller than minimum allowed value"),$(Math.floor(e)===e,"value has a fractional component")}function X(e,t,n){$("number"==typeof e,"cannot write a non-number as a number"),$(e<=t,"value larger than maximum allowed value"),$(e>=n,"value smaller than minimum allowed value")}function $(e,t){if(!e)throw new Error(t||"Failed assertion")}var G=e("base64-js"),Q=e("ieee754");n.Buffer=o,n.SlowBuffer=o,n.INSPECT_MAX_BYTES=50,o.poolSize=8192,o._useTypedArrays=function(){try{var e=new ArrayBuffer(0),t=new Uint8Array(e);return t.foo=function(){return 42},42===t.foo()&&"function"==typeof t.subarray}catch(n){return!1}}(),o.isEncoding=function(e){switch(String(e).toLowerCase()){case"hex":case"utf8":case"utf-8":case"ascii":case"binary":case"base64":case"raw":case"ucs2":case"ucs-2":case"utf16le":case"utf-16le":return!0;default:return!1}},o.isBuffer=function(e){return!(null===e||void 0===e||!e._isBuffer)},o.byteLength=function(e,t){var n;switch(e+="",t||"utf8"){case"hex":n=e.length/2;break;case"utf8":case"utf-8":n=V(e).length;break;case"ascii":case"binary":case"raw":n=e.length;break;case"base64":n=R(e).length;break;case"ucs2":case"ucs-2":case"utf16le":case"utf-16le":n=2*e.length;break;default:throw new Error("Unknown encoding")}return n},o.concat=function(e,t){if($(D(e),"Usage: Buffer.concat(list, [totalLength])\nlist should be an Array."),0===e.length)return new o(0);if(1===e.length)return e[0];var n;if("number"!=typeof t)for(t=0,n=0;n<e.length;n++)t+=e[n].length;var r=new o(t),i=0;for(n=0;n<e.length;n++){var u=e[n];u.copy(r,i),i+=u.length}return r},o.prototype.write=function(e,t,n,r){if(isFinite(t))isFinite(n)||(r=n,n=void 0);else{var o=r;r=t,t=n,n=o}t=Number(t)||0;var i=this.length-t;n?(n=Number(n),n>i&&(n=i)):n=i,r=String(r||"utf8").toLowerCase();var u;switch(r){case"hex":u=l(this,e,t,n);break;case"utf8":case"utf-8":u=d(this,e,t,n);break;case"ascii":u=h(this,e,t,n);break;case"binary":u=p(this,e,t,n);break;case"base64":u=y(this,e,t,n);break;case"ucs2":case"ucs-2":case"utf16le":case"utf-16le":u=g(this,e,t,n);break;default:throw new Error("Unknown encoding")}return u},o.prototype.toString=function(e,t,n){var r=this;if(e=String(e||"utf8").toLowerCase(),t=Number(t)||0,n=void 0!==n?Number(n):n=r.length,n===t)return"";var o;switch(e){case"hex":o=_(r,t,n);break;case"utf8":case"utf-8":o=b(r,t,n);break;case"ascii":o=v(r,t,n);break;case"binary":o=m(r,t,n);break;case"base64":o=w(r,t,n);break;case"ucs2":case"ucs-2":case"utf16le":case"utf-16le":o=E(r,t,n);break;default:throw new Error("Unknown encoding")}return o},o.prototype.toJSON=function(){return{type:"Buffer",data:Array.prototype.slice.call(this._arr||this,0)}},o.prototype.copy=function(e,t,n,r){var i=this;if(n||(n=0),r||0===r||(r=this.length),t||(t=0),r!==n&&0!==e.length&&0!==i.length){$(r>=n,"sourceEnd < sourceStart"),$(t>=0&&t<e.length,"targetStart out of bounds"),$(n>=0&&n<i.length,"sourceStart out of bounds"),$(r>=0&&r<=i.length,"sourceEnd out of bounds"),r>this.length&&(r=this.length),e.length-t<r-n&&(r=e.length-t+n);var u=r-n;if(u<100||!o._useTypedArrays)for(var a=0;a<u;a++)e[a+t]=this[a+n];else e._set(this.subarray(n,n+u),t)}},o.prototype.slice=function(e,t){var n=this.length;if(e=Y(e,n,0),t=Y(t,n,n),o._useTypedArrays)return o._augment(this.subarray(e,t));for(var r=t-e,i=new o(r,(void 0),(!0)),u=0;u<r;u++)i[u]=this[u+e];return i},o.prototype.get=function(e){return console.log(".get() is deprecated. Access using array indexes instead."),this.readUInt8(e)},o.prototype.set=function(e,t){return console.log(".set() is deprecated. Access using array indexes instead."),this.writeUInt8(e,t)},o.prototype.readUInt8=function(e,t){if(t||($(void 0!==e&&null!==e,"missing offset"),$(e<this.length,"Trying to read beyond buffer length")),!(e>=this.length))return this[e]},o.prototype.readUInt16LE=function(e,t){return I(this,e,!0,t)},o.prototype.readUInt16BE=function(e,t){return I(this,e,!1,t)},o.prototype.readUInt32LE=function(e,t){return A(this,e,!0,t)},o.prototype.readUInt32BE=function(e,t){return A(this,e,!1,t)},o.prototype.readInt8=function(e,t){if(t||($(void 0!==e&&null!==e,"missing offset"),$(e<this.length,"Trying to read beyond buffer length")),!(e>=this.length)){var n=128&this[e];return n?(255-this[e]+1)*-1:this[e]}},o.prototype.readInt16LE=function(e,t){return B(this,e,!0,t)},o.prototype.readInt16BE=function(e,t){return B(this,e,!1,t)},o.prototype.readInt32LE=function(e,t){return L(this,e,!0,t)},o.prototype.readInt32BE=function(e,t){return L(this,e,!1,t)},o.prototype.readFloatLE=function(e,t){return U(this,e,!0,t)},o.prototype.readFloatBE=function(e,t){return U(this,e,!1,t)},o.prototype.readDoubleLE=function(e,t){return x(this,e,!0,t)},o.prototype.readDoubleBE=function(e,t){return x(this,e,!1,t)},o.prototype.writeUInt8=function(e,t,n){n||($(void 0!==e&&null!==e,"missing value"),$(void 0!==t&&null!==t,"missing offset"),$(t<this.length,"trying to write beyond buffer length"),K(e,255)),t>=this.length||(this[t]=e)},o.prototype.writeUInt16LE=function(e,t,n){S(this,e,t,!0,n)},o.prototype.writeUInt16BE=function(e,t,n){S(this,e,t,!1,n)},o.prototype.writeUInt32LE=function(e,t,n){j(this,e,t,!0,n)},o.prototype.writeUInt32BE=function(e,t,n){j(this,e,t,!1,n)},o.prototype.writeInt8=function(e,t,n){n||($(void 0!==e&&null!==e,"missing value"),$(void 0!==t&&null!==t,"missing offset"),$(t<this.length,"Trying to write beyond buffer length"),z(e,127,-128)),t>=this.length||(e>=0?this.writeUInt8(e,t,n):this.writeUInt8(255+e+1,t,n))},o.prototype.writeInt16LE=function(e,t,n){C(this,e,t,!0,n)},o.prototype.writeInt16BE=function(e,t,n){C(this,e,t,!1,n)},o.prototype.writeInt32LE=function(e,t,n){k(this,e,t,!0,n)},o.prototype.writeInt32BE=function(e,t,n){k(this,e,t,!1,n)},o.prototype.writeFloatLE=function(e,t,n){T(this,e,t,!0,n)},o.prototype.writeFloatBE=function(e,t,n){T(this,e,t,!1,n)},o.prototype.writeDoubleLE=function(e,t,n){M(this,e,t,!0,n)},o.prototype.writeDoubleBE=function(e,t,n){M(this,e,t,!1,n)},o.prototype.fill=function(e,t,n){if(e||(e=0),t||(t=0),n||(n=this.length),"string"==typeof e&&(e=e.charCodeAt(0)),$("number"==typeof e&&!isNaN(e),"value is not a number"),$(n>=t,"end < start"),n!==t&&0!==this.length){$(t>=0&&t<this.length,"start out of bounds"),$(n>=0&&n<=this.length,"end out of bounds");for(var r=t;r<n;r++)this[r]=e}},o.prototype.inspect=function(){for(var e=[],t=this.length,r=0;r<t;r++)if(e[r]=H(this[r]),r===n.INSPECT_MAX_BYTES){e[r+1]="...";break}return"<Buffer "+e.join(" ")+">"},o.prototype.toArrayBuffer=function(){if("undefined"!=typeof Uint8Array){if(o._useTypedArrays)return new o(this).buffer;for(var e=new Uint8Array(this.length),t=0,n=e.length;t<n;t+=1)e[t]=this[t];return e.buffer}throw new Error("Buffer.toArrayBuffer not supported in this browser")};var Z=o.prototype;o._augment=function(e){return e._isBuffer=!0,e._get=e.get,e._set=e.set,e.get=Z.get,e.set=Z.set,e.write=Z.write,e.toString=Z.toString,e.toLocaleString=Z.toString,e.toJSON=Z.toJSON,e.copy=Z.copy,e.slice=Z.slice,e.readUInt8=Z.readUInt8,e.readUInt16LE=Z.readUInt16LE,e.readUInt16BE=Z.readUInt16BE,e.readUInt32LE=Z.readUInt32LE,e.readUInt32BE=Z.readUInt32BE,e.readInt8=Z.readInt8,e.readInt16LE=Z.readInt16LE,e.readInt16BE=Z.readInt16BE,e.readInt32LE=Z.readInt32LE,e.readInt32BE=Z.readInt32BE,e.readFloatLE=Z.readFloatLE,e.readFloatBE=Z.readFloatBE,e.readDoubleLE=Z.readDoubleLE,e.readDoubleBE=Z.readDoubleBE,e.writeUInt8=Z.writeUInt8,e.writeUInt16LE=Z.writeUInt16LE,e.writeUInt16BE=Z.writeUInt16BE,e.writeUInt32LE=Z.writeUInt32LE,e.writeUInt32BE=Z.writeUInt32BE,e.writeInt8=Z.writeInt8,e.writeInt16LE=Z.writeInt16LE,e.writeInt16BE=Z.writeInt16BE,e.writeInt32LE=Z.writeInt32LE,e.writeInt32BE=Z.writeInt32BE,e.writeFloatLE=Z.writeFloatLE,e.writeFloatBE=Z.writeFloatBE,e.writeDoubleLE=Z.writeDoubleLE,e.writeDoubleBE=Z.writeDoubleBE,e.fill=Z.fill,e.inspect=Z.inspect,e.toArrayBuffer=Z.toArrayBuffer,e}}).call(this,e("lYpoI2"),"undefined"!=typeof self?self:"undefined"!=typeof window?window:{},e("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/node_modules/gulp-browserify/node_modules/buffer/index.js","/node_modules/gulp-browserify/node_modules/buffer")},{"base64-js":2,buffer:3,ieee754:11,lYpoI2:10}],4:[function(e,t,n){(function(n,r,o,i,u,a,f,s,c){function l(e,t){if(e.length%p!==0){var n=e.length+(p-e.length%p);e=o.concat([e,y],n)}for(var r=[],i=t?e.readInt32BE:e.readInt32LE,u=0;u<e.length;u+=p)r.push(i.call(e,u));return r}function d(e,t,n){for(var r=new o(t),i=n?r.writeInt32BE:r.writeInt32LE,u=0;u<e.length;u++)i.call(r,e[u],4*u,!0);return r}function h(e,t,n,r){o.isBuffer(e)||(e=new o(e));var i=t(l(e,r),e.length*g);return d(i,n,r)}var o=e("buffer").Buffer,p=4,y=new o(p);y.fill(0);var g=8;t.exports={hash:h}}).call(this,e("lYpoI2"),"undefined"!=typeof self?self:"undefined"!=typeof window?window:{},e("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/node_modules/gulp-browserify/node_modules/crypto-browserify/helpers.js","/node_modules/gulp-browserify/node_modules/crypto-browserify")},{buffer:3,lYpoI2:10}],5:[function(e,t,n){(function(t,r,o,i,u,a,f,s,c){function l(e,t,n){o.isBuffer(t)||(t=new o(t)),o.isBuffer(n)||(n=new o(n)),t.length>m?t=e(t):t.length<m&&(t=o.concat([t,_],m));for(var r=new o(m),i=new o(m),u=0;u<m;u++)r[u]=54^t[u],i[u]=92^t[u];var a=e(o.concat([r,n]));return e(o.concat([i,a]))}function d(e,t){e=e||"sha1";var n=v[e],r=[],i=0;return n||h("algorithm:",e,"is not yet supported"),{update:function(e){return o.isBuffer(e)||(e=new o(e)),r.push(e),i+=e.length,this},digest:function(e){var i=o.concat(r),u=t?l(n,t,i):n(i);return r=null,e?u.toString(e):u}}}function h(){var e=[].slice.call(arguments).join(" ");throw new Error([e,"we accept pull requests","http://github.com/dominictarr/crypto-browserify"].join("\n"))}function p(e,t){for(var n in e)t(e[n],n)}var o=e("buffer").Buffer,y=e("./sha"),g=e("./sha256"),w=e("./rng"),b=e("./md5"),v={sha1:y,sha256:g,md5:b},m=64,_=new o(m);_.fill(0),n.createHash=function(e){return d(e)},n.createHmac=function(e,t){return d(e,t)},n.randomBytes=function(e,t){if(!t||!t.call)return new o(w(e));try{t.call(this,void 0,new o(w(e)))}catch(n){t(n)}},p(["createCredentials","createCipher","createCipheriv","createDecipher","createDecipheriv","createSign","createVerify","createDiffieHellman","pbkdf2"],function(e){n[e]=function(){h("sorry,",e,"is not implemented yet")}})}).call(this,e("lYpoI2"),"undefined"!=typeof self?self:"undefined"!=typeof window?window:{},e("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/node_modules/gulp-browserify/node_modules/crypto-browserify/index.js","/node_modules/gulp-browserify/node_modules/crypto-browserify")},{"./md5":6,"./rng":7,"./sha":8,"./sha256":9,buffer:3,lYpoI2:10}],6:[function(e,t,n){(function(n,r,o,i,u,a,f,s,c){function l(e,t){e[t>>5]|=128<<t%32,e[(t+64>>>9<<4)+14]=t;for(var n=1732584193,r=-271733879,o=-1732584194,i=271733878,u=0;u<e.length;u+=16){var a=n,f=r,s=o,c=i;n=h(n,r,o,i,e[u+0],7,-680876936),i=h(i,n,r,o,e[u+1],12,-389564586),o=h(o,i,n,r,e[u+2],17,606105819),r=h(r,o,i,n,e[u+3],22,-1044525330),n=h(n,r,o,i,e[u+4],7,-176418897),i=h(i,n,r,o,e[u+5],12,1200080426),o=h(o,i,n,r,e[u+6],17,-1473231341),r=h(r,o,i,n,e[u+7],22,-45705983),n=h(n,r,o,i,e[u+8],7,1770035416),i=h(i,n,r,o,e[u+9],12,-1958414417),o=h(o,i,n,r,e[u+10],17,-42063),r=h(r,o,i,n,e[u+11],22,-1990404162),n=h(n,r,o,i,e[u+12],7,1804603682),i=h(i,n,r,o,e[u+13],12,-40341101),o=h(o,i,n,r,e[u+14],17,-1502002290),r=h(r,o,i,n,e[u+15],22,1236535329),n=p(n,r,o,i,e[u+1],5,-165796510),i=p(i,n,r,o,e[u+6],9,-1069501632),o=p(o,i,n,r,e[u+11],14,643717713),r=p(r,o,i,n,e[u+0],20,-373897302),n=p(n,r,o,i,e[u+5],5,-701558691),i=p(i,n,r,o,e[u+10],9,38016083),o=p(o,i,n,r,e[u+15],14,-660478335),r=p(r,o,i,n,e[u+4],20,-405537848),n=p(n,r,o,i,e[u+9],5,568446438),i=p(i,n,r,o,e[u+14],9,-1019803690),o=p(o,i,n,r,e[u+3],14,-187363961),r=p(r,o,i,n,e[u+8],20,1163531501),n=p(n,r,o,i,e[u+13],5,-1444681467),i=p(i,n,r,o,e[u+2],9,-51403784),o=p(o,i,n,r,e[u+7],14,1735328473),r=p(r,o,i,n,e[u+12],20,-1926607734),n=y(n,r,o,i,e[u+5],4,-378558),i=y(i,n,r,o,e[u+8],11,-2022574463),o=y(o,i,n,r,e[u+11],16,1839030562),r=y(r,o,i,n,e[u+14],23,-35309556),n=y(n,r,o,i,e[u+1],4,-1530992060),i=y(i,n,r,o,e[u+4],11,1272893353),o=y(o,i,n,r,e[u+7],16,-155497632),r=y(r,o,i,n,e[u+10],23,-1094730640),n=y(n,r,o,i,e[u+13],4,681279174),i=y(i,n,r,o,e[u+0],11,-358537222),o=y(o,i,n,r,e[u+3],16,-722521979),r=y(r,o,i,n,e[u+6],23,76029189),n=y(n,r,o,i,e[u+9],4,-640364487),i=y(i,n,r,o,e[u+12],11,-421815835),o=y(o,i,n,r,e[u+15],16,530742520),r=y(r,o,i,n,e[u+2],23,-995338651),n=g(n,r,o,i,e[u+0],6,-198630844),i=g(i,n,r,o,e[u+7],10,1126891415),o=g(o,i,n,r,e[u+14],15,-1416354905),r=g(r,o,i,n,e[u+5],21,-57434055),n=g(n,r,o,i,e[u+12],6,1700485571),i=g(i,n,r,o,e[u+3],10,-1894986606),o=g(o,i,n,r,e[u+10],15,-1051523),r=g(r,o,i,n,e[u+1],21,-2054922799),n=g(n,r,o,i,e[u+8],6,1873313359),i=g(i,n,r,o,e[u+15],10,-30611744),o=g(o,i,n,r,e[u+6],15,-1560198380),r=g(r,o,i,n,e[u+13],21,1309151649),n=g(n,r,o,i,e[u+4],6,-145523070),i=g(i,n,r,o,e[u+11],10,-1120210379),o=g(o,i,n,r,e[u+2],15,718787259),r=g(r,o,i,n,e[u+9],21,-343485551),n=w(n,a),r=w(r,f),o=w(o,s),i=w(i,c)}return Array(n,r,o,i)}function d(e,t,n,r,o,i){return w(b(w(w(t,e),w(r,i)),o),n)}function h(e,t,n,r,o,i,u){return d(t&n|~t&r,e,t,o,i,u)}function p(e,t,n,r,o,i,u){return d(t&r|n&~r,e,t,o,i,u)}function y(e,t,n,r,o,i,u){return d(t^n^r,e,t,o,i,u)}function g(e,t,n,r,o,i,u){return d(n^(t|~r),e,t,o,i,u)}function w(e,t){var n=(65535&e)+(65535&t),r=(e>>16)+(t>>16)+(n>>16);return r<<16|65535&n}function b(e,t){return e<<t|e>>>32-t}var v=e("./helpers");t.exports=function(e){return v.hash(e,l,16)}}).call(this,e("lYpoI2"),"undefined"!=typeof self?self:"undefined"!=typeof window?window:{},e("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/node_modules/gulp-browserify/node_modules/crypto-browserify/md5.js","/node_modules/gulp-browserify/node_modules/crypto-browserify")},{"./helpers":4,buffer:3,lYpoI2:10}],7:[function(e,t,n){(function(e,n,r,o,i,u,a,f,s){!function(){var e,n,r=this;e=function(e){for(var t,t,n=new Array(e),r=0;r<e;r++)0==(3&r)&&(t=4294967296*Math.random()),n[r]=t>>>((3&r)<<3)&255;return n},r.crypto&&crypto.getRandomValues&&(n=function(e){var t=new Uint8Array(e);return crypto.getRandomValues(t),t}),t.exports=n||e}()}).call(this,e("lYpoI2"),"undefined"!=typeof self?self:"undefined"!=typeof window?window:{},e("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/node_modules/gulp-browserify/node_modules/crypto-browserify/rng.js","/node_modules/gulp-browserify/node_modules/crypto-browserify")},{buffer:3,lYpoI2:10}],8:[function(e,t,n){(function(n,r,o,i,u,a,f,s,c){function l(e,t){e[t>>5]|=128<<24-t%32,e[(t+64>>9<<4)+15]=t;for(var n=Array(80),r=1732584193,o=-271733879,i=-1732584194,u=271733878,a=-1009589776,f=0;f<e.length;f+=16){for(var s=r,c=o,l=i,g=u,w=a,b=0;b<80;b++){b<16?n[b]=e[f+b]:n[b]=y(n[b-3]^n[b-8]^n[b-14]^n[b-16],1);var v=p(p(y(r,5),d(b,o,i,u)),p(p(a,n[b]),h(b)));a=u,u=i,i=y(o,30),o=r,r=v}r=p(r,s),o=p(o,c),i=p(i,l),u=p(u,g),a=p(a,w)}return Array(r,o,i,u,a)}function d(e,t,n,r){return e<20?t&n|~t&r:e<40?t^n^r:e<60?t&n|t&r|n&r:t^n^r}function h(e){return e<20?1518500249:e<40?1859775393:e<60?-1894007588:-899497514}function p(e,t){var n=(65535&e)+(65535&t),r=(e>>16)+(t>>16)+(n>>16);return r<<16|65535&n}function y(e,t){return e<<t|e>>>32-t}var g=e("./helpers");t.exports=function(e){return g.hash(e,l,20,!0)}}).call(this,e("lYpoI2"),"undefined"!=typeof self?self:"undefined"!=typeof window?window:{},e("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/node_modules/gulp-browserify/node_modules/crypto-browserify/sha.js","/node_modules/gulp-browserify/node_modules/crypto-browserify")},{"./helpers":4,buffer:3,lYpoI2:10}],9:[function(e,t,n){(function(n,r,o,i,u,a,f,s,c){var l=e("./helpers"),d=function(e,t){var n=(65535&e)+(65535&t),r=(e>>16)+(t>>16)+(n>>16);return r<<16|65535&n},h=function(e,t){return e>>>t|e<<32-t},p=function(e,t){return e>>>t},y=function(e,t,n){return e&t^~e&n},g=function(e,t,n){return e&t^e&n^t&n},w=function(e){return h(e,2)^h(e,13)^h(e,22)},b=function(e){
+return h(e,6)^h(e,11)^h(e,25)},v=function(e){return h(e,7)^h(e,18)^p(e,3)},m=function(e){return h(e,17)^h(e,19)^p(e,10)},_=function(e,t){var n,r,o,i,u,a,f,s,c,l,h,p,_=new Array(1116352408,1899447441,3049323471,3921009573,961987163,1508970993,2453635748,2870763221,3624381080,310598401,607225278,1426881987,1925078388,2162078206,2614888103,3248222580,3835390401,4022224774,264347078,604807628,770255983,1249150122,1555081692,1996064986,2554220882,2821834349,2952996808,3210313671,3336571891,3584528711,113926993,338241895,666307205,773529912,1294757372,1396182291,1695183700,1986661051,2177026350,2456956037,2730485921,2820302411,3259730800,3345764771,3516065817,3600352804,4094571909,275423344,430227734,506948616,659060556,883997877,958139571,1322822218,1537002063,1747873779,1955562222,2024104815,2227730452,2361852424,2428436474,2756734187,3204031479,3329325298),E=new Array(1779033703,3144134277,1013904242,2773480762,1359893119,2600822924,528734635,1541459225),I=new Array(64);e[t>>5]|=128<<24-t%32,e[(t+64>>9<<4)+15]=t;for(var c=0;c<e.length;c+=16){n=E[0],r=E[1],o=E[2],i=E[3],u=E[4],a=E[5],f=E[6],s=E[7];for(var l=0;l<64;l++)l<16?I[l]=e[l+c]:I[l]=d(d(d(m(I[l-2]),I[l-7]),v(I[l-15])),I[l-16]),h=d(d(d(d(s,b(u)),y(u,a,f)),_[l]),I[l]),p=d(w(n),g(n,r,o)),s=f,f=a,a=u,u=d(i,h),i=o,o=r,r=n,n=d(h,p);E[0]=d(n,E[0]),E[1]=d(r,E[1]),E[2]=d(o,E[2]),E[3]=d(i,E[3]),E[4]=d(u,E[4]),E[5]=d(a,E[5]),E[6]=d(f,E[6]),E[7]=d(s,E[7])}return E};t.exports=function(e){return l.hash(e,_,32,!0)}}).call(this,e("lYpoI2"),"undefined"!=typeof self?self:"undefined"!=typeof window?window:{},e("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/node_modules/gulp-browserify/node_modules/crypto-browserify/sha256.js","/node_modules/gulp-browserify/node_modules/crypto-browserify")},{"./helpers":4,buffer:3,lYpoI2:10}],10:[function(e,t,n){(function(e,n,r,o,i,u,a,f,s){function c(){}var e=t.exports={};e.nextTick=function(){var e="undefined"!=typeof window&&window.setImmediate,t="undefined"!=typeof window&&window.postMessage&&window.addEventListener;if(e)return function(e){return window.setImmediate(e)};if(t){var n=[];return window.addEventListener("message",function(e){var t=e.source;if((t===window||null===t)&&"process-tick"===e.data&&(e.stopPropagation(),n.length>0)){var r=n.shift();r()}},!0),function(e){n.push(e),window.postMessage("process-tick","*")}}return function(e){setTimeout(e,0)}}(),e.title="browser",e.browser=!0,e.env={},e.argv=[],e.on=c,e.addListener=c,e.once=c,e.off=c,e.removeListener=c,e.removeAllListeners=c,e.emit=c,e.binding=function(e){throw new Error("process.binding is not supported")},e.cwd=function(){return"/"},e.chdir=function(e){throw new Error("process.chdir is not supported")}}).call(this,e("lYpoI2"),"undefined"!=typeof self?self:"undefined"!=typeof window?window:{},e("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/node_modules/gulp-browserify/node_modules/process/browser.js","/node_modules/gulp-browserify/node_modules/process")},{buffer:3,lYpoI2:10}],11:[function(e,t,n){(function(e,t,r,o,i,u,a,f,s){n.read=function(e,t,n,r,o){var i,u,a=8*o-r-1,f=(1<<a)-1,s=f>>1,c=-7,l=n?o-1:0,d=n?-1:1,h=e[t+l];for(l+=d,i=h&(1<<-c)-1,h>>=-c,c+=a;c>0;i=256*i+e[t+l],l+=d,c-=8);for(u=i&(1<<-c)-1,i>>=-c,c+=r;c>0;u=256*u+e[t+l],l+=d,c-=8);if(0===i)i=1-s;else{if(i===f)return u?NaN:(h?-1:1)*(1/0);u+=Math.pow(2,r),i-=s}return(h?-1:1)*u*Math.pow(2,i-r)},n.write=function(e,t,n,r,o,i){var u,a,f,s=8*i-o-1,c=(1<<s)-1,l=c>>1,d=23===o?Math.pow(2,-24)-Math.pow(2,-77):0,h=r?0:i-1,p=r?1:-1,y=t<0||0===t&&1/t<0?1:0;for(t=Math.abs(t),isNaN(t)||t===1/0?(a=isNaN(t)?1:0,u=c):(u=Math.floor(Math.log(t)/Math.LN2),t*(f=Math.pow(2,-u))<1&&(u--,f*=2),t+=u+l>=1?d/f:d*Math.pow(2,1-l),t*f>=2&&(u++,f/=2),u+l>=c?(a=0,u=c):u+l>=1?(a=(t*f-1)*Math.pow(2,o),u+=l):(a=t*Math.pow(2,l-1)*Math.pow(2,o),u=0));o>=8;e[n+h]=255&a,h+=p,a/=256,o-=8);for(u=u<<o|a,s+=o;s>0;e[n+h]=255&u,h+=p,u/=256,s-=8);e[n+h-p]|=128*y}}).call(this,e("lYpoI2"),"undefined"!=typeof self?self:"undefined"!=typeof window?window:{},e("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/node_modules/ieee754/index.js","/node_modules/ieee754")},{buffer:3,lYpoI2:10}]},{},[1])(1)});
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}],155:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -45117,7 +47814,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],153:[function(require,module,exports){
+},{}],156:[function(require,module,exports){
 /* eslint-disable no-undefined */
 
 var throttle = require('./throttle');
@@ -45140,7 +47837,7 @@ module.exports = function ( delay, atBegin, callback ) {
 	return callback === undefined ? throttle(delay, atBegin, false) : throttle(delay, callback, atBegin !== false);
 };
 
-},{"./throttle":154}],154:[function(require,module,exports){
+},{"./throttle":157}],157:[function(require,module,exports){
 /* eslint-disable no-undefined,no-param-reassign,no-shadow */
 
 /**
@@ -45233,7 +47930,7 @@ module.exports = function ( delay, noTrailing, callback, debounceMode ) {
 
 };
 
-},{}],155:[function(require,module,exports){
+},{}],158:[function(require,module,exports){
 (function (process){
 /**
   * vue-class-component v6.1.2
@@ -45430,7 +48127,7 @@ exports['default'] = Component$1;
 exports.createDecorator = createDecorator;
 
 }).call(this,require('_process'))
-},{"_process":152,"vue":157}],156:[function(require,module,exports){
+},{"_process":155,"vue":160}],159:[function(require,module,exports){
 var Vue // late bind
 var version
 var map = (window.__VUE_HOT_MAP__ = Object.create(null))
@@ -45660,7 +48357,7 @@ exports.reload = tryWrap(function (id, options) {
   })
 })
 
-},{}],157:[function(require,module,exports){
+},{}],160:[function(require,module,exports){
 (function (process,global){
 /*!
  * Vue.js v2.5.13
@@ -53587,7 +56284,7 @@ Vue$3.nextTick(function () {
 module.exports = Vue$3;
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"_process":152}],158:[function(require,module,exports){
+},{"_process":155}],161:[function(require,module,exports){
 var inserted = exports.cache = {}
 
 function noop () {}
@@ -53612,8 +56309,8 @@ exports.insert = function (css) {
   }
 }
 
-},{}],159:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".component_doc h3 {\n  padding-left: 10px;\n}\n.component_doc span.el-input-number__decrease {\n  height: calc(100% - 2px)\n}\n.component_doc span.el-input-number__decrease i.el-icon-minus {\n  line-height: 3\n}\n.component_doc span.el-input-number__increase {\n  height: calc(100% - 2px)\n}\n.component_doc span.el-input-number__increase i.el-icon-plus {\n  line-height: 3\n}\n.component_doc .input .cell {\n  text-align: center;\n}")
+},{}],162:[function(require,module,exports){
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".component_doc h3 {\n  padding-left: 10px;\n}\n.component_doc span.el-input-number__decrease {\n  height: calc(100% - 2px)\n}\n.component_doc span.el-input-number__decrease i.el-icon-minus {\n  line-height: 3\n}\n.component_doc span.el-input-number__increase {\n  height: calc(100% - 2px)\n}\n.component_doc span.el-input-number__increase i.el-icon-plus {\n  line-height: 3\n}\n.component_doc .input .cell {\n  text-align: center;\n}\n/* line 191, stdin */\n.component_doc .reiszer[data-v-ba1ef200] {\n  overflow: scroll;\n  position: relative;\n  outline: 1px solid rgba(0, 0, 0, 0.5); }\n  /* line 195, stdin */\n  .component_doc .reiszer .display[data-v-ba1ef200] {\n    display: none;\n    background-color: rgba(255, 255, 255, 0.5);\n    position: absolute;\n    right: 0;\n    top: 0;\n    padding-left: 1em; }\n    /* line 202, stdin */\n    .component_doc .reiszer .display i.el-icon-refresh[data-v-ba1ef200] {\n      cursor: pointer;\n      padding: 1em; }\n  /* line 207, stdin */\n  .component_doc .reiszer .control[data-v-ba1ef200] {\n    cursor: move;\n    display: none;\n    background-color: rgba(255, 255, 255, 0.5);\n    position: absolute;\n    right: 0;\n    bottom: 0;\n    padding: 1em; }\n  /* line 216, stdin */\n  .component_doc .reiszer.initialized[data-v-ba1ef200] {\n    display: inline-block; }\n  /* line 220, stdin */\n  .component_doc .reiszer.enabled:hover .control[data-v-ba1ef200], .component_doc .reiszer.enabled:hover .display[data-v-ba1ef200] {\n    display: block; }\n  /* line 225, stdin */\n  .component_doc .reiszer.active .control[data-v-ba1ef200], .component_doc .reiszer.active .display[data-v-ba1ef200] {\n    display: block; }")
 ;(function(){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
@@ -53636,17 +56333,45 @@ exports.__esModule = true;
 var Vue = require("vue");
 var vue_class_component_1 = require("vue-class-component");
 var component_properties_1 = require("./component_properties");
+var Hammerjs = require("hammerjs");
+var Hash = require("object-hash");
 var presets = require("./presets.vue");
 var ComponentDoc = /** @class */ (function (_super) {
     __extends(ComponentDoc, _super);
     function ComponentDoc() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.props_form = _this.component_properties.props_form;
+        _this.resizer_active = false;
+        _this.resizer_initialized = false;
+        _this.resizer_width = null;
+        _this.resizer_height = null;
+        _this.initial_resizer_height = null;
+        _this.initial_resizer_width = null;
         return _this;
     }
+    Object.defineProperty(ComponentDoc.prototype, "resizer_style", {
+        get: function () {
+            var width = this.resizer_width ? this.resizer_width + "px" : 'auto';
+            var height = this.resizer_height ? this.resizer_height + "px" : 'auto';
+            return {
+                width: width,
+                height: height
+            };
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(ComponentDoc.prototype, "component_properties", {
         get: function () {
             return new component_properties_1["default"](this.component);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ComponentDoc.prototype, "component_hash", {
+        get: function () {
+            console.log(Hash.keys(this.component));
+            return Hash.keys(this.component);
         },
         enumerable: true,
         configurable: true
@@ -53672,6 +56397,20 @@ var ComponentDoc = /** @class */ (function (_super) {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(ComponentDoc.prototype, "preview", {
+        get: function () {
+            return this.$el.getElementsByClassName('preview')[0];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(ComponentDoc.prototype, "resizer_control", {
+        get: function () {
+            return this.$el.getElementsByClassName('control')[0];
+        },
+        enumerable: true,
+        configurable: true
+    });
     ComponentDoc.prototype.nullify_blank_string = function (field) {
         if (this.props_form[field] === '') {
             this.props_form[field] = null;
@@ -53683,8 +56422,44 @@ var ComponentDoc = /** @class */ (function (_super) {
         }
         return null;
     };
+    ComponentDoc.prototype.initialize_resizer = function () {
+        this.initialize_resize_pan();
+        this.set_resizer_dimensions();
+    };
+    ComponentDoc.prototype.initialize_resize_pan = function () {
+        var _this = this;
+        this.resize_pan_handler = new Hammerjs.Manager(this.resizer_control);
+        var pan = new Hammerjs.Pan();
+        this.resize_pan_handler.add(pan);
+        this.resize_pan_handler.on('panstart', function (event) {
+            _this.initial_resizer_width = _this.resizer_width;
+            _this.initial_resizer_height = _this.resizer_height;
+            _this.resizer_active = true;
+        });
+        this.resize_pan_handler.on('panmove', function (event) {
+            _this.resizer_width = _this.initial_resizer_width + event.deltaX;
+            _this.resizer_height = _this.initial_resizer_height + event.deltaY;
+        });
+        this.resize_pan_handler.on('panend', function (event) {
+            _this.resizer_active = false;
+        });
+        this.resizer_initialized = true;
+    };
+    ComponentDoc.prototype.set_resizer_dimensions = function () {
+        this.resizer_width = this.preview.firstChild.clientWidth;
+        this.resizer_height = this.preview.firstChild.clientHeight;
+    };
+    ComponentDoc.prototype.reset_dimensions = function () {
+        this.resizer_width = null;
+        this.resizer_height = null;
+    };
     ComponentDoc.prototype.beforeMount = function () {
-        this.$options.components[this.component.name] = this.component;
+        this.$options.components[this.component_hash] = this.component;
+    };
+    ComponentDoc.prototype.mounted = function () {
+        if (this.resizable) {
+            this.initialize_resizer();
+        }
     };
     ComponentDoc = __decorate([
         vue_class_component_1["default"]({
@@ -53697,6 +56472,10 @@ var ComponentDoc = /** @class */ (function (_super) {
                     required: true
                 },
                 full_screen: {
+                    type: Boolean,
+                    "default": false
+                },
+                resizable: {
                     type: Boolean,
                     "default": false
                 },
@@ -53734,8 +56513,9 @@ exports["default"] = ComponentDoc;
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"component_doc"},[_c('h3',[_vm._v(_vm._s(_vm.name))]),_c('el-row',{attrs:{"gutter":20}},[_c('el-col',{attrs:{"xs":24,"sm":24,"md":24,"lg":_vm.small_screen_column_count,"xl":_vm.small_screen_column_count}},[_c('el-table',{attrs:{"data":_vm.props}},[_c('el-table-column',{attrs:{"prop":"name","label":"Name"}}),_c('el-table-column',{attrs:{"prop":"type","label":"Type"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_constructor")(scope.row.type)))]}}])}),_c('el-table-column',{attrs:{"prop":"required","label":"Required"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_boolean")(scope.row.required)))]}}])}),_c('el-table-column',{attrs:{"prop":"default","label":"Default"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_default")(scope.row.default)))]}}])}),_c('el-table-column',{attrs:{"prop":"input","label":"Input","width":"200","class-name":"input"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [(_vm.get_presets(scope.row.name))?_c('presets',{attrs:{"presets":_vm.get_presets(scope.row.name),"name":scope.row.name},model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(!scope.row.type)?_c('el-input',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(scope.row.type === String)?_c('div',{staticClass:"string_input",on:{"keyup":function($event){_vm.nullify_blank_string(scope.row.name)}}},[_c('el-input',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}})],1):(scope.row.type === Number)?_c('el-input-number',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(scope.row.type === Boolean)?_c('el-switch',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):_vm._e()]}}])})],1)],1),_c('el-col',{attrs:{"xs":24,"sm":24,"md":24,"lg":_vm.small_screen_column_count,"xl":_vm.small_screen_column_count}},[_c(_vm.component.name,_vm._b({tag:"component"},'component',_vm.props_form,false))],1)],1)],1)}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"component_doc"},[_c('h3',[_vm._v(_vm._s(_vm.name))]),_c('el-row',{attrs:{"gutter":20}},[_c('el-col',{attrs:{"xs":24,"sm":24,"md":24,"lg":_vm.small_screen_column_count,"xl":_vm.small_screen_column_count}},[_c('el-table',{attrs:{"data":_vm.props}},[_c('el-table-column',{attrs:{"prop":"name","label":"Name"}}),_c('el-table-column',{attrs:{"prop":"type","label":"Type"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_constructor")(scope.row.type)))]}}])}),_c('el-table-column',{attrs:{"prop":"required","label":"Required"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_boolean")(scope.row.required)))]}}])}),_c('el-table-column',{attrs:{"prop":"default","label":"Default"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [_vm._v(_vm._s(_vm._f("stringify_default")(scope.row.default)))]}}])}),_c('el-table-column',{attrs:{"prop":"input","label":"Input","width":"200","class-name":"input"},scopedSlots:_vm._u([{key:"default",fn:function(scope){return [(_vm.get_presets(scope.row.name))?_c('presets',{attrs:{"presets":_vm.get_presets(scope.row.name),"name":scope.row.name},model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(!scope.row.type)?_c('el-input',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(scope.row.type === String)?_c('div',{staticClass:"string_input",on:{"keyup":function($event){_vm.nullify_blank_string(scope.row.name)}}},[_c('el-input',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}})],1):(scope.row.type === Number)?_c('el-input-number',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):(scope.row.type === Boolean)?_c('el-switch',{model:{value:(_vm.props_form[scope.row.name]),callback:function ($$v) {_vm.$set(_vm.props_form, scope.row.name, $$v)},expression:"props_form[scope.row.name]"}}):_vm._e()]}}])})],1)],1),_c('el-col',{attrs:{"xs":24,"sm":24,"md":24,"lg":_vm.small_screen_column_count,"xl":_vm.small_screen_column_count}},[_c('div',{staticClass:"reiszer",class:{enabled: _vm.resizable, active: _vm.resizer_active, initialized: _vm.resizer_initialized},style:(_vm.resizer_style)},[_c('div',{staticClass:"preview"},[_c(_vm.component_hash,_vm._b({tag:"component"},'component',_vm.props_form,false))],1),_c('div',{staticClass:"display"},[_vm._v("w: "+_vm._s(_vm.resizer_width)+", h: "+_vm._s(_vm.resizer_height)),_c('i',{staticClass:"el-icon-refresh",on:{"click":_vm.set_resizer_dimensions}})]),_c('div',{staticClass:"control"},[_c('i',{staticClass:"el-icon-rank"})])])])],1)],1)}
 __vue__options__.staticRenderFns = []
+__vue__options__._scopeId = "data-v-ba1ef200"
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
   if (!hotAPI.compatible) return
@@ -53747,7 +56527,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.reload("data-v-ba1ef200", __vue__options__)
   }
 })()}
-},{"./component_properties":160,"./presets.vue":161,"vue":157,"vue-class-component":155,"vue-hot-reload-api":156,"vueify/lib/insert-css":158}],160:[function(require,module,exports){
+},{"./component_properties":163,"./presets.vue":164,"hammerjs":148,"object-hash":154,"vue":160,"vue-class-component":158,"vue-hot-reload-api":159,"vueify/lib/insert-css":161}],163:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class ComponentProperties {
@@ -53830,7 +56610,7 @@ class ComponentProperties {
 }
 exports.default = ComponentProperties;
 
-},{}],161:[function(require,module,exports){
+},{}],164:[function(require,module,exports){
 ;(function(){
 "use strict";
 var __extends = (this && this.__extends) || (function () {
@@ -53932,4 +56712,4 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
     hotAPI.reload("data-v-e8cb7804", __vue__options__)
   }
 })()}
-},{"vue":157,"vue-class-component":155,"vue-hot-reload-api":156}]},{},[7]);
+},{"vue":160,"vue-class-component":158,"vue-hot-reload-api":159}]},{},[7]);

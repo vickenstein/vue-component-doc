@@ -3,6 +3,7 @@
     component_doc(v-for="component in components", :component="component")
     component_doc(:component="components[3]", :presets="presets")
     component_doc(:component="components[3]", :full_screen="true")
+    component_doc(:component="variable_size_component", :resizable="true")
 </template>
 
 <script lang="typescript">
@@ -12,6 +13,7 @@
   import * as complex_object_component from './complex_object_component.vue'
   import * as complex_extend_component from './complex_extend_component.vue'
   import * as complex_class_component from './complex_class_component.vue'
+  import * as variable_size_component from './variable_size_component.vue'
 
   @Component
   export default class Demo extends Vue {
@@ -21,6 +23,9 @@
       complex_extend_component,
       complex_class_component
     ]
+
+    variable_size_component = variable_size_component
+
     presets = {
       object_required: [
         {
@@ -35,3 +40,9 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  .demo {
+    margin-bottom: 200px;
+  }
+</style>
