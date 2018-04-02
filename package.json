@@ -1,6 +1,6 @@
 {
   "name": "vue-component-doc",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Documentation for vue component",
   "main": "index.js",
   "scripts": {

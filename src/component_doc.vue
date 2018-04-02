@@ -1,24 +1,25 @@
 <template lang="pug">
   .component_doc
     h3 {{ name }}
-    el-row(:gutter="20")
+    el-row
       el-col(:xs="24", :sm="24", :md="24", :lg="small_screen_column_count", :xl="small_screen_column_count")
-        el-table(:data="props")
-          el-table-column(prop="name", label="Name")
-          el-table-column(prop="type", label="Type")
-            template(slot-scope="scope") {{ scope.row.type | stringify_constructor}}
-          el-table-column(prop="required", label="Required")
-            template(slot-scope="scope") {{ scope.row.required | stringify_boolean}}
-          el-table-column(prop="default", label="Default")
-            template(slot-scope="scope") {{ scope.row.default | stringify_default}}
-          el-table-column(prop="input", label="Input", width="200", class-name="input")
-            template(slot-scope="scope")
-              presets(v-if="get_presets(scope.row.name)", :presets="get_presets(scope.row.name)", :name="scope.row.name", v-model="props_form[scope.row.name]")
-              el-input(v-else-if="!scope.row.type", v-model="props_form[scope.row.name]")
-              .string_input(v-else-if="scope.row.type === String", @keyup="nullify_blank_string(scope.row.name)")
-                el-input(v-model="props_form[scope.row.name]")
-              el-input-number(v-else-if="scope.row.type === Number", v-model="props_form[scope.row.name]")
-              el-switch(v-else-if="scope.row.type === Boolean", v-model="props_form[scope.row.name]")
+        .table_padding
+          el-table(:data="props")
+            el-table-column(prop="name", label="Name")
+            el-table-column(prop="type", label="Type")
+              template(slot-scope="scope") {{ scope.row.type | stringify_constructor}}
+            el-table-column(prop="required", label="Required")
+              template(slot-scope="scope") {{ scope.row.required | stringify_boolean}}
+            el-table-column(prop="default", label="Default")
+              template(slot-scope="scope") {{ scope.row.default | stringify_default}}
+            el-table-column(prop="input", label="Input", width="200", class-name="input")
+              template(slot-scope="scope")
+                presets(v-if="get_presets(scope.row.name)", :presets="get_presets(scope.row.name)", :name="scope.row.name", v-model="props_form[scope.row.name]")
+                el-input(v-else-if="!scope.row.type", v-model="props_form[scope.row.name]")
+                .string_input(v-else-if="scope.row.type === String", @keyup="nullify_blank_string(scope.row.name)")
+                  el-input(v-model="props_form[scope.row.name]")
+                el-input-number(v-else-if="scope.row.type === Number", v-model="props_form[scope.row.name]")
+                el-switch(v-else-if="scope.row.type === Boolean", v-model="props_form[scope.row.name]")
       el-col(:xs="24", :sm="24", :md="24", :lg="small_screen_column_count", :xl="small_screen_column_count")
         .reiszer(:class="{enabled: resizable, active: resizer_active, initialized: resizer_initialized}", :style="resizer_style")
           .preview
@@ -188,6 +189,9 @@
 
 <style lang="scss" scoped>
   .component_doc {
+    .table_padding {
+      padding: 20px;
+    }
     .reiszer {
       overflow: scroll;
       position: relative;
